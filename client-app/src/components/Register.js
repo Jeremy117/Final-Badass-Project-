@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class register extends Component {
+class Register extends Component {
     render() {
         return (
             <form className="signUp">
@@ -55,4 +55,4 @@ class register extends Component {
         );
     }
 }
-export default register;
+export default Register;
