@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./components/Home";
 import signUp from "./components/signUp";
-import About from "./components/About";
 import Register from "./components/Register";
 
 class App extends Component {
@@ -20,9 +19,7 @@ class App extends Component {
               <div>
                 <Link to="/components/signUp">SignUp</Link>
               </div>
-              <div>
-                <Link to="/components/About">About</Link>
-              </div>
+
               <div>
                 <Link to="/components/Register">Register</Link>
               </div>
@@ -32,7 +29,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/components/signUp" component={signUp} />
-              <Route path="/components/About" component={About} />
+
               <Route path="/components/Register" component={Register} />
             </Switch>
           </div>
