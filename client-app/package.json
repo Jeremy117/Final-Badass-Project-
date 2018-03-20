@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
     "cross-env": "^5.1.4",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
@@ -21,9 +20,10 @@
     "redux-logger": "^3.0.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=4100 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
