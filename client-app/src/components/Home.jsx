@@ -7,13 +7,17 @@ export default class Home extends Component {
   render() {
     return (
       <Grid>
-        <Jumbotron>
-          <h2>Welcome to Huddle</h2>
-          <p>Great place to manage your Sports Teams!</p>
-          <Link to="/about">
-            <Button bsStyle="primary">Learn More</Button>
-          </Link>
-        </Jumbotron>
+        <div class="row">
+          <div class="container">
+            <div class="jumbotron text-center col-lg-6">
+              <h1>Login</h1>
+            </div>
+
+            <div class="jumbotron text-center col-lg-6">
+              <h1>Register</h1>
+            </div>
+          </div>
+        </div>
       </Grid>
     );
   }
