@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require("mongoose");
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+var isProduction = process.env.NODE_ENV === "production";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,9 +22,9 @@ app.set('view engine', 'jade');
 if (isProduction) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect("mongodb://localhost/killick", function (err) {
+  mongoose.connect("mongodb://admin:admin@ds213199.mlab.com:13199/heroku_57qw8z8r", function (err) {
     if (err) return console.error(err);
-    console.log("THE DB, mongo, is connected, and I ROCK");
+    console.log("THE DB, mongo, is connected, and Team Huddle Rules");
   });
   mongoose.set("debug", true);
 }
