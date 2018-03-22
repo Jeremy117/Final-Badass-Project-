@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 
+
 class signUp extends Component {
     render() {
         return (
             <form className="signUp">
                 <h1 /> Sign In
-    <div className="signIn">
+                    <div className="signIn">
                     <label for="Email">Email:</label>
                     <input
                         placeholder="your email"
@@ -28,7 +29,7 @@ class signUp extends Component {
                     <div>
                         <input type="submit" />
                     </div>
-                    <hr />
+
                 </div>
 
 

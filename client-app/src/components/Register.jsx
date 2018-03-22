@@ -4,7 +4,7 @@ import React, { Component } from "react";
 class Register extends Component {
     render() {
         return (
-            <form className="signUp">
+            <form>
                 <div className="register">
                     <h1 /> Register
           <div>
