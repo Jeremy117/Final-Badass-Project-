@@ -60,5 +60,5 @@ class Register extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Register);
-// export default Register;
+// export default connect(mapStateToProps)(Register);
+export default Register;
