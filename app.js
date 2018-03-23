@@ -21,20 +21,13 @@ app.set("view engine", "jade");
 if (isProduction) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-<<<<<<< HEAD
-  mongoose.connect("mongodb://admin:admin@ds213199.mlab.com:13199/heroku_57qw8z8r", function (err) {
-    if (err) return console.error(err);
-    console.log("THE DB, mongo, is connected, and Go Team");
-  });
-=======
   mongoose.connect(
     "mongodb://admin:admin@ds213199.mlab.com:13199/heroku_57qw8z8r",
-    function(err) {
+    function (err) {
       if (err) return console.error(err);
       console.log("THE DB, mongo, is connected, and Team Huddle Rules");
     }
   );
->>>>>>> 6d2556012c5dedc26f36e7b59f60993efb227ec1
   mongoose.set("debug", true);
 }
 
@@ -50,14 +43,14 @@ app.use("/", index);
 app.use("/users", users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
