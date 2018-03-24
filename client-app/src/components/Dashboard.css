@@ -1,10 +1,11 @@
-.container1 {
+.row {
     display: flex;
     justify-content: center;
     justify-content: space-around;
-   }
-   
-   .container2 {
-    display: flex;
-    justify-content: center;
-   }
+  }
+  .container1 {
+    border-style: solid;
+    border-color: beige;
+    text-align: center;
+    /* background-color: #ccffff; */
+  }

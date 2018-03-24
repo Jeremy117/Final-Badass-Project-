@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+
 
 const mapStateToProps = state => ({
   appName: state.appName
@@ -11,7 +11,7 @@ class Register extends Component {
       <form>
         <div className="register">
           <h1 /> Register
-          <div>
+        <div>
             <label for="First Name">First Name:</label>
             <input
               name="First"
@@ -59,6 +59,4 @@ class Register extends Component {
     );
   }
 }
-
-// export default connect(mapStateToProps)(Register);
 export default Register;
