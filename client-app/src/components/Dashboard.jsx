@@ -3,7 +3,7 @@ import "./Dashboard.css";
 import { Grid, Row, Col } from "react-bootstrap";
 
 const arrTeams = ["alvaro", "jennifer", "jeremy", "thomas", "jacob", "adam"];
-const listArr = arrTeams.map(arrTeams => <li>{arrTeams}</li>);
+const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
 const dummySentences = [
   "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -24,23 +24,23 @@ class Dashboard extends Component {
     return (
       <Grid>
         <Row className="show-grid">
-          <Col sm={6} md={3}>
+          <Col sm={6} md={3} className="container1">
             <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
             <br />
             {dummySentences.slice(0, 6).join(" ")}
           </Col>
-          <Col sm={6} md={3}>
+          <Col sm={6} md={3} className="container1">
             <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
             <br />
             {dummySentences.slice(0, 4).join(" ")}
           </Col>
-          <Col sm={6} md={3}>
-            <code>{"Table of Teams!!!"}</code>
+          <Col sm={6} md={3} className="container1">
+            <div>Teams!!{listArr}</div>
             <br />
-            {listArr}
           </Col>
         </Row>
       </Grid>
+
       //   <div class="row">
       //     <div class="col-md-1">.col-md-1</div>
       //     <div class="col-md-1">.col-md-1</div>
