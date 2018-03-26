@@ -41,16 +41,14 @@ class Dashboard extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col sm={6} md={3} className="container1">
-              <InfiniteCalendar
-                width={270}
-                height={300}
-                selected={today}
-                disabledDays={[0, 6]}
-                minDate={lastWeek}
-              />,
-              <br />
-            </Col>
+            <InfiniteCalendar
+              width={300}
+              height={300}
+              selected={today}
+              disabledDays={[0, 6]}
+              minDate={lastWeek}
+            />,
+            <br />
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
               <br />
