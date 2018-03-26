@@ -9,17 +9,13 @@ export default class Home extends Component {
       <Grid>
         <Jumbotron>
           <h2>Welcome to Huddle A Team Management Site</h2>
-          <p>
-            Organize your team and follow your favorite teams!
-          </p>
+          <p>Organize your team and follow your favorite teams!</p>
           <Link to="/about">
             <Button bsStyle="primary">Learn More!</Button>
           </Link>
         </Jumbotron>
         <Row className="show-grid text-center">
-          <Col xs={12} sm={4} className="person-wrapper">
-
-          </Col>
+          <Col xs={12} sm={4} className="person-wrapper" />
         </Row>
       </Grid>
     );

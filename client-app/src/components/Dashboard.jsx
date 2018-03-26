@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import { Grid, Row, Col } from "react-bootstrap";
 
-const arrTeams = ["alvaro", "jennifer", "jeremy", "thomas", "jacob", "adam"];
+const arrTeams = [
+  "Titian",
+  "Angles",
+  "Chiefs",
+  "Seahawks",
+  "Patriots",
+  "49ers"
+];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
 const dummySentences = [
