@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
 import { Grid, Row, Col } from "react-bootstrap";
+import InfiniteCalendar from "react-infinite-calendar";
+import "react-infinite-calendar/styles.css"; // Make sure to import the default stylesheet
+
+var today = new Date();
+var lastWeek = new Date(
+  today.getFullYear(),
+  today.getMonth(),
+  today.getDate() - 7
+);
 
 const arrTeams = [
   "Titian",
@@ -29,25 +38,31 @@ const dummySentences = [
 class Dashboard extends Component {
   render() {
     return (
-      <Grid>
-        <Row className="show-grid">
-          <Col sm={6} md={3} className="container1">
-            <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
-            <br />
-            {dummySentences.slice(0, 6).join(" ")}
-          </Col>
-          <Col sm={6} md={3} className="container1">
-            <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
-            <br />
-            {dummySentences.slice(0, 4).join(" ")}
-          </Col>
-          <Col sm={6} md={3} className="container1">
-            <div>Teams!!{listArr}</div>
-            <br />
-          </Col>
-        </Row>
-      </Grid>
-
+      <div>
+        <Grid>
+          <Row className="show-grid">
+            <Col sm={6} md={3} className="container1">
+              <InfiniteCalendar
+                width={400}
+                height={600}
+                selected={today}
+                disabledDays={[0, 6]}
+                minDate={lastWeek}
+              />,
+              <br />
+            </Col>
+            <Col sm={6} md={3} className="container1">
+              <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
+              <br />
+              {dummySentences.slice(0, 4).join(" ")}
+            </Col>
+            <Col sm={6} md={3} className="container1">
+              <div>Teams!!{listArr}</div>
+              <br />
+            </Col>
+          </Row>
+        </Grid>
+      </div>
       //   <div class="row">
       //     <div class="col-md-1">.col-md-1</div>
       //     <div class="col-md-1">.col-md-1</div>
