@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import "./signUp";
 import "./Register";
 
+
+
 const mapStateToProps = state => ({
   appName: state.appName
 });
@@ -27,7 +29,9 @@ export default class Home extends Component {
         <Row className="show-grid text-center">
           <Col xs={12} sm={4} className="person-wrapper" />
         </Row>
+
       </Grid>
+
     );
   }
 }
