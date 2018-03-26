@@ -43,8 +43,8 @@ class Dashboard extends Component {
           <Row className="show-grid">
             <Col sm={6} md={3} className="container1">
               <InfiniteCalendar
-                width={400}
-                height={600}
+                width={270}
+                height={300}
                 selected={today}
                 disabledDays={[0, 6]}
                 minDate={lastWeek}
