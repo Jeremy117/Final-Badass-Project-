@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MainView from "./mainview";
-
 import services from "../../services";
+
+import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
 
 const mapStateToProps = state => ({
   appName: state.appName,
@@ -23,9 +24,17 @@ class Home extends Component {
         <div className="container page">
           <div className="row">
             <MainView />
-            <div className="col-md-3">
-              <div className="sidebar" />
-            </div>
+          </div>
+          <div className="row">
+            <Grid>
+              <Jumbotron>
+                <h2>Welcome to Huddle A Team Management Site</h2>
+                <p>Organize your team and follow your favorite teams!</p>
+              </Jumbotron>
+              <Row className="show-grid text-center">
+                <Col xs={12} sm={4} className="person-wrapper" />
+              </Row>
+            </Grid>
           </div>
         </div>
       </div>
