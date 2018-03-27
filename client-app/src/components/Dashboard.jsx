@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
-import { Grid, Row, Col } from "react-bootstrap";
+import {
+  Grid,
+  Row,
+  Col,
+  Button,
+  Modal,
+  ModalDialog,
+  ModalBody,
+  ModalTitle,
+  ModalHeader,
+  ModalFooter
+} from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
-import "react-infinite-calendar/styles.css"; // Make sure to import the default stylesheet
+import "react-infinite-calendar/styles.css";
+import $ from "jquery";
+import Modals from "./Modals";
 
 var today = new Date();
 var lastWeek = new Date(
@@ -41,14 +54,15 @@ class Dashboard extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
+            <br />
             <InfiniteCalendar
               width={300}
               height={300}
               selected={today}
               disabledDays={[0, 6]}
               minDate={lastWeek}
+              onSelect={(date, e) => console.log(this.Modals.bind(this))}
             />,
-            <br />
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
               <br />
