@@ -61,7 +61,7 @@ class Dashboard extends Component {
               selected={today}
               disabledDays={[0, 6]}
               minDate={lastWeek}
-              onSelect={(date, e) => console.log(this.Modals.bind(this))}
+              onSelect={(date, e) => console.log(e)}
             />,
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
