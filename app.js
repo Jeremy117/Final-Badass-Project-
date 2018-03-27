@@ -6,7 +6,8 @@ var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
-var isProduction = process.env.NODE_ENV === "production";
+var index = require("./routes/index");
+var users = require("./routes/users");
 
 var app = express();
 
@@ -40,14 +41,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/api", function(req, res, next) {
-  res.send("API all good in the hood!");
-});
+app.use("/", index);
+app.use("/users", users);
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client-app/build/index.html"));
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error("Not Found");
+  err.status = 404;
+  next(err);
 });
 
 // error handler
