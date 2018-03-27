@@ -7,77 +7,124 @@ import { Link } from "react-router-dom";
 export default class Footer extends Component {
     render() {
         return (
-            <Navbar fixedBottom>
+            <Navbar default fixedBottom>
                 <Navbar.Header>
 
 
 
-                    <Navbar.Toggle />
+
                 </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav>
 
 
-                        {/* <!--Footer--> */}
-                        <footer className="page-footer font-small indigo pt-0">
+                <Nav>
 
-                            {/* <!--Footer Links--> */}
-                            <div className="container">
 
-                                {/* <!--First row--> */}
-                                <div className="row">
+                    {/* <!--Footer--> */}
+                    <footer className="page-footer font-small indigo pt-5">
 
-                                    {/* <!--First column--> */}
-                                    <div className="col-md-12 py-5">
+                        {/* <!--Footer Links--> */}
+                        <div className="container">
 
-                                        <div className="mb-5 flex-center">
 
-                                            {/* <!--Facebook--> */}
-                                            <a className="fb-ic">
-                                                <i class="fa fa-facebook fa-lg black-text mr-md-5 mr-3 fa-2x"> </i>
-                                            </a>
-                                            {/* <!--Twitter--> */}
-                                            <a className="tw-ic">
-                                                <i class="fa fa-twitter fa-lg black-text mr-md-5 mr-3 fa-2x"> </i>
-                                            </a>
-                                            {/* <!--Google +--> */}
-                                            <a className="gplus-ic">
-                                                <i class="fa fa-google-plus fa-lg black-text mr-md-5 mr-3 fa-2x"> </i>
-                                            </a>
-                                            {/* <!--Linkedin--> */}
-                                            <a className="li-ic">
-                                                <i class="fa fa-linkedin fa-lg black-text mr-md-5 mr-3 fa-2x"> </i>
-                                            </a>
-                                            {/* <!--Instagram--> */}
-                                            <a className="ins-ic">
-                                                <i className="fa fa-instagram fa-lg black-text mr-md-5 mr-3 fa-2x"> </i>
-                                            </a>
-                                            {/* <!--Pinterest--> */}
-                                            <a className="pin-ic">
-                                                <i className="fa fa-pinterest fa-lg black-text fa-2x"> </i>
-                                            </a>
+
+                            {/* <!--First row--> */}
+                            <div className="row">
+
+
+
+                                {/* <!--First column--> */}
+                                <div className="col-md-12 py-5">
+
+                                    <div className="mb-5 flex-center">
+                                        <div className="col-md-2 col-xs-4">
+                                            <ul>
+                                                <div>
+                                                    <b>
+                                                        <i class="fa fa-headphones"></i>
+                                                        SUPPORT
+                                                        </b>
+                                                </div>
+                                                <div>
+                                                    <a href="/helpdesk">Helpdesk</a>
+                                                </div>
+                                            </ul>
+
+                                        </div>
+                                        <div class="col=md-2 col-xs-4">
+                                            <ul>
+                                                <div>
+                                                    <b>
+                                                        <i class="fas fa-exclamation"></i>
+                                                        ABOUT
+                                                        </b>
+                                                </div>
+                                                <div>
+                                                    <a href="./Home">Huddle Home</a>
+                                                </div>
+                                                <div>
+                                                    <a href="/About">About us</a>
+                                                </div>
+                                                <div>
+                                                    <a href="/Careers">Careers</a>
+                                                </div>
+                                                <div>
+                                                    <a href="/Testimonials">Testimonials</a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-3 col-md-offset-1 border-left col-xs-12">
+                                            <ul>
+                                                <b>
+                                                    <div class="margin-left-large">WOZ U</div>
+                                                </b>
+                                                <small>
+                                                    8444 N 90th St
+                                                        <br></br>
+
+                                                    Scottsdale, AZ
+
+                                                </small>
+                                                <div>
+                                                    <span class="margin-topsmall block">
+                                                        <i class="fas fa-phone-square">
+
+                                                        </i>
+                                                        &nbsp;602-555-7070
+                                                    </span>
+                                                </div>
+
+
+
+
+                                            </ul>
+
                                         </div>
                                     </div>
-                                    {/* <!--/First column--> */}
                                 </div>
-                                {/* <!--/First row--> */}
+                                {/* <!--/First column--> */}
                             </div>
-                            {/* <!--/Footer Links--> */}
+                            {/* <!--/First row--> */}
+                        </div>
+                        {/* <!--/Footer Links--> */}
 
-                            {/* <!--Copyright--> */}
-                            <div class="footer-copyright py-3 text-center">
-                                © 2018 Copyright:
+                        {/* <!--Copyright--> */}
+                        <div class="footer-copyright py-3 text-center">
+                            © 2018 Copyright:
         <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> Team Huddle </a>
-                            </div>
-                            {/* <!--/Copyright--> */}
 
-                        </footer>
-                        {/* <!--/Footer--> */}
+                        </div>
+                        {/* <!--/Copyright--> */}
 
 
-                    </Nav>
 
-                </Navbar.Collapse>
+
+                    </footer>
+                    {/* <!--/Footer--> */}
+
+
+                </Nav>
+
+
             </Navbar>
         );
     }
