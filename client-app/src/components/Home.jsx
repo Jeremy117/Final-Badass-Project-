@@ -1,4 +1,4 @@
-//previous home.jsx
+// previous home.jsx
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 // import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
