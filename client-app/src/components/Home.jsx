@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
 import "./Home.css";
+import { connect } from "react-redux";
+import "./signUp";
+import "./Register";
+
+const mapStateToProps = state => ({
+  appName: state.appName
+});
 
 export default class Home extends Component {
   render() {
@@ -21,3 +28,5 @@ export default class Home extends Component {
     );
   }
 }
+
+// export default connect(mapStateToProps)(Home);
