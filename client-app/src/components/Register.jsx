@@ -12,7 +12,7 @@ class Register extends Component {
     return (
       <form>
         <div className="register">
-          <div className="row">
+          <div className="row1">
             <div className="col-md-2 offset-md-3 col-xs-12">
               <h1 className="text-xs-center">Register</h1>
               <p className="text-xs-center">
@@ -71,9 +71,7 @@ class Register extends Component {
                       required
                     />
                     <small id="passwordHelpInline" class="text-muted">Must be 5-10 characters long.</small>
-                  </div>
-
-                  <div>
+                    <br />
                     <button
                       className="btn btn-primary pull-xs-right"
                       type="submit"
@@ -82,6 +80,16 @@ class Register extends Component {
                       Register
                   </button>
                   </div>
+
+                  {/* <div>
+                    <button
+                      className="btn btn-primary pull-xs-right"
+                      type="submit"
+                      disabled={this.props.inProgress}
+                    >
+                      Register
+                  </button>
+                  </div> */}
                 </div>
               </div>
             </div>

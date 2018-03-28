@@ -11,7 +11,7 @@ class signUp extends Component {
     return (
       <form>
         <div className="signIn">
-          <div className="row">
+          <div className="row1">
             <div className="col-sm-2 offset-md-3 col-xs-12">
               <h1 className="text-xs-center">Sign In</h1>
               <p className="text-xs-center">

@@ -1,6 +1,11 @@
 .container1 {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-  }
-  
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.row1 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
