@@ -10,15 +10,19 @@ import Dashboard from "./components/Dashboard";
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Navbar />
-          <Route exact path="/" component={Home} />
-          <Route path="/components/signUp" component={signUp} />
-          <Route path="/components/Register" component={Register} />
-          <Route path="/components/Dashboard" component={Dashboard} />
-        </div>
-      </Router>
+      <div>
+        <Router>
+          <div>
+            <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route path="/components/signUp" component={signUp} />
+            <Route path="/components/Register" component={Register} />
+            <Route path="/components/Dashboard" component={Dashboard} />
+          </div>
+        </Router>
+        <hr />
+        <h3>this is footer</h3>
+      </div>
     );
   }
 }

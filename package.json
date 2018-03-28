@@ -24,6 +24,8 @@
         "passport": "^0.4.0",
         "passport-local": "^1.0.0",
         "pug": "^2.0.1",
+        "react-addons-css-transition-group": "^15.6.2",
+        "react-infinite-calendar": "^2.3.1",
         "serve-favicon": "~2.4.5",
         "slug": "^0.9.1"
     },
