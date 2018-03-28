@@ -1,4 +1,3 @@
-//first version of App.js
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -7,6 +6,7 @@ import Register from "./components/Register";
 import signUp from "./components/signUp";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/home/index.js";
+import Article from "./components/article/index.js";
 
 class App extends Component {
   render() {
@@ -18,6 +18,7 @@ class App extends Component {
           <Route path="/components/signUp" component={signUp} />
           <Route path="/components/Register" component={Register} />
           <Route path="/components/Dashboard" component={Dashboard} />
+          <Route path="/components/article" component={Article} />
         </div>
       </Router>
     );
@@ -25,44 +26,3 @@ class App extends Component {
 }
 
 export default App;
-
-// //second version of App.js
-// import React, { Component } from "react";
-// // import Header from "./components/header";
-// import Home from "./components/home/index.js";
-
-// class App extends Component {
-//   render() {
-//     return <Home />;
-//   }
-// }
-
-// export default App;
-
-//first version of App.js
-// import React, { Component } from "react";
-// import "./App.css";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Navbar from "./components/CustomNavbar";
-// import Home from "./components/Home";
-// import Register from "./components/Register";
-// import signUp from "./components/signUp";
-// import Dashboard from "./components/Dashboard";
-
-// class App extends Component {
-//   render() {
-//     return (
-// <Router>
-//   <div>
-//     <Navbar />
-//     <Route exact path="/" component={Home} />
-//     <Route path="/components/signUp" component={signUp} />
-//     <Route path="/components/Register" component={Register} />
-//     <Route path="/components/Dashboard" component={Dashboard} />
-//   </div>
-// </Router>
-//     );
-//   }
-// }
-
-// export default App;
