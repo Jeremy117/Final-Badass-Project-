@@ -20,22 +20,13 @@ const arrTeams = [
   "Chiefs",
   "Seahawks",
   "Patriots",
-  "49ers"
+  "49ers",
+  "Texans"
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
 const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl....."
+  "Lorem ipsum dolor sit amet, consectetuer adipiscing eliti."
 ];
 
 class Dashboard extends Component {
@@ -57,9 +48,9 @@ class Dashboard extends Component {
             <Col sm={6} md={3} className="container2">
               <code>&lt;&gt;</code>
               <br />
-              {dummySentences.slice(0, 4).join(" ")}
+              {dummySentences.splice(0, 5).join(" ")}
             </Col>
-            <Col sm={1} md={33} className="container1">
+            <Col sm={10} md={3500} className="container1">
               <div>Teams!!{listArr}</div>
               <br />
             </Col>

@@ -59,4 +59,4 @@ class signUp extends Component {
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(signUp);
+export default signUp;
