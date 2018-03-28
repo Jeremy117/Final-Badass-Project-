@@ -1,11 +1,26 @@
 .show-grid {
   display: flex;
   justify-content: center;
-  justify-content: space-around;
+  align-items: flex-start;
+  background-color: rgba(245, 235, 241, 0.055);
 }
 .container1 {
-  border-style: solid;
-  border-color: beige;
-  text-align: center;
-  /* background-color: #ccffff; */
+  border-style: ridge;
+  border-color: rgb(9, 190, 48);
+  text-align: center-align;
+  background-color: #0b0eb8b9;
+}
+.container2 {
+  width: 5000px;
+  line-height: 112.9;
+  border-style: ridge;
+  border-color: rgb(16, 180, 10);
+  text-align: center-align;
+  background-color: #0b0eb8b9;
+}
+.container3 {
+  border-style: ridge;
+  border-color: rgb(16, 180, 10);
+  text-align: center-align;
+  background-color: #0b0eb8b9;
 }

@@ -59,5 +59,6 @@ class signUp extends Component {
     );
   }
 }
+
 export default signUp;
 // export default connect(mapStateToProps, mapDispatchToProps)(signUp);
