@@ -1,15 +1,34 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import services from "../services";
 
-const mapStateToProps = state => ({
-  appName: state.appName
-});
-
+// console.log(this.handleInputOnChange);
+// const mapStateToProps = state => ({ ...state.auth });
+// const mapDispatchToProps = dispatch => ({
+//   onSubmit: (email, password) =>
+//     dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
+// });
 class signUp extends Component {
+  state = {
+    email: null,
+    password: null
+  };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  handleSubmit = event => {
+    event.preventDefault();
+    alert("A email and password was submitted: " + this.state.props);
+    this.props.onSubmit(this.state.email, this.state.password);
+  };
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit} className="signUp">
+
         <div className="signIn">
           <div className="row1">
             <div className="col-sm-2 offset-md-3 col-xs-12">
@@ -23,6 +42,8 @@ class signUp extends Component {
             <label for="Email" className="col-sm-10 col-form-label">Email address</label>
             <div className="col-sm-5">
               <input
+                value={this.state.value}
+                onChange={this.handleChange}
                 type="Email"
                 className="form-control"
                 placeholder="Enter email "
@@ -36,6 +57,8 @@ class signUp extends Component {
             <label for="Password" className="col-sm-10 col-form-label">Password</label>
             <div className="col-sm-5">
               <input
+                value={this.state.value}
+                onChange={this.handleChange}
                 className="form-control form-control-sm"
                 placeholder="Password"
                 id="Password"
@@ -55,6 +78,7 @@ class signUp extends Component {
                   </button>
               </div>
             </div>
+
           </div>
         </div>
       </form>
@@ -63,5 +87,5 @@ class signUp extends Component {
   }
 }
 
-// export default connect(mapStateToProps)(signUp);
 export default signUp;
+    // export default connect(mapStateToProps, mapDispatchToProps)(signUp);

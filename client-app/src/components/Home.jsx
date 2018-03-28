@@ -6,8 +6,6 @@ import { connect } from "react-redux";
 import "./signUp";
 import "./Register";
 
-
-
 const mapStateToProps = state => ({
   appName: state.appName
 });
