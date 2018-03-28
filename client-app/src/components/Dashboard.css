@@ -5,11 +5,21 @@
   background-color: rgba(245, 235, 241, 0.055);
 }
 .container1 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
   border-style: ridge;
   border-color: rgb(9, 190, 48);
   text-align: center-align;
   background-color: #0b0eb8b9;
 }
+
+.row1 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
 .container2 {
   width: 5000px;
   line-height: 112.9;

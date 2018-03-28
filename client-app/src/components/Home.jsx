@@ -17,14 +17,19 @@ export default class Home extends Component {
         <Jumbotron>
           <h2>Welcome to Huddle A Team Management Site</h2>
           <p>Organize your team and follow your favorite teams!</p>
-          <Link to="/about">
-            <Button bsStyle="primary">Learn More!</Button>
+          <Link to="/components/signUp">
+            <Button bsStyle="primary">Sign In</Button>
+          </Link>
+          <Link to="/components/Register">
+            <Button bsStyle="primary">Register</Button>
           </Link>
         </Jumbotron>
         <Row className="show-grid text-center">
           <Col xs={12} sm={4} className="person-wrapper" />
         </Row>
+
       </Grid>
+
     );
   }
 }

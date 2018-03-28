@@ -37,8 +37,22 @@ const arrTeams = [
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
+
+
+
+
 const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing eliti."
+  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "Donec hendrerit tempor tellus.",
+  "Donec pretium posuere tellus.",
+  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
+  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+  "Nulla posuere.",
+  "Donec vitae dolor.",
+  "Nullam tristique diam non turpis.",
+  "Cras placerat accumsan nulla.",
+  "Nullam rutrum.",
+  "Nam vestibulum accumsan nisl."
 ];
 
 class Dashboard extends Component {
@@ -74,7 +88,7 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
-              // onSelect={(date, Modals) => console.log(Modals())}
+            // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
@@ -109,7 +123,7 @@ class Dashboard extends Component {
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
-      </div>
+      </div >
       //   <div class="row">
       //     <div class="col-md-1">.col-md-1</div>
       //     <div class="col-md-1">.col-md-1</div>
