@@ -10,12 +10,14 @@ import {
   ModalBody,
   ModalTitle,
   ModalHeader,
-  ModalFooter
+  ModalFooter,
+  OverlayTrigger,
+  Tooltip,
+  Popover
 } from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
-import $ from "jquery";
-import Modals from "./Modals";
+// import Modals from "./Modals";
 
 var today = new Date();
 var lastWeek = new Date(
@@ -49,6 +51,24 @@ const dummySentences = [
 ];
 
 class Dashboard extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false
+    };
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
   render() {
     return (
       <div>
@@ -61,7 +81,9 @@ class Dashboard extends Component {
               selected={today}
               disabledDays={[0, 6]}
               minDate={lastWeek}
-              onSelect={(date, e) => console.log(e)}
+              onSelect={this.handleShow}
+
+              // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
@@ -74,6 +96,28 @@ class Dashboard extends Component {
             </Col>
           </Row>
         </Grid>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Text in a modal</h4>
+            <p>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </p>
+
+            <h4>Popover in a modal</h4>
+            <p>there is a here</p>
+
+            <h4>Tooltips in a modal</h4>
+            <p>there is a here</p>
+
+            <hr />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleClose}>Close</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
       //   <div class="row">
       //     <div class="col-md-1">.col-md-1</div>
