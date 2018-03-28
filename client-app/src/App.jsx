@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import signUp from "./components/signUp";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
+import Profile from "./components/Profile";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/components/signUp" component={signUp} />
           <Route path="/components/Register" component={Register} />
           <Route path="/components/Dashboard" component={Dashboard} />
+          <Route path="/components/Profile" component={Profile} />
 
 
         </div>
