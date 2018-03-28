@@ -20,8 +20,6 @@ class App extends Component {
             <Route path="/components/Dashboard" component={Dashboard} />
           </div>
         </Router>
-        <hr />
-        <h3>this is footer</h3>
       </div>
     );
   }

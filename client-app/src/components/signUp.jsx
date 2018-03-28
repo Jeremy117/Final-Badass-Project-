@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import services from "../services";
 
-console.log(this.handleInputOnChange);
-const mapStateToProps = state => ({ ...state.auth });
-const mapDispatchToProps = dispatch => ({
-  onSubmit: (email, password) =>
-    dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
-});
+// console.log(this.handleInputOnChange);
+// const mapStateToProps = state => ({ ...state.auth });
+// const mapDispatchToProps = dispatch => ({
+//   onSubmit: (email, password) =>
+//     dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
+// });
 class signUp extends Component {
   state = {
     email: null,
@@ -60,5 +60,5 @@ class signUp extends Component {
   }
 }
 
-// export default connect(mapStateToProps)(signUp);
 export default signUp;
+// export default connect(mapStateToProps, mapDispatchToProps)(signUp);
