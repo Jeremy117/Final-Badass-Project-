@@ -37,12 +37,9 @@ const arrTeams = [
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing eliti."
-];
 
-const arrTeams = ["alvaro", "jennifer", "jeremy", "thomas", "jacob", "adam"];
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
+
+
 
 const dummySentences = [
   "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
