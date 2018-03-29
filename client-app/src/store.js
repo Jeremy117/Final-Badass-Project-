@@ -1,5 +1,29 @@
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import { routerReducer, routerMiddleware } from "react-router-redux";
-import { createLogger } from "redux-logger";
+import { createStore, applyMiddleware, compose } from "redux";
+import { promiseMiddleware } from "./middleware";
 
-export const reduxStore = createStore(reducer, getMiddleware());
+const defaultState = {
+  appName: "Huddle",
+  articles: null
+};
+
+const reducer = function(state = defaultState, action) {
+  switch (action.type) {
+    case "HOME_PAGE_LOADED":
+      return action.error
+        ? state
+        : {
+            ...state,
+            articles: action.payload.articles
+          };
+    default:
+      return state;
+  }
+};
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const reduxStore = createStore(
+  reducer,
+  composeEnhancers(applyMiddleware(promiseMiddleware))
+);
+
+export default reduxStore;
