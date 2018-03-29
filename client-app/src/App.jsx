@@ -7,6 +7,7 @@ import signUp from "./components/signUp";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/home/index.js";
 import Article from "./components/article/index.js";
+import Profile from "./components/Profile";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/components/Register" component={Register} />
           <Route path="/components/Dashboard" component={Dashboard} />
           <Route path="/components/article" component={Article} />
+          <Route path="/components/Profile" component={Profile} />
         </div>
       </Router>
     );
