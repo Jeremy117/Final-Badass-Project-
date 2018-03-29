@@ -8,7 +8,7 @@ const defaultState = {
 
 const reducer = function(state = defaultState, action) {
   switch (action.type) {
-    case "HOME_PAGE_LOADED":
+    case "ARTICLE_HOME_PAGE_LOADED":
       return action.error
         ? state
         : {
