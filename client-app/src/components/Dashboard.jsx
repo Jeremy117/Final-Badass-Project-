@@ -17,7 +17,7 @@ import {
 } from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
-// import Modals from "./Modals";
+import axios from "axios";
 
 var today = new Date();
 var lastWeek = new Date(
@@ -37,20 +37,6 @@ const arrTeams = [
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
-
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
@@ -62,7 +48,9 @@ class Dashboard extends Component {
       show: false
     };
   }
-
+  getRequest() {
+    console.log("hi");
+  }
   handleClose() {
     this.setState({ show: false });
   }
@@ -75,7 +63,6 @@ class Dashboard extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <br />
             <InfiniteCalendar
               width={300}
               height={300}
@@ -87,9 +74,9 @@ class Dashboard extends Component {
               // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
-              <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+              <div>
+                <button onClick={this.getRequest}>Get Newsfeed!</button>
+              </div>
             </Col>
             <Col sm={6} md={3} className="container1">
               <div>Teams!!{listArr}</div>
