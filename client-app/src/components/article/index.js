@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import MainView from "./mainview";
 import services from "../../services";
 
-import { Grid, Row, Col, Button } from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
 
 const mapStateToProps = state => ({
   appName: state.appName,
