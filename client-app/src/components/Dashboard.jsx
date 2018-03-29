@@ -49,7 +49,9 @@ class Dashboard extends Component {
     };
   }
   getRequest() {
-    console.log("hi");
+    axios.get("");
+
+    // console.log("hi");
   }
   handleClose() {
     this.setState({ show: false });
