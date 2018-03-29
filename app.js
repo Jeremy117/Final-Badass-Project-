@@ -32,7 +32,7 @@ if (isProduction) {
 }
 
 //import models as soon as we are connected!!!!!!
-require("./models/article");
+require("./models/Article");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
