@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
 import "./Home.css";
 import { connect } from "react-redux";
-import "./signUp";
+import "./signIn";
 import "./Register";
 
 const mapStateToProps = state => ({
@@ -17,7 +17,7 @@ export default class Home extends Component {
         <Jumbotron>
           <h2>Welcome to Huddle A Team Management Site</h2>
           <p>Organize your team and follow your favorite teams!</p>
-          <Link to="/components/signUp">
+          <Link to="/components/signIn">
             <Button bsStyle="primary">Sign In</Button>
           </Link>
           <Link to="/components/Register">
@@ -27,9 +27,7 @@ export default class Home extends Component {
         <Row className="show-grid text-center">
           <Col xs={12} sm={4} className="person-wrapper" />
         </Row>
-
       </Grid>
-
     );
   }
 }

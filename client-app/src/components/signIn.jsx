@@ -9,7 +9,7 @@ import services from "../services";
 //   onSubmit: (email, password) =>
 //     dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
 // });
-class signUp extends Component {
+class signIn extends Component {
   state = {
     email: null,
     password: null
@@ -27,19 +27,19 @@ class signUp extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="signUp">
-
+      <form onSubmit={this.handleSubmit} className="signIn">
         <div className="signIn">
           <div className="row1">
             <div className="col-sm-2 offset-md-3 col-xs-12">
               <h1 className="text-xs-center">Sign In</h1>
-              <p className="text-xs-center">
-              </p>
+              <p className="text-xs-center" />
             </div>
           </div>
 
           <div className="form-group">
-            <label for="Email" className="col-sm-10 col-form-label">Email address</label>
+            <label for="Email" className="col-sm-10 col-form-label">
+              Email address
+            </label>
             <div className="col-sm-5">
               <input
                 value={this.state.value}
@@ -51,10 +51,14 @@ class signUp extends Component {
                 name="email"
                 required
               />
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailHelp" class="form-text text-muted">
+                We'll never share your email with anyone else.
+              </small>
             </div>
 
-            <label for="Password" className="col-sm-10 col-form-label">Password</label>
+            <label for="Password" className="col-sm-10 col-form-label">
+              Password
+            </label>
             <div className="col-sm-5">
               <input
                 value={this.state.value}
@@ -75,17 +79,14 @@ class signUp extends Component {
                   disabled={this.props.inProgress}
                 >
                   Submit
-                  </button>
+                </button>
               </div>
             </div>
-
           </div>
         </div>
       </form>
-
     );
   }
 }
 
-export default signUp;
-    // export default connect(mapStateToProps, mapDispatchToProps)(signUp);
+export default signIn;
