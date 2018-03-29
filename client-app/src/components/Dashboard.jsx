@@ -17,6 +17,7 @@ import {
 } from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
+import axios from "axios";
 // import Modals from "./Modals";
 
 var today = new Date();
@@ -37,31 +38,13 @@ const arrTeams = [
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
-
-
-
-
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
-
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
+    this.getRespones = this.getRespones.bind(this);
     this.state = {
       show: false
     };
@@ -73,6 +56,22 @@ class Dashboard extends Component {
 
   handleShow() {
     this.setState({ show: true });
+  }
+  getRespones() {
+    console.log("hi");
+
+    // axios
+    //   .get("/api", {
+    //     params: {
+    //       ID: 12345
+    //     }
+    //   })
+    //   .then(function(response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
   }
   render() {
     return (
@@ -88,12 +87,10 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
-            // onSelect={(date, Modals) => console.log(Modals())}
+              // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
-              <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+              <button OnClick={this.getRespones}>Get User</button>
             </Col>
             <Col sm={6} md={3} className="container1">
               <div>Teams!!{listArr}</div>
@@ -123,31 +120,7 @@ class Dashboard extends Component {
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
-      </div >
-      //   <div class="row">
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">
-      //       <div>Teams!!!</div>
-      //       {listArr}
-      //     </div>
-      //   </div>
-      //   <div>
-      //     <div className="container2">
-      //       <h1 /> Dashboard
-      //     </div>
-      //     <ul className="container1">
-      //       <h2 />calendar
-      //       <h2 />newsfeed
-      //       <h2 />roster
-      //     </ul>
-      //     <ul className="container1">
-      //       <div />calendar code
-      //       <div />newsfeed code
-      //       <div className="container2" />
-      //       {listArr}
-      //     </ul>
-      //   </div>
+      </div>
     );
   }
 }
