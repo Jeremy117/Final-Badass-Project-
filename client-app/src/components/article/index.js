@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
 });
 
-class Home extends Component {
+class ArticlesHome extends Component {
   componentDidMount() {
     this.props.onLoad(services.Articles.all());
   }
@@ -38,4 +38,4 @@ class Home extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesHome);
