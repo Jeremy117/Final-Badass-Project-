@@ -37,10 +37,6 @@ const arrTeams = [
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
-
-
-
-
 const dummySentences = [
   "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   "Donec hendrerit tempor tellus.",
@@ -88,7 +84,7 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
-            // onSelect={(date, Modals) => console.log(Modals())}
+              // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
               <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
@@ -123,31 +119,7 @@ class Dashboard extends Component {
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
-      </div >
-      //   <div class="row">
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">
-      //       <div>Teams!!!</div>
-      //       {listArr}
-      //     </div>
-      //   </div>
-      //   <div>
-      //     <div className="container2">
-      //       <h1 /> Dashboard
-      //     </div>
-      //     <ul className="container1">
-      //       <h2 />calendar
-      //       <h2 />newsfeed
-      //       <h2 />roster
-      //     </ul>
-      //     <ul className="container1">
-      //       <div />calendar code
-      //       <div />newsfeed code
-      //       <div className="container2" />
-      //       {listArr}
-      //     </ul>
-      //   </div>
+      </div>
     );
   }
 }

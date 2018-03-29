@@ -26,6 +26,7 @@
         "pug": "^2.0.1",
         "react-addons-css-transition-group": "^15.6.2",
         "react-infinite-calendar": "^2.3.1",
+        "react-open-weather": "^0.3.0",
         "serve-favicon": "~2.4.5",
         "slug": "^0.9.1"
     },

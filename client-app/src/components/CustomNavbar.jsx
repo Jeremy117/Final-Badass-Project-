@@ -41,10 +41,22 @@ export default class CustomNavbar extends Component {
             >
               Dashboard
             </NavItem>
-            <NavItem eventKey={4} componentClass={Link} href="/components/Profile" to="/components/Profile">
+            <NavItem
+              eventKey={4}
+              componentClass={Link}
+              href="/components/Profile"
+              to="/components/Profile"
+            >
+              Weather
+            </NavItem>
+            <NavItem
+              eventKey={5}
+              componentClass={Link}
+              href="/components/weather"
+              to="/components/weather"
+            >
               Profile
-                            </NavItem>
-
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
