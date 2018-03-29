@@ -1,19 +1,11 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case "ARTICLE_PAGE_LOADED":
+    case "ARTICLE_HOME_PAGE_LOADED":
       return {
         ...state,
-        article: action.payload[0].article,
-        comments: action.payload[1].comments
+        article: action.payload[0].article
       };
-    case "ADD_COMMENT":
-      return {
-        ...state,
-        commentErrors: action.error ? action.payload.errors : null,
-        comments: action.error
-          ? null
-          : [...state.comments, action.payload.comment]
-      };
+
     default:
       return state;
   }
