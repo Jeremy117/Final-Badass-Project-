@@ -12,8 +12,6 @@ import Profile from "./components/Profile";
 class App extends Component {
   render() {
     return (
-
-
       <Router>
         <div>
           <Navbar />
@@ -23,15 +21,8 @@ class App extends Component {
           <Route path="/components/Register" component={Register} />
           <Route path="/components/Dashboard" component={Dashboard} />
           <Route path="/components/Profile" component={Profile} />
-
-
         </div>
       </Router>
-
-
-
-
-
     );
   }
 }
