@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard";
 import Home from "./components/home/index.js";
 import Article from "./components/article/index.js";
 import Profile from "./components/Profile";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
