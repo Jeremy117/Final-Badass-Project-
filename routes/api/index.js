@@ -17,11 +17,3 @@ router.use(function(err, req, res, next) {
 });
 
 module.exports = router;
-
-// previous routes/api/index.js
-// const router = require("express").Router();
-
-// router.use("/", require("./users"));
-// router.use("/articles", require("./articles"));
-
-// module.exports = router;

@@ -1,58 +1,28 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/CustomNavbar";
+import Register from "./components/Register";
+import signUp from "./components/signUp";
+import Dashboard from "./components/Dashboard";
+import Home from "./components/home/index.js";
+import Article from "./components/article/index.js";
 
-export default class CustomNavbar extends Component {
+class App extends Component {
   render() {
     return (
-      <Navbar default collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">Huddle</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-
-        <Navbar.Collapse>
-          <Nav pullRight>
-            <NavItem eventKey={1} componentClass={Link} href="/" to="/">
-              Home
-            </NavItem>
-            <NavItem
-              eventKey={2}
-              componentClass={Link}
-              href="/components/signUp"
-              to="/components/signUp"
-            >
-              Sign In
-            </NavItem>
-            <NavItem
-              eventKey={3}
-              componentClass={Link}
-              href="/components/Register"
-              to="/components/Register"
-            >
-              Register
-            </NavItem>
-            <NavItem
-              eventKey={4}
-              componentClass={Link}
-              href="/components/Dashboard"
-              to="/components/Dashboard"
-            >
-              Dashboard
-            </NavItem>
-            <NavItem
-              eventKey={5}
-              componentClass={Link}
-              href="/components/article"
-              to="/components/article"
-            >
-              Articles
-            </NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <Router>
+        <div>
+          <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route path="/components/signUp" component={signUp} />
+          <Route path="/components/Register" component={Register} />
+          <Route path="/components/Dashboard" component={Dashboard} />
+          <Route path="/components/article" component={Article} />
+        </div>
+      </Router>
     );
   }
 }
+
+export default App;
