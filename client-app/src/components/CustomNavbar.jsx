@@ -28,8 +28,8 @@ export default class CustomNavbar extends Component {
             <NavItem
               eventKey={3}
               componentClass={Link}
-              href="/components/Register"
-              to="/components/Register"
+              href="/components/Registerform"
+              to="/components/Registerform"
             >
               Register
             </NavItem>
