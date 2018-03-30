@@ -48,11 +48,20 @@ class Dashboard extends Component {
       show: false
     };
   }
-  getRequest() {
-    axios.get("");
 
-    // console.log("hi");
+  getRequest() {
+    axios
+      .get(
+        "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa"
+      )
+      .then(function(response) {
+        console.log(response.data);
+        console.log(response.status);
+        console.log(response.statusText);
+        console.log(response.headers);
+      });
   }
+
   handleClose() {
     this.setState({ show: false });
   }
