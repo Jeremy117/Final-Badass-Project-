@@ -3,66 +3,59 @@ import { connect } from "react-redux";
 import "./Profile.css";
 
 
-class Profile extends Component {
-    // state = {
-    //     image: "",
-    //     username: "",
-    //     bio: "",
-    //     email: "",
-    //     password: ""
-    // };
-    // //On Mount we want to assign all the currentUser props to the forms state,
-    // //so it's filled out
-    // componentDidMount() {
-    //     if (this.props.currentUser) {
-    //         this.setState({
-    //             ...this.state,
-    //             ...this.props.currentUser
-    //         });
-    //     }
-    // }
 
-    // //we also need the form to update after possible rehydration, or changes to currentUser
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.currentUser) {
-    //         this.setState({
-    //             ...this.state,
-    //             image: nextProps.currentUser.image || "",
-    //             username: nextProps.currentUser.username,
-    //             bio: nextProps.currentUser.bio,
-    //             email: nextProps.currentUser.email
-    //         });
-    //     }
-    // }
+class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { file: '', imagePreviewUrl: '' };
+    }
 
-    // submitForm = event => {
-    //     event.preventDefault();
+    _handleSubmit(e) {
+        e.preventDefault();
+        // TODO: do something with -> this.state.file
+        console.log('handle uploading-', this.state.file);
+    }
 
-    //     const user = Object.assign({}, this.state);
-    //     //we don't want to HTTP PUT a blank user
-    //     if (!user.password) {
-    //         delete user.password;
-    //     }
+    _handleImageChange(e) {
+        e.preventDefault();
 
-    //     this.props.onSubmitForm(user);
-    // };
+        let reader = new FileReader();
+        let file = e.target.files[0];
 
-    // updateState = field => event => {
-    //     const state = this.state;
-    //     const newState = Object.assign({}, state, { [field]: event.target.value });
-    //     this.setState(newState);
-    // };
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+
+        reader.readAsDataURL(file)
+    }
+
+
+
+
     render() {
+        let { imagePreviewUrl } = this.state;
+        let $imagePreview = null;
+        if (imagePreviewUrl) {
+            $imagePreview = (<img src={imagePreviewUrl} />);
+        } else {
+            $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+        }
         return (
+
+
             <form>
+
                 <div className="container">
                     <div className="row">
 
 
 
-                        <div className="col-md-7 ">
+                        <div className="col-md-12 ">
 
-                            <div className="panel panel-default">
+                            <div className="panel panel-primary">
                                 <div className="panel-heading">  <h4 >User Profile</h4></div>
                                 <div className="panel-body">
 
@@ -70,91 +63,110 @@ class Profile extends Component {
 
                                         <div className="box-body">
                                             <div className="col-sm-5">
-                                                <div align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" className="img-circle img-responsive" />
-
-                                                    <input id="profile-image-upload" className="hidden" type="file" />
-                                                    <button className="btn btn-primary" type="button" id="custom-button">Edit Photo</button>
 
 
+
+                                                <div className="previewComponent">
+                                                    <div className="imgPreview">
+                                                        {$imagePreview}
+                                                    </div>
+                                                    <form onSubmit={(e) => this._handleSubmit(e)}>
+                                                        <input className="fileInput"
+                                                            type="file"
+                                                            onChange={(e) => this._handleImageChange(e)} />
+                                                        <button className="submitButton"
+                                                            type="submit"
+                                                            onClick={(e) => this._handleSubmit(e)}>Upload Image</button>
+                                                    </form>
 
                                                 </div>
 
-                                                <br />
 
-                                                {/* <!-- /input-group --> */}
+
+
+
+
+
                                             </div>
-                                            <div className="col-sm-6">
-                                                <h4 styles="color:#00b1b1;">Jennifer Andrade</h4>
-                                                <span><p>Catcher</p></span>
-                                            </div>
-                                            <div className="clearfix"></div>
-                                            <hr styles="margin:5px 0 5px 0;" />
-
-
-                                            <div className="col-sm-5 col-xs-6 tital " >First Name:</div><div className="col-sm-7 col-xs-6 "><input type="text" placeholder="First Name"></input></div>
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
-
-                                            <div className="col-sm-5 col-xs-6 tital " >Last Name:</div><div className="col-sm-7"><input type="text" placeholder="Last Name"></input></div>
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
-
-                                            <div className="col-sm-5 col-xs-6 tital " >Email Address:</div><div className="col-sm-7"><input type="text" placeholder="Email Adress"></input></div>
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
-
-                                            <div className="col-sm-5 col-xs-6 tital " >Password:</div><div className="col-sm-7"><input type="text" placeholder="Password"></input></div>
-
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
-
-                                            <div className="col-sm-5 col-xs-6 tital " >Position:</div><div className="col-sm-7"><input type="text" placeholder="Position"></input></div>
-
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
-
-                                            <div className="col-sm-5 col-xs-6 tital " >Phone Number:</div><div className="col-sm-7"><input type="text" placeholder="Phone Number"></input></div>
-
-                                            <div className="clearfix"></div>
-                                            <div className="bot-border"></div>
 
 
 
+                                            <br />
 
-                                            <button
-                                                className="btn btn-primary pull-xs-right"
-                                                type="submit"
-                                                disabled={this.props.inProgress}
-                                            >
-                                                Edit Info
-                  </button>
-
-                                            <button
-                                                className="btn btn-primary pull-xs-right"
-                                                type="submit"
-                                                disabled={this.props.inProgress}
-                                            >
-                                                Save
-                  </button>
-
-
-                                            {/* <!-- /.box-body --> */}
+                                            {/* <!-- /input-group --> */}
                                         </div>
-                                        {/* <!-- /.box --> */}
+                                        <div className="col-sm-5">
+                                            <h4 styles="color:#00b1b1;">Jennifer Andrade</h4>
+                                            <span><p>Catcher</p></span>
+                                        </div>
+                                        <div className="clearfix"></div>
+                                        <hr styles="margin:5px 0 5px 0;" />
 
+
+                                        <div className="col-sm-5 col-xs-6 tital " >First Name:</div><div className="col-sm-7"><input type="text" placeholder="First Name"></input></div>
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+                                        <div className="col-sm-5 col-xs-6 tital " >Last Name:</div><div className="col-sm-7"><input type="text" placeholder="Last Name"></input></div>
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+                                        <div className="col-sm-5 col-xs-6 tital " >Email Address:</div><div className="col-sm-7"><input type="text" placeholder="Email Adress"></input></div>
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+                                        <div className="col-sm-5 col-xs-6 tital " >Password:</div><div className="col-sm-7"><input type="text" placeholder="Password"></input></div>
+
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+                                        <div className="col-sm-5 col-xs-6 tital " >Position:</div><div className="col-sm-7"><input type="text" placeholder="Position"></input></div>
+
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+                                        <div className="col-sm-5 col-xs-6 tital " >Phone Number:</div><div className="col-sm-7"><input type="text" placeholder="Phone Number"></input></div>
+
+                                        <div className="clearfix"></div>
+                                        <div className="bot-border"></div>
+
+
+
+
+                                        <button
+                                            className="btn btn-primary pull-xs-right"
+                                            type="submit"
+                                            disabled={this.props.inProgress}
+                                        >
+                                            Edit Info
+                  </button>
+
+                                        <button
+                                            className="btn btn-primary pull-xs-right"
+                                            type="submit"
+                                            disabled={this.props.inProgress}
+                                        >
+                                            Save
+                  </button>
+
+
+                                        {/* <!-- /.box-body --> */}
                                     </div>
-
+                                    {/* <!-- /.box --> */}
 
                                 </div>
+
+
                             </div>
                         </div>
-                        <script>
+                    </div>
+                    {/* <script>
                             {function () {
                                 ('#profile-image1').on('click', function () {
                                     ('#profile-image-upload').click();
                                 });
                             }};
-              </script>
+              </script> */}
 
 
 
@@ -166,8 +178,8 @@ class Profile extends Component {
 
 
 
-                    </div>
                 </div>
+
             </form>
 
 
