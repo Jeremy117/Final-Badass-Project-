@@ -16,7 +16,7 @@ class Register extends Component {
             <div className="panel panel-default">
               <div className="panel-heading">
                 <h3 className="panel-title">
-                  Please sign up for Bootsnipp <small>It's free!</small>
+                  Sign up for Huddle <small>It's free!</small>
                 </h3>
               </div>
               <div className="panel-body">

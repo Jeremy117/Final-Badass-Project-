@@ -27,64 +27,47 @@ class signIn extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="signIn">
-        <div className="signIn">
-          <div className="row1">
-            <div className="col-sm-2 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign In</h1>
-              <p className="text-xs-center" />
-            </div>
-          </div>
+      <div className="container">
+        <div className="row centered-form">
+          <div className="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div className="panel panel-default">
+              <div className="panel-heading">
+                <h3 className="panel-title">
+                  Sign In <small>Your Team Awaits!</small>
+                </h3>
+              </div>
+              <div className="panel-body">
+                <form role="form">
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="form-control input-sm"
+                      placeholder="Email Address"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="form-control input-sm"
+                      placeholder="password"
+                    />
+                  </div>
 
-          <div className="form-group">
-            <label for="Email" className="col-sm-10 col-form-label">
-              Email address
-            </label>
-            <div className="col-sm-5">
-              <input
-                value={this.state.value}
-                onChange={this.handleChange}
-                type="Email"
-                className="form-control"
-                placeholder="Enter email "
-                id="Email"
-                name="email"
-                required
-              />
-              <small id="emailHelp" class="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
-            </div>
-
-            <label for="Password" className="col-sm-10 col-form-label">
-              Password
-            </label>
-            <div className="col-sm-5">
-              <input
-                value={this.state.value}
-                onChange={this.handleChange}
-                className="form-control form-control-sm"
-                placeholder="Password"
-                id="Password"
-                type="Password"
-                maxlength="10"
-                minlength="5"
-                name="password"
-                required
-              />
-              <div>
-                <button
-                  className="btn btn-primary pull-xs-right"
-                  type="submit"
-                  disabled={this.props.inProgress}
-                >
-                  Submit
-                </button>
+                  <input
+                    type="submit"
+                    value="Register"
+                    className="btn btn-info btn-block"
+                  />
+                </form>
               </div>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     );
   }
 }
