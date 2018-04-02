@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArticlePreview = ({ article }) => {
+const ArticleListPreview = ({ article }) => {
   // const article = props.article;
   return (
     <div className="article-preview">
@@ -40,4 +40,4 @@ const ArticlePreview = ({ article }) => {
   );
 };
 
-export default ArticlePreview;
+export default ArticleListPreview;

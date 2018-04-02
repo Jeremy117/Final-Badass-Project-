@@ -20,40 +20,40 @@ export default class CustomNavbar extends Component {
             <NavItem
               eventKey={2}
               componentClass={Link}
-              href="/components/signIn"
-              to="/components/signIn"
+              href="/SignIn"
+              to="/SignIn"
             >
               Sign In
             </NavItem>
             <NavItem
               eventKey={3}
               componentClass={Link}
-              href="/components/Registerform"
-              to="/components/Registerform"
+              href="/Register"
+              to="/Register"
             >
               Register
             </NavItem>
             <NavItem
               eventKey={4}
               componentClass={Link}
-              href="/components/Dashboard"
-              to="/components/Dashboard"
+              href="/Dashboard"
+              to="/Dashboard"
             >
               Dashboard
             </NavItem>
             <NavItem
               eventKey={5}
               componentClass={Link}
-              href="/components/Profile"
-              to="/components/Profile"
+              href="/Profile"
+              to="/Profile"
             >
               Profile
             </NavItem>
             <NavItem
               eventKey={6}
               componentClass={Link}
-              href="/components/article"
-              to="/components/article"
+              href="/Article"
+              to="/Article"
             >
               Articles
             </NavItem>

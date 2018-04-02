@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Jumbotron, Grid, Row, Col } from "react-bootstrap";
-// import "./Home.css";
-// import { connect } from "react-redux";
+import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import "../SignIn";
+import "../Register";
 
-// const mapStateToProps = state => ({
-//   appName: state.appName
-// });
+const mapStateToProps = state => ({
+  appName: state.appName
+});
 
 export default class Home extends Component {
   render() {
@@ -15,7 +16,12 @@ export default class Home extends Component {
         <Jumbotron>
           <h2>Welcome to Huddle A Team Management Site</h2>
           <p>Organize your team and follow your favorite teams!</p>
-          <Link to="/about" />
+          <Link to="/components/signIn">
+            <Button bsStyle="primary">Sign In</Button>
+          </Link>
+          <Link to="/components/Register">
+            <Button bsStyle="primary">Register</Button>
+          </Link>
         </Jumbotron>
         <Row className="show-grid text-center">
           <Col xs={12} sm={4} className="person-wrapper" />
@@ -24,3 +30,5 @@ export default class Home extends Component {
     );
   }
 }
+
+// export default connect(mapStateToProps)(Home);
