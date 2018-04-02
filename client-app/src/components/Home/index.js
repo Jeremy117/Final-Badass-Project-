@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Grid, Row, Col, Button } from "react-bootstrap";
-import "./Home.css";
 import { connect } from "react-redux";
-import "./signIn";
-import "./Register";
+import "../SignIn";
+import "../Register";
 
 const mapStateToProps = state => ({
   appName: state.appName

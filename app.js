@@ -23,7 +23,7 @@ if (isProduction) {
     "mongodb://admin:admin@ds213199.mlab.com:13199/heroku_57qw8z8r",
     function(err) {
       if (err) return console.error(err);
-      console.log("THE DB, mongo, is connected, and I ROCK");
+      console.log("THE MONGO DB is connected, go Team Huddle!");
     }
   );
   mongoose.set("debug", true);
