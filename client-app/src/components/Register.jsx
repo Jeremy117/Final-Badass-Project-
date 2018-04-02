@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 const mapStateToProps = state => ({
   appName: state.appName
 });
@@ -15,13 +14,14 @@ class Register extends Component {
           <div className="row1">
             <div className="col-md-2 offset-md-3 col-xs-12">
               <h1 className="text-xs-center">Register</h1>
-              <p className="text-xs-center">
-              </p>
+              <p className="text-xs-center" />
             </div>
           </div>
 
           <div className="form-group">
-            <label for="First Name" className="col-sm-10 col-form-label">First Name</label>
+            <label for="First Name" className="col-sm-10 col-form-label">
+              First Name
+            </label>
             <div className="col-sm-5">
               <input
                 className="form-control form-control-sm"
@@ -33,7 +33,9 @@ class Register extends Component {
               />
             </div>
             <div>
-              <label for="Last Name" className="col-sm-10 col-form-label">Last Name</label>
+              <label for="Last Name" className="col-sm-10 col-form-label">
+                Last Name
+              </label>
               <div className="col-sm-5">
                 <input
                   className="form-control form-control-sm"
@@ -46,7 +48,9 @@ class Register extends Component {
               </div>
 
               <div>
-                <label for="Email" className="col-sm-10 col-form-label">Email</label>
+                <label for="Email" className="col-sm-10 col-form-label">
+                  Email
+                </label>
                 <div className="col-sm-5">
                   <input
                     className="form-control form-control-sm"
@@ -58,7 +62,9 @@ class Register extends Component {
                   />
                 </div>
                 <div>
-                  <label for="Password" className="col-sm-10 col-form-label">Password</label>
+                  <label for="Password" className="col-sm-10 col-form-label">
+                    Password
+                  </label>
                   <div className="col-sm-5">
                     <input
                       className="form-control form-control-sm"
@@ -70,7 +76,9 @@ class Register extends Component {
                       name="password"
                       required
                     />
-                    <small id="passwordHelpInline" class="text-muted">Must be 5-10 characters long.</small>
+                    <small id="passwordHelpInline" class="text-muted">
+                      Must be 5-10 characters long.
+                    </small>
                     <br />
                     <button
                       className="btn btn-primary pull-xs-right"
@@ -78,7 +86,7 @@ class Register extends Component {
                       disabled={this.props.inProgress}
                     >
                       Register
-                  </button>
+                    </button>
                   </div>
 
                   {/* <div>
@@ -96,11 +104,6 @@ class Register extends Component {
           </div>
         </div>
       </form>
-
-
-
-
-
     );
   }
 }
