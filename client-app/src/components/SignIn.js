@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import services from "../services";
+import "./SignIn.css";
 
 // console.log(this.handleInputOnChange);
 // const mapStateToProps = state => ({ ...state.auth });
@@ -28,7 +29,7 @@ class signIn extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row centered-form">
+        <div className="row centered-form-signin">
           <div className="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div className="panel panel-default">
               <div className="panel-heading">
