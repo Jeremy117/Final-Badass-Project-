@@ -23,6 +23,7 @@ class App extends Component {
           <Route path="/components/Dashboard" component={Dashboard} />
           <Route path="/components/Profile" component={Profile} />
           <Route path="/components/article" component={Article} />
+          <Route path="/components/Profile" component={Profile} />
         </div>
       </Router>
     );
