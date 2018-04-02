@@ -36,7 +36,8 @@ const arrTeams = [
   "Texans"
 ];
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
+const URL =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
@@ -50,16 +51,12 @@ class Dashboard extends Component {
   }
 
   getRequest() {
-    axios
-      .get(
-        "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa"
-      )
-      .then(function(response) {
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.statusText);
-        console.log(response.headers);
-      });
+    const action = axios.get(URL).then(function(res) {
+      console.log(res.data);
+      // console.log(response.status);
+      // console.log(response.statusText);
+      // console.log(response.headers);
+    });
   }
 
   handleClose() {
@@ -87,6 +84,7 @@ class Dashboard extends Component {
             <Col sm={6} md={3} className="container1">
               <div>
                 <button onClick={this.getRequest}>Get Newsfeed!</button>
+                <div>{this.action}</div>
               </div>
             </Col>
             <Col sm={6} md={3} className="container1">
