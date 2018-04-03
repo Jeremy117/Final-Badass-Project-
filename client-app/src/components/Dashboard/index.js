@@ -73,7 +73,7 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div>
+      <div class="container">
         <Grid>
           <Row className="show-grid">
             <br />
@@ -87,12 +87,12 @@ class Dashboard extends Component {
 
               // onSelect={(date, Modals) => console.log(Modals())}
             />,
-            <Col sm={6} md={3} className="container1">
-              <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
+            <Col xl={6} xl={6} className="container1">
+              {/* <code>{"Col xl={6} xl={3}"}</code> */}
               <br />
               {dummySentences.slice(0, 4).join(" ")}
             </Col>
-            <Col sm={6} md={3} className="container1">
+            <Col xl={6} xl={6} className="container1">
               <div>Teams!!{listArr}</div>
               <br />
             </Col>
