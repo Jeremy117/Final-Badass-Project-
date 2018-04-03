@@ -22,11 +22,8 @@ class Home extends Component {
   render() {
     return (
       <div className="home-page">
-        <Banner appName={this.props.appName} />
         <div className="container page">
-          <div className="row">
-            <MainView articles={this.props.articles} />
-          </div>
+          <img src={mainImage} /> <div className="row" />
         </div>
       </div>
     );
