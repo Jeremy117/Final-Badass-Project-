@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
 import { connect } from "react-redux";
 import marked from "marked";
-
 import services from "../../services";
-
 import ArticleMeta from "./ArticleMeta";
 import CommentContainer from "./CommentContainer";
 
