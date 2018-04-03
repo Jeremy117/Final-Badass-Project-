@@ -39,6 +39,7 @@ UserSchema.plugin(uniqueValidator, { message: "is already taken." });
 
 //validate user password
 UserSchema.methods.validPassword = function(password) {
+  console.log(this.password);
   // var hash = crypto
   //   .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
   //   .toString("hex");
