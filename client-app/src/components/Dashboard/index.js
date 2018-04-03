@@ -44,7 +44,7 @@ class Dashboard extends Component {
       show: false,
       newsfeed: false,
       articles: [],
-      playerShow: true,
+      playerShow: false,
       players: []
     };
   }
@@ -55,7 +55,6 @@ class Dashboard extends Component {
         playerShow: true,
         players: res.data
       });
-      console.log(res.data);
     });
 
   getRequest = () => {
