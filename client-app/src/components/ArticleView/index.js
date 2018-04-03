@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
 });
 
-class Home extends Component {
+class ArticleView extends Component {
   componentDidMount() {
     this.props.onLoad(services.Articles.all());
   }
@@ -22,14 +22,21 @@ class Home extends Component {
     return (
       <div className="home-page">
         <div className="container page">
-          <div className="row" />
+          <div className="row">
+            <MainView articles={this.props.articles} />
+            <div className="col-md-3">
+              <div className="sidebar">
+                <p>Popular Tags</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);
 
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
