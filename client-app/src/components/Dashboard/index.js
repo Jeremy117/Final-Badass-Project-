@@ -35,6 +35,7 @@ const arrTeams = [
   "49ers",
   "Texans"
 ];
+
 const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
 
 const dummySentences = [

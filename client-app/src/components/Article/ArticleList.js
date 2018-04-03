@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlePreview from "./articlelistpreview";
+import ArticleListPreview from "./ArticleListPreview";
 
 /* 
 3 states for our articles list:
@@ -28,7 +28,7 @@ const ArticleList = props => {
     <div className="article-preview">
       {props.articles.map(article => (
         <div key={article.slug}>
-          <ArticlePreview article={article} />
+          <ArticleListPreview article={article} />
         </div>
       ))}
     </div>

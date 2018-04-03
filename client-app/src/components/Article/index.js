@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MainView from "./mainview";
+import MainView from "./MainView";
 import services from "../../services";
 
 import { Grid, Row, Col } from "react-bootstrap";
@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: "ARTICLE_HOME_PAGE_LOADED", payload })
 });
 
-class ArticlesHome extends Component {
+class Article extends Component {
   componentDidMount() {
     this.props.onLoad(services.Articles.all());
   }
@@ -38,4 +38,4 @@ class ArticlesHome extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticlesHome);
+export default connect(mapStateToProps, mapDispatchToProps)(Article);
