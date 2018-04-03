@@ -33,7 +33,9 @@ class Dashboard extends Component {
           <div>
             <button onClick={this.getRequest}>Get Newsfeed!</button>
             <div>
-              {this.state.articles.map(article => <li>{article.title}</li>)}
+              {this.state.articles.map(article => (
+                <img src={article.author.image} />
+              ))}
             </div>
           </div>
         </div>
