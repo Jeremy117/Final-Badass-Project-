@@ -17,7 +17,14 @@ import {
 } from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
+import axios from "axios";
 // import Modals from "./Modals";
+
+const URL =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+
+const URL2 =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 var today = new Date();
 var lastWeek = new Date(
@@ -25,35 +32,6 @@ var lastWeek = new Date(
   today.getMonth(),
   today.getDate() - 7
 );
-
-const arrTeams = [
-  "Titian",
-  "Angles",
-  "Chiefs",
-  "Seahawks",
-  "Patriots",
-  "49ers",
-  "Texans"
-];
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
-
-
-
-
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -63,9 +41,35 @@ class Dashboard extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      newsfeed: false,
+      articles: [],
+      playerShow: true,
+      players: []
     };
   }
+
+  getPlayers = () =>
+    axios.get(URL2).then(res => {
+      this.setState({
+        playerShow: true,
+        players: res.data
+      });
+      console.log(res.data);
+    });
+
+  getRequest = () => {
+    axios.get(URL).then(res => {
+      this.setState({
+        newsfeed: true,
+        articles: res.data
+      });
+      // console.log(res.data);
+      // console.log(response.status);
+      // console.log(response.statusText);
+      // console.log(response.headers);
+    });
+  };
 
   handleClose() {
     this.setState({ show: false });
@@ -87,17 +91,20 @@ class Dashboard extends Component {
               disabledDays={[0, 6]}
               minDate={lastWeek}
               onSelect={this.handleShow}
-
-            // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col sm={6} md={3} className="container1">
-              <code>&lt;{"Col sm={6} md={3}"} /">">&gt;</code>
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+              <button onClick={this.getRequest}>Get Newsfeed!</button>
+              <div>
+                {this.state.articles.map(article => (
+                  <img src={article.author.image} />
+                ))}
+              </div>
             </Col>
             <Col sm={6} md={3} className="container1">
-              <div>Teams!!{listArr}</div>
-              <br />
+              <div>Teams!!</div>
+              <div src={this.getPlayers()}>
+                {this.state.players.map(player => <div>{player.name} </div>)}
+              </div>
             </Col>
           </Row>
         </Grid>
@@ -123,31 +130,7 @@ class Dashboard extends Component {
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>
         </Modal>
-      </div >
-      //   <div class="row">
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">.col-md-1</div>
-      //     <div class="col-md-1">
-      //       <div>Teams!!!</div>
-      //       {listArr}
-      //     </div>
-      //   </div>
-      //   <div>
-      //     <div className="container2">
-      //       <h1 /> Dashboard
-      //     </div>
-      //     <ul className="container1">
-      //       <h2 />calendar
-      //       <h2 />newsfeed
-      //       <h2 />roster
-      //     </ul>
-      //     <ul className="container1">
-      //       <div />calendar code
-      //       <div />newsfeed code
-      //       <div className="container2" />
-      //       {listArr}
-      //     </ul>
-      //   </div>
+      </div>
     );
   }
 }
