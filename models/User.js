@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -26,7 +27,7 @@ const UserSchema = new mongoose.Schema(
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Article" }],
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     hash: String,
-    salt: String
+    salt: Buffer
   },
   {
     timestamps: true,
@@ -38,10 +39,11 @@ UserSchema.plugin(uniqueValidator, { message: "is already taken." });
 
 //validate user password
 UserSchema.methods.validPassword = function(password) {
-  var hash = crypto
-    .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
-    .toString("hex");
-  return this.hash === hash;
+  // var hash = crypto
+  //   .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
+  //   .toString("hex");
+  // return this.hash === hash;
+  return bcrypt.compare(password, this.password).then(res => res);
 };
 
 //vaild user payload when auth'd
@@ -63,12 +65,19 @@ UserSchema.pre("save", function(next) {
   // only hash the password if it has been modified (or is new)
   if (!user.isModified("password")) return next();
 
-  this.salt = crypto.randomBytes(16).toString("hex");
-  this.hash = crypto
-    .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
-    .toString("hex");
-  user.password = hash;
-  next();
+  // this.salt = crypto.randomBytes(16).toString("hex");
+  // this.hash = crypto
+  //   .pbkdf2Sync(password, this.salt, 10000, 512, "sha512")
+  //   .toString("hex");
+  // user.password = hash;
+  bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      user.password = hash;
+      next();
+    });
+  });
+
+  // next();
 });
 
 //Create JWT for User
