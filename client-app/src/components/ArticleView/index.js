@@ -24,11 +24,11 @@ class ArticleView extends Component {
         <div className="container page">
           <div className="row">
             <MainView articles={this.props.articles} />
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <div className="sidebar">
                 <p>Popular Tags</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

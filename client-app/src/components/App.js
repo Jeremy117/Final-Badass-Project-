@@ -14,6 +14,9 @@ import Settings from "./Settings";
 import Article from "./Article";
 import Editor from "./Editor";
 
+import Dashboard from "./Dashboard";
+import Footer from "./Footer";
+
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
   appName: state.common.appName,
@@ -61,6 +64,8 @@ class App extends Component {
           <Route path="/article/:id" component={Article} />
           <Route path="/editor/:slug" component={Editor} />
           <Route path="/editor" component={Editor} />
+          <Route path="/Dashboard" component={Dashboard} />
+          <Route path="/Footer" component={Footer} />
         </Switch>
       </div>
     );

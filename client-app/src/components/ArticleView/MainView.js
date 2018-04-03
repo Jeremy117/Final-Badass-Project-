@@ -9,7 +9,7 @@ const MainView = props => {
         <ul className="nav nav-pills outline-active">
           <li className="nav-item">
             <a href="" className="nav-link active">
-              Global Brig
+              Huddle Articles
             </a>
           </li>
         </ul>

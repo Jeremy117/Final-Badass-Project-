@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import MainView from "./MainView";
 
 import services from "../../services";
+import mainImage from "../../images/prototype-home-desktop.jpg";
 
 const mapStateToProps = state => ({
   appName: state.common.appName,
@@ -22,7 +23,7 @@ class Home extends Component {
     return (
       <div className="home-page">
         <div className="container page">
-          <div className="row" />
+          <img src={mainImage} /> <div className="row" />
         </div>
       </div>
     );

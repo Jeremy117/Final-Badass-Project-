@@ -26,7 +26,7 @@ router.get("/", function(req, res, next) {
   //and send them back
   //db.getCollection('articles').find({})
   Article.find()
-    .limit(5)
+    .limit(50)
     .exec()
     .then(results => {
       return res.json({

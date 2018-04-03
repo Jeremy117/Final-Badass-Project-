@@ -83,7 +83,7 @@ UserSchema.methods.generateJWT = function() {
       username: this.username, //--> User's username
       exp: parseInt(exp.getTime() / 1000)
     },
-    process.env.SUPER_JERK // --> already loaded from .env shhhhhhhh!
+    process.env.SUPER_SECRET_ENV // --> already loaded from .env shhhhhhhh!
   );
 };
 
