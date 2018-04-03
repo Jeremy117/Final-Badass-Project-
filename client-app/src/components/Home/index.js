@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MainView from "./MainView";
-import Banner from "./Banner";
 import services from "../../services";
 import mainImage from "../../images/prototype-home-desktop.jpg";
 
@@ -23,7 +21,7 @@ class Home extends Component {
     return (
       <div className="home-page">
         <div className="container page">
-          <img src={mainImage} /> <div className="row" />
+          <img src={mainImage} alt="alt" /> <div className="row" />
         </div>
       </div>
     );

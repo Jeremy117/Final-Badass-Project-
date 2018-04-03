@@ -12,7 +12,7 @@ import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
   <Provider store={reduxStore}>
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route path="/" component={App} />
       </Switch>
