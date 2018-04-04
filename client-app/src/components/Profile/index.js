@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Profile.css";
+import axios from "axios";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -8,8 +9,12 @@ class Profile extends React.Component {
     this.state = { file: "", imagePreviewUrl: "" };
   }
 
+
+
+
   _handleSubmit(e) {
     e.preventDefault();
+
     // TODO: do something with -> this.state.file
     console.log("handle uploading-", this.state.file);
   }
@@ -59,16 +64,19 @@ class Profile extends React.Component {
                           <form onSubmit={e => this._handleSubmit(e)}>
                             <input
                               className="fileInput"
+                              className="btn btn-primary pull-xs-right"
                               type="file"
                               onChange={e => this._handleImageChange(e)}
                             />
                             <button
                               className="submitButton"
+                              className="btn btn-primary pull-xs-right"
                               type="submit"
                               onClick={e => this._handleSubmit(e)}
                             >
                               Upload Image
                             </button>
+
                           </form>
                         </div>
                       </div>
