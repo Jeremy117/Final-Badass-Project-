@@ -1,87 +1,64 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
 import services from "../services";
+
 import ListErrors from "./ListErrors";
 
 const mapStateToProps = state => ({ ...state.auth });
-
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (username, email, password) => {
-    dispatch({
-      type: "REGISTER",
-      payload: services.Auth.register(username, email, password)
-    });
-  }
+  onSubmit: (email, password) =>
+    dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
 });
 
-class Register extends Component {
+class Login extends React.Component {
   state = {
-    username: "",
-    email: "",
-    password: ""
+    email: null,
+    password: null
   };
-  handleInputChange = event => {
-    const targetName = event.target.name;
 
+  handleInputOnChange = event => {
     this.setState({
-      [targetName]: event.target.value
+      [event.target.name]: event.target.value
     });
   };
 
-  submitForm = event => {
+  handleOnSubmit = event => {
     event.preventDefault();
-    const { username, email, password } = this.state;
-    this.props.onSubmit(username, email, password);
+    //dispatch the login service promise as an action to redux
+    this.props.onSubmit(this.state.email, this.state.password);
   };
 
   render() {
-    const { username, email, password } = this.state;
     return (
       <div className="auth-page">
         <div className="container page">
           <div className="row">
             <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign Up</h1>
+              <h1 className="text-xs-center">Sign In</h1>
               <p className="text-xs-center">
-                <Link to="login">Have an account?</Link>
+                <Link to="/register">Need an account?</Link>
               </p>
-
               <ListErrors errors={this.props.errors} />
-
-              <form onSubmit={e => this.submitForm(e)}>
+              <form onSubmit={this.handleOnSubmit}>
                 <fieldset>
                   <fieldset className="form-group">
                     <input
-                      className="form-control form-control-lg"
-                      type="text"
-                      name="username"
-                      placeholder="Username"
-                      value={username}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <input
+                      onChange={this.handleInputOnChange}
                       className="form-control form-control-lg"
                       type="email"
-                      name="email"
                       placeholder="Email"
-                      value={email}
-                      onChange={this.handleInputChange}
+                      name="email"
                     />
                   </fieldset>
 
                   <fieldset className="form-group">
                     <input
+                      onChange={this.handleInputOnChange}
                       className="form-control form-control-lg"
                       type="password"
-                      name="password"
                       placeholder="Password"
-                      value={password}
-                      onChange={this.handleInputChange}
+                      name="password"
                     />
                   </fieldset>
 
@@ -90,7 +67,7 @@ class Register extends Component {
                     type="submit"
                     disabled={this.props.inProgress}
                   >
-                    Join Huddle
+                    Sign in
                   </button>
                 </fieldset>
               </form>
@@ -102,4 +79,4 @@ class Register extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
