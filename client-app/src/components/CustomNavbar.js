@@ -48,15 +48,15 @@ export default class CustomNavbar extends Component {
               href="/Profile"
               to="/Profile"
             >
-              Weather
+              Profile
             </NavItem>
             <NavItem
               eventKey={6}
               componentClass={Link}
-              href="/components/weather"
-              to="/components/weather"
+              href="/weather"
+              to="/weather"
             >
-              Profile
+              Weather
             </NavItem>
             <NavItem
               eventKey={7}
