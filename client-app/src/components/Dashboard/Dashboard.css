@@ -10,7 +10,7 @@
   justify-content: space-around;
   border-style: ridge;
   border-color: rgb(9, 190, 48);
-  text-align: center-align;
+  text-align: center;
   background-color: #0b0eb8b9;
 }
 
@@ -25,13 +25,20 @@
   line-height: 112.9;
   border-style: ridge;
   border-color: rgb(16, 180, 10);
-  text-align: center-align;
+  text-align: center;
   background-color: #0b0eb8b9;
 }
 .container3 {
   border-style: ridge;
   border-color: rgb(16, 180, 10);
-  text-align: center-align;
+  text-align: center;
   background-color: #0b0eb8b9;
 }
 
+.body {
+  float: center;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  background-image: url(https://s14-eu5.startpage.com/cgi-bin/serveimage?url=https:%2F%2Fc1.staticflickr.com%2F1%2F206%2F508563651_d10e426b25_b.jpg&sp=54601bb7ecb595eaadd350e389720b57);
+}

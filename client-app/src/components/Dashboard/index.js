@@ -73,6 +73,16 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+        <div>
+          <iframe
+            className="body"
+            id="forecast_embed"
+            frameBorder="2"
+            height="220"
+            width="100%"
+            src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+          />
+        </div>
         <Grid>
           <Row className="show-grid">
             <br />
