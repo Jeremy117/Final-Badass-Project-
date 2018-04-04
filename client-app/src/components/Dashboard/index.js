@@ -117,7 +117,6 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
-
               // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col xl={6} xl={6} className="container1">
@@ -128,22 +127,6 @@ class Dashboard extends Component {
             <Col xl={6} xl={6} className="container1">
               <div>Teams!!{listArr}</div>
               <br />
-
-            />,
-            <Col sm={6} md={3} className="container1">
-              <button onClick={this.getRequest}>Get Newsfeed!</button>
-              <div>
-                {this.state.articles.map(article => (
-                  <img src={article.author.image} />
-                ))}
-              </div>
-            </Col>
-            <Col sm={6} md={3} className="container1">
-              <div>Teams!!</div>
-              <div src={this.getPlayers()}>
-                {this.state.players.map(player => <div>{player.name} </div>)}
-              </div>
-
             </Col>
           </Row>
         </Grid>
