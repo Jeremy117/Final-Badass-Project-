@@ -18,9 +18,3 @@ router.use(function(err, req, res, next) {
 });
 
 module.exports = router;
-
-// const router = require("express").Router();
-
-// router.use("/articles", require("./articles"));
-
-// module.exports = router;
