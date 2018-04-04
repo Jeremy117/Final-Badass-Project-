@@ -42,6 +42,7 @@ export default class CustomNavbar extends Component {
               Dashboard
             </NavItem>
             <NavItem
+              //eventKey={4}
               eventKey={5}
               componentClass={Link}
               href="/Profile"
@@ -51,6 +52,14 @@ export default class CustomNavbar extends Component {
             </NavItem>
             <NavItem
               eventKey={6}
+              componentClass={Link}
+              href="/weather"
+              to="/weather"
+            >
+              Weather
+            </NavItem>
+            <NavItem
+              eventKey={7}
               componentClass={Link}
               href="/Article"
               to="/Article"
