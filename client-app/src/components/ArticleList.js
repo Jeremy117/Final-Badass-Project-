@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleListPreview from "./ArticleListPreview";
+import ArticlePreview from "./ArticleListPreview";
 
 /* 
 3 states for our articles list:
@@ -25,10 +25,10 @@ const ArticleList = props => {
 
   //sweet articles
   return (
-    <div className="article-preview">
+    <div>
       {props.articles.map(article => (
         <div key={article.slug}>
-          <ArticleListPreview article={article} />
+          <ArticlePreview article={article} />
         </div>
       ))}
     </div>

@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ArticleListPreview = ({ article }) => {
+const ArticlePreview = ({ article }) => {
   // const article = props.article;
   return (
     <div className="article-preview">
       <div className="article-meta">
         <a>
-          <img src={article.author.image} alt="alt" />
+          <img src={article.author.image} alt="avatar" />
         </a>
 
         <div className="info">
@@ -24,7 +25,7 @@ const ArticleListPreview = ({ article }) => {
         </div>
       </div>
 
-      <a to={`articles/${article.slug}`} className="preview-link">
+      <Link to={`article/${article.slug}`} className="preview-link">
         <h1>{article.title}</h1>
         <p>{article.description}</p>
         <span>Read more...</span>
@@ -35,9 +36,9 @@ const ArticleListPreview = ({ article }) => {
             </li>
           ))}
         </ul>
-      </a>
+      </Link>
     </div>
   );
 };
 
-export default ArticleListPreview;
+export default ArticlePreview;

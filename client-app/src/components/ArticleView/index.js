@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import MainView from "./MainView";
+
 import services from "../../services";
-import mainImage from "../../images/prototype-home-desktop.jpg";
 
 const mapStateToProps = state => ({
   appName: state.common.appName,
@@ -12,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
 });
 
-class Home extends Component {
+class ArticleView extends Component {
   componentDidMount() {
     this.props.onLoad(services.Articles.all());
   }
@@ -20,12 +21,19 @@ class Home extends Component {
   render() {
     return (
       <div className="home-page">
-        <div>
-          <img src={mainImage} alt="alt" /> <div className="row" />
+        <div className="container page">
+          <div className="row">
+            <MainView articles={this.props.articles} />
+            {/* <div className="col-md-3">
+              <div className="sidebar">
+                <p>Popular Tags</p>
+              </div>
+            </div> */}
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);
