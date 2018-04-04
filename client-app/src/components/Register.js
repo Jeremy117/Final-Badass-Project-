@@ -11,7 +11,7 @@ class Register extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row centered-form">
+        <div className="row centered-form-register">
           <div className="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div className="panel panel-default">
               <div className="panel-heading">

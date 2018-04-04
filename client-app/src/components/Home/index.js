@@ -16,10 +16,10 @@ export default class Home extends Component {
         <Jumbotron>
           <h2>Welcome to Huddle A Team Management Site</h2>
           <p>Organize your team and follow your favorite teams!</p>
-          <Link to="/components/signIn">
+          <Link to="/SignIn">
             <Button bsStyle="primary">Sign In</Button>
           </Link>
-          <Link to="/components/Register">
+          <Link to="/Register">
             <Button bsStyle="primary">Register</Button>
           </Link>
         </Jumbotron>
