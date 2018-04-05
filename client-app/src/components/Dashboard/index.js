@@ -33,18 +33,6 @@ var lastWeek = new Date(
   today.getDate() - 7
 );
 
-const arrTeams = [
-  "Titian",
-  "Angles",
-  "Chiefs",
-  "Seahawks",
-  "Patriots",
-  "49ers",
-  "Texans"
-];
-
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
 const dummySentences = [
   "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   "Donec hendrerit tempor tellus.",
@@ -117,19 +105,37 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
-
               // onSelect={(date, Modals) => console.log(Modals())}
-            />,
-            <Col xl={6} xl={6} className="container1">
-              {/* <code>{"Col xl={6} xl={3}"}</code> */}
-              <br />
-              {dummySentences.slice(4).join(" ")}
-            </Col>
-            <Col xl={6} xl={6} className="container1">
-              <div>Teams!!{listArr}</div>
-              <br />
-
-            />,
+            />
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
             <Col sm={6} md={3} className="container1">
               <button onClick={this.getRequest}>Get Newsfeed!</button>
               <div>
@@ -143,7 +149,6 @@ class Dashboard extends Component {
               <div src={this.getPlayers()}>
                 {this.state.players.map(player => <div>{player.name} </div>)}
               </div>
-
             </Col>
           </Row>
         </Grid>

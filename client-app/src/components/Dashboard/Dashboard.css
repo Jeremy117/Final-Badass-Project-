@@ -9,7 +9,7 @@
   justify-content: center;
   justify-content: space-around;
   border-style: groove;
-  border-color: rgb(199, 68, 7);
+  border-color: rgb(10, 163, 18);
   text-align: center-align;
   background-color: #0b39b863;
 }
@@ -21,7 +21,7 @@
 }
 
 .container2 {
-  width: 5000px;
+  width: 6000px;
   line-height: 112.9;
   border-style: groove;
   border-color: rgb(199, 68);
