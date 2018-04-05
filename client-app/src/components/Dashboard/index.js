@@ -80,7 +80,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.toggleWeather}>Weather On/Off</button>
+        <Button bsStyle="primary" onClick={this.toggleWeather}>
+          Weather On/Off
+        </Button>
         {this.state.weather && <Box />}
         <Grid>
           <Row className="show-grid">
