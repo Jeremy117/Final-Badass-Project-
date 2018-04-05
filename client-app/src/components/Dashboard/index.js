@@ -57,11 +57,18 @@ class Dashboard extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.toggleWeather = this.toggleWeather.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      weather: true
     };
   }
+
+  toggleWeather = () => {
+    const { weather } = this.state;
+    this.setState({ weather: !weather });
+  };
 
   handleClose() {
     this.setState({ show: false });
@@ -73,16 +80,8 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <div>
-          <iframe
-            className="body"
-            id="forecast_embed"
-            frameBorder="2"
-            height="220"
-            width="100%"
-            src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
-          />
-        </div>
+        <button onClick={this.toggleWeather}>Weather On/Off</button>
+        {this.state.weather && <Box />}
         <Grid>
           <Row className="show-grid">
             <br />
@@ -154,6 +153,23 @@ class Dashboard extends Component {
       //       {listArr}
       //     </ul>
       //   </div>
+    );
+  }
+}
+
+class Box extends Component {
+  render() {
+    return (
+      <div>
+        <iframe
+          className="body"
+          id="forecast_embed"
+          frameBorder="2"
+          height="220"
+          width="100%"
+          src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+        />
+      </div>
     );
   }
 }
