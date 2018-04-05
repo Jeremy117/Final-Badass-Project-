@@ -73,7 +73,7 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div class="container">
+      <div class="container1">
         <Grid>
           <Row className="show-grid">
             <br />
@@ -90,7 +90,7 @@ class Dashboard extends Component {
             <Col xl={6} xl={6} className="container1">
               {/* <code>{"Col xl={6} xl={3}"}</code> */}
               <br />
-              {dummySentences.slice(0, 4).join(" ")}
+              {dummySentences.slice(4).join(" ")}
             </Col>
             <Col xl={6} xl={6} className="container1">
               <div>Teams!!{listArr}</div>
@@ -100,16 +100,16 @@ class Dashboard extends Component {
         </Grid>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Huddle Calendar</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
+            <h4>Create an event</h4>
             <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              City,state, indoor/outdoor,location, Time and weather forecast.
             </p>
 
-            <h4>Popover in a modal</h4>
-            <p>there is a here</p>
+            <h4>Team name</h4>
+            <p>Enter team name here</p>
 
             <h4>Tooltips in a modal</h4>
             <p>there is a here</p>
