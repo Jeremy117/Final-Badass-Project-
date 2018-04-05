@@ -17,7 +17,14 @@ import {
 } from "react-bootstrap";
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
+import axios from "axios";
 // import Modals from "./Modals";
+
+const URL =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+
+const URL2 =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 var today = new Date();
 var lastWeek = new Date(
@@ -60,9 +67,34 @@ class Dashboard extends Component {
     this.handleClose = this.handleClose.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      newsfeed: false,
+      articles: [],
+      playerShow: false,
+      players: []
     };
   }
+
+  getPlayers = () =>
+    axios.get(URL2).then(res => {
+      this.setState({
+        playerShow: true,
+        players: res.data
+      });
+    });
+
+  getRequest = () => {
+    axios.get(URL).then(res => {
+      this.setState({
+        newsfeed: true,
+        articles: res.data
+      });
+      // console.log(res.data);
+      // console.log(response.status);
+      // console.log(response.statusText);
+      // console.log(response.headers);
+    });
+  };
 
   handleClose() {
     this.setState({ show: false });
@@ -85,6 +117,7 @@ class Dashboard extends Component {
               minDate={lastWeek}
               onSelect={this.handleShow}
 
+
               // onSelect={(date, Modals) => console.log(Modals())}
             />,
             <Col xl={6} xl={6} className="container1">
@@ -95,6 +128,22 @@ class Dashboard extends Component {
             <Col xl={6} xl={6} className="container1">
               <div>Teams!!{listArr}</div>
               <br />
+
+            />,
+            <Col sm={6} md={3} className="container1">
+              <button onClick={this.getRequest}>Get Newsfeed!</button>
+              <div>
+                {this.state.articles.map(article => (
+                  <img src={article.author.image} />
+                ))}
+              </div>
+            </Col>
+            <Col sm={6} md={3} className="container1">
+              <div>Teams!!</div>
+              <div src={this.getPlayers()}>
+                {this.state.players.map(player => <div>{player.name} </div>)}
+              </div>
+
             </Col>
           </Row>
         </Grid>
