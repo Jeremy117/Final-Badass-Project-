@@ -127,6 +127,9 @@ class Dashboard extends Component {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
+            <button type="button" class="btn btn-outline-danger">
+              Save
+            </button>
           </Modal.Footer>
         </Modal>
       </div>
