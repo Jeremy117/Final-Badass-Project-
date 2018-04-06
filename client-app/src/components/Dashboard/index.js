@@ -111,28 +111,88 @@ class Dashboard extends Component {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Team Sauce</th>
+                  <th scope="col">TeamB vs Team B</th>
+                  <th scope="col">TeamC</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Iron Man</td>
+                  <td>Pirate Hicks</td>
+                  <td>Guard</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>Jhonny Cage</td>
+                  <td>IronMan</td>
+                  <td>Center</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td colspan="2">Jason Vorhees</td>
+
+                  <td>Substitute</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Team Bowl </th>
+                  <th scope="col">TeamB vs Team B</th>
+                  <th scope="col">TeamC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Freddie Kruger</td>
+                  <td>Pirate Hicks</td>
+                  <td>Guard</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>JuliousErving</td>
+                  <td>IronMan</td>
+                  <td>Center</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Hilary Clinton</td>
+
+                  <td>Substitute</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Team Death Match</th>
+                  <th scope="col">Team B vs Team B</th>
+                  <th scope="col">TeamC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Tim Brady</td>
+                  <td>Otto Tequila</td>
+                  <td>Guard</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>JackHammer</td>
+                  <td>Timmy Neutron</td>
+                  <td>Center</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Lex Luther</td>
+                  <td>Substitute</td>
                 </tr>
               </tbody>
             </table>
@@ -162,7 +222,7 @@ class Dashboard extends Component {
               City,state, indoor/outdoor,location, Time and weather forecast.
             </p>
 
-            <h4>Team name</h4>
+            <h4>Team Name</h4>
             <p>Enter team name here</p>
 
             <h4>Tooltips in a modal</h4>
