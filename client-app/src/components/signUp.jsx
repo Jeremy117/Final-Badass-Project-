@@ -1,62 +1,81 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import services from "../services";
+import axios from "axios";
 
-console.log(this.handleInputOnChange);
-const mapStateToProps = state => ({ ...state.auth });
-const mapDispatchToProps = dispatch => ({
-  onSubmit: (email, password) =>
-    dispatch({ type: "LOGIN", payload: services.Auth.login(email, password) })
-});
+const URL3 =
+  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/users?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+
 class signUp extends Component {
   state = {
-    email: null,
-    password: null
+    usertoggle: false,
+    usersinfo: []
   };
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
+  pass = () => {
+    axios.get(URL3).then(res => {
+      this.setState({
+        usertoggle: true,
+        usersinfo: res.data
+      });
+      console.log(res.data);
     });
   };
-  handleSubmit = event => {
-    event.preventDefault();
-    alert("A email and password was submitted: " + this.state.props);
-    this.props.onSubmit(this.state.email, this.state.password);
-  };
+
+  verify =("test1")=>{
+    if ("test1"===this.state.usersinfo.username){
+      return "positive"
+    }else{
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="signUp">
-        <h1 /> Sign In
-        <div className="signIn">
-          <label for="Email">Email:</label>
-          <input
-            value={this.state.value}
-            onChange={this.handleChange}
-            placeholder="your email"
-            id="Email"
-            type="email"
-            name="email"
-            required
-          />
-          <label for="Password">Password</label>
-          <input
-            value={this.state.value}
-            onChange={this.handleChange}
-            placeholder="your password"
-            id="Password"
-            type="password"
-            maxlength="10"
-            minlength="5"
-            name="password"
-            required
-          />
-          <div>
-            <input type="submit" />
-          </div>
-        </div>
-      </form>
+      <div className="auth-page">
+        <button
+          className="btn btn-lg btn-primary pull-xs-right"
+          onClick={this.pass}
+        >
+          Sign in
+        </button>
+      </div>
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(signUp);
+
+export default signUp;
+
+{
+  /* <form>
+  <form onSubmit={this.handleOnSubmit}>
+  <fieldset>
+    <fieldset className="form-group">
+      <input
+        onChange={this.handleInputOnChange}
+        className="form-control form-control-lg"
+        type="email"
+        placeholder="Email"
+        name="email"
+      />
+    </fieldset>
+
+    <fieldset className="form-group">
+      <input
+        onChange={this.handleInputOnChange}
+        className="form-control form-control-lg"
+        type="password"
+        placeholder="Password"
+        name="password"
+      />
+    </fieldset>
+
+    <button
+      className="btn btn-lg btn-primary pull-xs-right"
+      type="submit"
+      onClick={this.passVer}
+      disabled={this.props.inProgress}
+    >
+      Sign in
+    </button>
+  </fieldset>
+</form> */
+}
