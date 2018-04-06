@@ -1,32 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+
 import { Provider } from "react-redux";
-// import { BrowserRouter } from "react-browser-router";
+import { Route } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { ConnectedRouter } from "react-router-redux";
+
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
+import { reduxStore, history } from "./store";
+
 import registerServiceWorker from "./registerServiceWorker";
 
-const defaultState = {
-  appName: "technology-notes",
-  articles: null
-};
-
-const reducer = function(state = defaultState, action) {
-  return state;
-};
-
-const reduxStore = createStore(reducer);
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={reduxStore}>
+    <ConnectedRouter history={history}>
+      <Route path="/" component={App} />
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById("root")
+);
 registerServiceWorker();
-
-// ReactDOM.render(
-//   <Provider store={reduxStore}>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </Provider>,
-//   document.getElementById("root")
-// );
-// registerServiceWorker();

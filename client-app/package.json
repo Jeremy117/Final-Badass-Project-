@@ -7,16 +7,18 @@
     "cross-env": "^5.1.4",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
-    "marked": "^0.3.17",
+    "marked": "^0.3.19",
+    "material-ui": "^0.20.0",
+    "nodemon": "^1.17.3",
     "popper.js": "^1.14.1",
-    "react": "^16.2.0",
+    "react": "^16.3.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.3.0",
     "react-infinite-calendar": "^2.3.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "^1.1.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6"
@@ -27,5 +29,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3000"
+  "proxy": "http://localhost:3001"
 }

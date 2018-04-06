@@ -1,0 +1,36 @@
+.show-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  border-style: groove;
+  border-color: rgb(10, 163, 18);
+  text-align: center-align;
+  background-color: #07b60fbe;
+}
+
+.row1 {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.container2 {
+  width: 6000px;
+  line-height: 112.9;
+  border-style: groove;
+  border-color: rgb(199, 68);
+  text-align: center-align;
+  background-color: #0b0eb8b9;
+}
+.container3 {
+  border-style: groove;
+  border-color: rgb(0, 131, 28);
+  text-align: center-align;
+  background-color: #19b80be5;
+}
