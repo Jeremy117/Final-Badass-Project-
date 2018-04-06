@@ -112,21 +112,18 @@ class Dashboard extends Component {
         </Grid>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Huddel Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-
-            <h4>Popover in a modal</h4>
-            <p>there is a here</p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>there is a here</p>
-
-            <hr />
+            <h4>Create Event:</h4>
+            <form>
+              About event:<br />
+              <input type="text" name="firstname" />
+              <br />
+              date:<br />
+              <input type="date" name="lastname" />
+              <Button>Add Event</Button>
+            </form>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
