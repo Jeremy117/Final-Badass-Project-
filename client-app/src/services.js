@@ -48,9 +48,16 @@ const Auth = {
   save: user => requests.put("/user", { user })
 };
 
+const Teams = {
+  players: teamid => requests.get(`/teams/${teamid}`),
+  addPlayer: (teamid, userid) =>
+    requests.post(`/teams/${teamid}`, { player: userid })
+};
+
 export default {
   Articles,
   Auth,
   Comments,
-  setToken
+  setToken,
+  Teams
 };
