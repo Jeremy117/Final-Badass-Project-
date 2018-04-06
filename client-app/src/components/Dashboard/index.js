@@ -120,13 +120,11 @@ class Dashboard extends Component {
             <Col sm={6} md={3} className="container1">
               <button onClick={this.getRequest}>Get Newsfeed!</button>
               <div>
-                {this.state.articles.map(article => (
-                  <img src={article.author.image} />
-                ))}
+                {this.state.articles.map(article => <img src={article.body} />)}
               </div>
             </Col>
             <Col sm={6} md={3} className="container1">
-              <div>Teams!!</div>
+              <div>players!!</div>
               <div src={this.getPlayers()}>
                 {this.state.players.map(player => <div>{player.name} </div>)}
               </div>
