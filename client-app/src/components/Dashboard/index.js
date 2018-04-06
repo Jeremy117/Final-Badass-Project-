@@ -105,7 +105,7 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div class="container">
+      <div>
         <Grid>
           <Row className="show-grid">
             <br />
@@ -116,17 +116,20 @@ class Dashboard extends Component {
               disabledDays={[0, 6]}
               minDate={lastWeek}
               onSelect={this.handleShow}
-
-              // onSelect={(date, Modals) => console.log(Modals())}
             />,
-            <Col xl={6} xl={6} className="container1">
-              {/* <code>{"Col xl={6} xl={3}"}</code> */}
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+            <Col sm={6} md={3} className="container1">
+              <button onClick={this.getRequest}>Get Newsfeed!</button>
+              <div>
+                {this.state.articles.map(article => (
+                  <img src={article.author.image} />
+                ))}
+              </div>
             </Col>
-            <Col xl={6} xl={6} className="container1">
-              <div>Teams!!{listArr}</div>
-              <br />
+            <Col sm={6} md={3} className="container1">
+              <div>Teams!!</div>
+              <div src={this.getPlayers()}>
+                {this.state.players.map(player => <div>{player.name} </div>)}
+              </div>
             </Col>
           </Row>
         </Grid>
