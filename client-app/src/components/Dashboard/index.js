@@ -33,8 +33,8 @@ var lastWeek = new Date(
   today.getDate() - 7
 );
 
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+//const dummySentences = [
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   "Donec hendrerit tempor tellus.",
   "Donec pretium posuere tellus.",
   "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
@@ -44,8 +44,8 @@ const dummySentences = [
   "Nullam tristique diam non turpis.",
   "Cras placerat accumsan nulla.",
   "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
+  "Nam vestibulum accumsan nisl.";
+//];
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -225,13 +225,16 @@ class Dashboard extends Component {
             <h4>Team Name</h4>
             <p>Enter team name here</p>
 
-            <h4>Tooltips in a modal</h4>
-            <p>there is a here</p>
+            <h4 />
+            <p />
 
             <hr />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
+            <button type="button" class="btn btn-outline-danger">
+              Save
+            </button>
           </Modal.Footer>
         </Modal>
       </div>
