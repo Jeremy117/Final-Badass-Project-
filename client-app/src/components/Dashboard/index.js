@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import {
   Grid,
@@ -32,32 +33,6 @@ var lastWeek = new Date(
   today.getMonth(),
   today.getDate() - 7
 );
-
-const arrTeams = [
-  "Titian",
-  "Angles",
-  "Chiefs",
-  "Seahawks",
-  "Patriots",
-  "49ers",
-  "Texans"
-];
-
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -126,7 +101,11 @@ class Dashboard extends Component {
             <Col sm={6} md={3} className="container1">
               <div>players!!</div>
               <div src={this.getPlayers()}>
-                {this.state.players.map(player => <div>{player.name} </div>)}
+                {this.state.players.map(player => (
+                  <div>
+                    <Link to="./settings">{player.name} </Link>
+                  </div>
+                ))}
               </div>
             </Col>
           </Row>
