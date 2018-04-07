@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import {
   Grid,
@@ -32,32 +33,6 @@ var lastWeek = new Date(
   today.getMonth(),
   today.getDate() - 7
 );
-
-const arrTeams = [
-  "Titian",
-  "Angles",
-  "Chiefs",
-  "Seahawks",
-  "Patriots",
-  "49ers",
-  "Texans"
-];
-
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -105,7 +80,7 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div class="container">
+      <div>
         <Grid>
           <Row className="show-grid">
             <br />
@@ -116,40 +91,45 @@ class Dashboard extends Component {
               disabledDays={[0, 6]}
               minDate={lastWeek}
               onSelect={this.handleShow}
-
-              // onSelect={(date, Modals) => console.log(Modals())}
             />,
-            <Col xl={6} xl={6} className="container1">
-              {/* <code>{"Col xl={6} xl={3}"}</code> */}
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+            <Col sm={6} md={3} className="container1">
+              <button onClick={this.getRequest}>Get Newsfeed!</button>
+              <div>
+                {this.state.articles.map(article => <img src={article.body} />)}
+              </div>
             </Col>
-            <Col xl={6} xl={6} className="container1">
-              <div>Teams!!{listArr}</div>
-              <br />
+            <Col sm={6} md={3} className="container1">
+              <div>players!!</div>
+              <div src={this.getPlayers()}>
+                {this.state.players.map(player => (
+                  <div>
+                    <Link to="./settings">{player.name} </Link>
+                  </div>
+                ))}
+              </div>
             </Col>
           </Row>
         </Grid>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Huddel Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-
-            <h4>Popover in a modal</h4>
-            <p>there is a here</p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>there is a here</p>
-
-            <hr />
+            <h4>Create Event:</h4>
+            <form>
+              About event:<br />
+              <input type="text" name="firstname" />
+              <br />
+              date:<br />
+              <input type="date" name="lastname" />
+              <Button>Add Event</Button>
+            </form>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
+            <button type="button" class="btn btn-outline-danger">
+              Save
+            </button>
           </Modal.Footer>
         </Modal>
       </div>
