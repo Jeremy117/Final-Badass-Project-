@@ -6,7 +6,7 @@ export default class Footer extends Component {
   render() {
     return (
       <Navbar default fixedBottom>
-        <Navbar.Header />
+
 
         <Nav>
           {/* <!--Footer--> */}
@@ -40,7 +40,7 @@ export default class Footer extends Component {
                           </b>
                         </div>
                         <div>
-                          <a href="./Home">Huddle Home</a>
+                          <a href="/components/Home/index">Huddle Home</a>
                         </div>
                         <div>
                           <a href="/About">About us</a>
@@ -71,6 +71,28 @@ export default class Footer extends Component {
                         </div>
                       </ul>
                     </div>
+
+                    <div class="col-md-3 col-md-offset-3">
+
+
+                      <div class="col-md-1">
+                        <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x"></i></a>
+                      </div>
+
+                      <div class="col-md-1">
+                        <a href="https://github.com/Jeremy117/Huddle-App"><i class="fab fa-github fa-2x"></i></a>
+                      </div>
+
+                      <div class="col-md-1">
+                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x"></i></a>
+                      </div>
+
+                      <div class="col-md-1">
+                        <a href="https://www.google.com/"><i class="fab fa-google fa-2x"></i></a>
+                      </div>
+
+
+                    </div>
                   </div>
                 </div>
                 {/* <!--/First column--> */}
@@ -82,7 +104,7 @@ export default class Footer extends Component {
             {/* <!--Copyright--> */}
             <div class="footer-copyright py-3 text-center">
               © 2018 Copyright:
-              <a href="https://mdbootstrap.com/material-design-for-bootstrap/">
+              <a href="https://github.com/Jeremy117/Huddle-App">
                 {" "}
                 Team Huddle{" "}
               </a>
