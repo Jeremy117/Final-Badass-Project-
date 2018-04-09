@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
 import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
+import TextField from "material-ui/TextField";
+import Toggle from "material-ui/Toggle";
+
+import {
   Grid,
   Row,
   Col,
@@ -15,6 +27,7 @@ import {
   Tooltip,
   Popover
 } from "react-bootstrap";
+
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
@@ -232,7 +245,7 @@ class Dashboard extends Component {
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
-            <button type="button" class="btn btn-outline-danger">
+            <button onClick="button" class="btn btn-outline-danger">
               Save
             </button>
           </Modal.Footer>
@@ -244,3 +257,4 @@ class Dashboard extends Component {
 
 // export default connect(mapStateToProps)(Dashboard);
 export default Dashboard;
+//export default FlatButtonExampleSimple;

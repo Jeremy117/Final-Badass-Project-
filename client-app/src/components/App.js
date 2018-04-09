@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Router, Route } from "react-router-dom";
 import { push } from "react-router-redux";
 import { connect } from "react-redux";
-
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { reduxStore } from "../store";
 import services from "../services";
 import Header from "./Header";
@@ -50,6 +50,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div MuiThemeProvider />
         <Header
           appName={this.props.appName}
           currentUser={this.props.currentUser}
@@ -65,6 +66,7 @@ class App extends Component {
           <Route path="/editor" component={Editor} />
           <Route path="/Dashboard" component={Dashboard} />
         </Switch>
+        <div>MuiThemeProvider</div>
       </div>
     );
   }

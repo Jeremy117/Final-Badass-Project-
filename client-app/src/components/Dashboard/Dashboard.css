@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(111, 150, 153, 0.295);
 }
 .container1 {
   display: flex;
@@ -11,7 +11,7 @@
   border-style: groove;
   border-color: rgb(10, 163, 18);
   text-align: center-align;
-  background-color: #07b60fbe;
+  background-color: #56ffe7;
 }
 
 .row1 {
@@ -26,7 +26,7 @@
   border-style: groove;
   border-color: rgb(199, 68);
   text-align: center-align;
-  background-color: #0b0eb8b9;
+  background-color: #56ffe7;
 }
 .container3 {
   border-style: groove;
