@@ -49,25 +49,25 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div MuiThemeProvider />
-        <Header
-          appName={this.props.appName}
-          currentUser={this.props.currentUser}
-        />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/articleview" component={ArticleView} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/article/:id" component={Article} />
-          <Route path="/editor/:slug" component={Editor} />
-          <Route path="/editor" component={Editor} />
-          <Route path="/Dashboard" component={Dashboard} />
-        </Switch>
-        <div>MuiThemeProvider</div>
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <Header
+            appName={this.props.appName}
+            currentUser={this.props.currentUser}
+          />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/articleview" component={ArticleView} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/settings" component={Settings} />
+            <Route path="/article/:id" component={Article} />
+            <Route path="/editor/:slug" component={Editor} />
+            <Route path="/editor" component={Editor} />
+            <Route path="/Dashboard" component={Dashboard} />
+          </Switch>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
