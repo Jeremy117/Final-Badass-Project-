@@ -49,6 +49,14 @@ marked is a library that compiles markdown into HTML - in order to get react to 
       this.props.currentUser.username === article.author.username;
     return (
       <div className="article-page">
+        <div class="card-panel">
+          <span class="green-text text-darken-2">
+            {/* This is a card panel with dark blue text */}
+          </span>
+          <div class="card-panel red lighten-2">
+            {/* This is a card panel with a teal lighten-2 class */}
+          </div>
+        </div>
         <div className="banner">
           <div className="container">
             <h1>{article.title}</h1>
