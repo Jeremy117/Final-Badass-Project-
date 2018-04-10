@@ -10,6 +10,7 @@ const MainView = props => {
           <li className="nav-item">
             <a href="" className="nav-link active">
               Huddle Articles
+              <i class="material-icons">sentiment_very_satisfied</i>
             </a>
           </li>
         </ul>
