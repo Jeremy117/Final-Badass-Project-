@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MainView from "./MainView";
+import "../../css/articlestyle.css";
 
 import services from "../../services";
 
@@ -24,11 +25,9 @@ class ArticleView extends Component {
         <div className="container page">
           <div className="row">
             <MainView articles={this.props.articles} />
-            {/* <div className="col-md-3">
-              <div className="sidebar">
-                <p>Popular Tags</p>
-              </div>
-            </div> */}
+            {/* <i class="material-icons">sentiment_very_satisfied</i> */}
+            <i class="material-icons">bubble_chart</i>
+            <i class="material-icons">adb</i>
           </div>
         </div>
       </div>

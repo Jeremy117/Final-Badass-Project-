@@ -1,5 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
+import TextField from "material-ui/TextField";
+import Toggle from "material-ui/Toggle";
+
 import {
   Grid,
   Row,
@@ -15,10 +28,17 @@ import {
   Tooltip,
   Popover
 } from "react-bootstrap";
+
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
-// import Modals from "./Modals";
+import Events from "./Events";
+import RaisedButton from "material-ui/RaisedButton";
+import Avatar from "material-ui/Avatar";
+import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
+import Divider from "material-ui/Divider";
+import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 const URL =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
@@ -33,41 +53,15 @@ var lastWeek = new Date(
   today.getDate() - 7
 );
 
-const arrTeams = [
-  "Titian",
-  "Angles",
-  "Chiefs",
-  "Seahawks",
-  "Patriots",
-  "49ers",
-  "Texans"
-];
-
-const listArr = arrTeams.map(arrTeams => <div>{arrTeams}</div>);
-
-const dummySentences = [
-  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-  "Donec hendrerit tempor tellus.",
-  "Donec pretium posuere tellus.",
-  "Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.",
-  "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-  "Nulla posuere.",
-  "Donec vitae dolor.",
-  "Nullam tristique diam non turpis.",
-  "Cras placerat accumsan nulla.",
-  "Nullam rutrum.",
-  "Nam vestibulum accumsan nisl."
-];
-
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-
     this.state = {
       show: false,
+      // dateShow: [],
       newsfeed: false,
       articles: [],
       playerShow: false,
@@ -101,55 +95,77 @@ class Dashboard extends Component {
   }
 
   handleShow() {
-    this.setState({ show: true });
+    this.setState({
+      show: true
+    });
   }
+
   render() {
     return (
-      <div class="container">
+      <div>
         <Grid>
           <Row className="show-grid">
-            <br />
-            <InfiniteCalendar
-              width={300}
-              height={300}
-              selected={today}
-              disabledDays={[0, 6]}
-              minDate={lastWeek}
-              onSelect={this.handleShow}
-
-              // onSelect={(date, Modals) => console.log(Modals())}
-            />,
-            <Col xl={6} xl={6} className="container1">
-              {/* <code>{"Col xl={6} xl={3}"}</code> */}
-              <br />
-              {dummySentences.slice(0, 4).join(" ")}
+            <Col sm={6} lg={3} className="container1">
+              <InfiniteCalendar
+                width={260}
+                height={390}
+                selected={today}
+                disabledDays={[0, 6]}
+                minDate={lastWeek}
+                onSelect={this.handleShow}
+              />,
             </Col>
-            <Col xl={6} xl={6} className="container1">
-              <div>Teams!!{listArr}</div>
-              <br />
+            <Col sm={6} md={3} className="container1">
+              <List>
+                <ListItem>
+                  <button onClick={this.getRequest}>Get Newsfeed!</button>
+                </ListItem>
+                <div>
+                  {this.state.articles.map(article => (
+                    <img src={article.body} />
+                  ))}
+                </div>
+              </List>
+            </Col>
+            <Col sm={6} md={3} className="container1">
+              <List>
+                <Subheader>
+                  <h3>
+                    <strong />Players
+                  </h3>
+                </Subheader>
+                <strong />
+                <div src={this.getPlayers()}>
+                  {this.state.players.map(player => (
+                    <div>
+                      <Link to="./settings">
+                        <ListItem
+                          primaryText={player.name}
+                          leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                          rightIcon={<CommunicationChatBubble />}
+                        />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </List>
             </Col>
           </Row>
         </Grid>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Huddel Event</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-
-            <h4>Popover in a modal</h4>
-            <p>there is a here</p>
-
-            <h4>Tooltips in a modal</h4>
-            <p>there is a here</p>
-
-            <hr />
+            <h4>Create Event:</h4>
+            {Events}
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
+            <RaisedButton
+              label="Close"
+              onClick={this.handleClose}
+              primary={true}
+            />
           </Modal.Footer>
         </Modal>
       </div>
@@ -159,3 +175,4 @@ class Dashboard extends Component {
 
 // export default connect(mapStateToProps)(Dashboard);
 export default Dashboard;
+//export default FlatButtonExampleSimple;
