@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import {
-  Grid,
-  Row,
-  Col,
   Button,
   Modal,
   ModalDialog,
@@ -48,7 +45,6 @@ class Dashboard extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.state = {
       show: false,
-      // dateShow: [],
       newsfeed: false,
       articles: [],
       playerShow: false,
@@ -90,9 +86,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Grid>
-          <Row className="show-grid">
-            <Col sm={6} lg={3} className="container1">
+        <div>
+          <ul className="show-grid">
+            <div className="container1">
               <InfiniteCalendar
                 width={260}
                 height={390}
@@ -101,8 +97,8 @@ class Dashboard extends Component {
                 minDate={lastWeek}
                 onSelect={this.handleShow}
               />,
-            </Col>
-            <Col sm={6} md={3} className="container1">
+            </div>
+            <div className="container1">
               <List>
                 <ListItem>
                   <button onClick={this.getRequest}>Get Newsfeed!</button>
@@ -113,8 +109,8 @@ class Dashboard extends Component {
                   ))}
                 </div>
               </List>
-            </Col>
-            <Col sm={6} md={3} className="container1">
+            </div>
+            <div className="container1">
               <List>
                 <Subheader>
                   <h3>
@@ -136,9 +132,9 @@ class Dashboard extends Component {
                   ))}
                 </div>
               </List>
-            </Col>
-          </Row>
-        </Grid>
+            </div>
+          </ul>
+        </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Huddel Event</Modal.Title>
