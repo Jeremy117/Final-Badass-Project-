@@ -5,6 +5,8 @@ import services from "../../services";
 
 import SettingsForm from "./SettingsForm";
 import ListErrors from "../ListErrors";
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 const mapStateToProps = state => {
   return {
@@ -26,7 +28,7 @@ class Settings extends Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Your Settings</h1>
+              <h1 className="text-xs-center">Settings</h1>
 
               <ListErrors errors={this.props.errors} />
 
@@ -36,12 +38,21 @@ class Settings extends Component {
               />
               <hr />
 
-              <button
-                className="btn btn-outline-danger"
+              <RaisedButton label="Log Out" primary={true}
+                style={{
+                  width: "700px"
+                }}
+
                 onClick={this.props.onClickLogout}
-              >
-                Or click here to logout.
-              </button>
+              />
+              <br />
+              <br />
+              <br />
+              <br />
+
+
+
+
             </div>
           </div>
         </div>
