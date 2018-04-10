@@ -105,7 +105,6 @@ class Dashboard extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-<<<<<<< HEAD
             <Col sm={6} lg={3} className="container1">
               <InfiniteCalendar
                 width={260}
@@ -116,17 +115,6 @@ class Dashboard extends Component {
                 onSelect={this.handleShow}
               />,
             </Col>
-=======
-            <br />
-            <InfiniteCalendar
-              width={300}
-              height={300}
-              selected={today}
-              disabledDays={[0, 6]}
-              minDate={lastWeek}
-              onSelect={this.handleShow}
-            />
->>>>>>> bdafee30bd08b9d455e9ba3649c107bb1f010f21
             <Col sm={6} md={3} className="container1">
               <List>
                 <ListItem>
