@@ -17,7 +17,7 @@ const Comment = props => {
             alt={comment.author.username}
           />
         </Link>
-        {/* &nbsp; */}
+        &nbsp;
         <Link to={`/@${comment.author.username}`} className="comment-author">
           {comment.author.username}
         </Link>

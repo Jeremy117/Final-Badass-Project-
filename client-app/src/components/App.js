@@ -50,6 +50,7 @@ class App extends Component {
   }
   render() {
     return (
+<<<<<<< HEAD
       <MuiThemeProvider>
         <div>
           <Header
@@ -70,6 +71,26 @@ class App extends Component {
           </Switch>
         </div>
       </MuiThemeProvider>
+=======
+      <div>
+        <Header
+          appName={this.props.appName}
+          currentUser={this.props.currentUser}
+        />
+        <Footer />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/articleview" component={ArticleView} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/article/:id" component={Article} />
+          <Route path="/editor/:slug" component={Editor} />
+          <Route path="/editor" component={Editor} />
+          <Route path="/Dashboard" component={Dashboard} />
+        </Switch>
+      </div>
+>>>>>>> bdafee30bd08b9d455e9ba3649c107bb1f010f21
     );
   }
 }
