@@ -104,7 +104,7 @@ class Dashboard extends Component {
               disabledDays={[0, 6]}
               minDate={lastWeek}
               onSelect={this.handleShow}
-            />,
+            />
             <Col sm={6} md={3} className="container1">
               <button onClick={this.getRequest}>Get Newsfeed!</button>
               <div>
