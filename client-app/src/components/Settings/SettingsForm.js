@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import Avatar from 'material-ui/Avatar';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+
+
 
 
 class SettingsForm extends Component {
@@ -54,69 +61,95 @@ class SettingsForm extends Component {
   render() {
     return (
       <form onSubmit={this.submitForm}>
-        <fieldset>
-          <fieldset className="form-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="URL of profile picture"
-              value={this.state.image}
-              onChange={this.updateState("image")}
-            />
-          </fieldset>
-
-
-
-          <fieldset className="form-group">
-            <input
-              className="form-control form-control-lg"
-              type="text"
-              placeholder="Username"
-              value={this.state.username}
-              onChange={this.updateState("username")}
-            />
-          </fieldset>
-
-          <fieldset className="form-group">
-            <textarea
-              className="form-control form-control-lg"
-              rows="8"
-              placeholder="Short bio about you"
-              value={this.state.bio}
-              onChange={this.updateState("bio")}
-            />
-          </fieldset>
-
-          <fieldset className="form-group">
-            <input
-              className="form-control form-control-lg"
-              type="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.updateState("email")}
-            />
-          </fieldset>
-
-          <fieldset className="form-group">
-            <input
-              className="form-control form-control-lg"
-              type="password"
-              placeholder="New Password"
-              value={this.state.password}
-              onChange={this.updateState("password")}
-            />
-          </fieldset>
-
-          <button
-            className="btn btn-lg btn-primary pull-xs-right"
-            type="submit"
-            disabled={this.state.inProgress}
+        <List>
+          <ListItem
+            disabled={true}
+            leftAvatar={
+              <Avatar src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
+                size={100} />
+            }
           >
-            Update Settings
-          </button>
-        </fieldset>
 
-      </form>
+          </ListItem>
+        </List>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        {/* <TextField
+          style={{
+            width: "700px"
+          }}
+          type="text"
+          placeholder="URL of profile picture"
+          value={this.state.image}
+          onChange={this.updateState("image")}
+        /><br /> */}
+
+
+
+
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="text"
+          placeholder="Username"
+          value={this.state.username}
+          onChange={this.updateState("username")}
+        /><br />
+
+
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          placeholder="Short bio about you"
+          value={this.state.bio}
+          onChange={this.updateState("bio")}
+        /><br />
+
+
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="email"
+          placeholder="Email"
+          value={this.state.email}
+          onChange={this.updateState("email")}
+        /><br />
+
+
+
+
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="password"
+          placeholder="New Password"
+          value={this.state.password}
+          onChange={this.updateState("password")}
+        /><br />
+
+
+
+
+
+
+        <RaisedButton label="Update Settings" primary={true}
+          style={{
+            width: "700px"
+          }}
+          type="submit"
+          disabled={this.state.inProgress}
+
+        />
+
+
+      </form >
     );
   }
 }
