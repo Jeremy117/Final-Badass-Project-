@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Router, Route } from "react-router-dom";
 import { push } from "react-router-redux";
 import { connect } from "react-redux";
-
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { reduxStore } from "../store";
 import services from "../services";
 import Header from "./Header";
@@ -16,7 +16,6 @@ import Editor from "./Editor";
 
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
