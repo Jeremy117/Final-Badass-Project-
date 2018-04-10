@@ -16,6 +16,7 @@ import Editor from "./Editor";
 
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -50,24 +51,26 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <Header
-          appName={this.props.appName}
-          currentUser={this.props.currentUser}
-        />
-        <Footer />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/articleview" component={ArticleView} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/article/:id" component={Article} />
-          <Route path="/editor/:slug" component={Editor} />
-          <Route path="/editor" component={Editor} />
-          <Route path="/Dashboard" component={Dashboard} />
-        </Switch>
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <Header
+            appName={this.props.appName}
+            currentUser={this.props.currentUser}
+          />
+          <Footer />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/articleview" component={ArticleView} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/settings" component={Settings} />
+            <Route path="/article/:id" component={Article} />
+            <Route path="/editor/:slug" component={Editor} />
+            <Route path="/editor" component={Editor} />
+            <Route path="/Dashboard" component={Dashboard} />
+          </Switch>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
