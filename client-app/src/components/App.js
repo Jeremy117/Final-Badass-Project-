@@ -51,23 +51,12 @@ class App extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
       <MuiThemeProvider>
         <div>
-          {/* Apply here things will show above the header. */}
-=======
-      <MuiThemeProvider>
-        <div>
->>>>>>> master
           <Header
             appName={this.props.appName}
             currentUser={this.props.currentUser}
           />
-<<<<<<< HEAD
-=======
-          <Footer />
->>>>>>> master
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/articleview" component={ArticleView} />
@@ -81,29 +70,6 @@ class App extends Component {
           </Switch>
         </div>
       </MuiThemeProvider>
-<<<<<<< HEAD
-=======
-      <div>
-        <Header
-          appName={this.props.appName}
-          currentUser={this.props.currentUser}
-        />
-        <Footer />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/articleview" component={ArticleView} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/article/:id" component={Article} />
-          <Route path="/editor/:slug" component={Editor} />
-          <Route path="/editor" component={Editor} />
-          <Route path="/Dashboard" component={Dashboard} />
-        </Switch>
-      </div>
->>>>>>> master
-=======
->>>>>>> master
     );
   }
 }

@@ -161,18 +161,11 @@ class Dashboard extends Component {
             {Events}
           </Modal.Body>
           <Modal.Footer>
-<<<<<<< HEAD
-            <Button onClick={this.handleClose}>Close</Button>
-            <button onClick="button" class="btn btn-outline-danger">
-              Save
-            </button>
-=======
             <RaisedButton
               label="Close"
               onClick={this.handleClose}
               primary={true}
             />
->>>>>>> master
           </Modal.Footer>
         </Modal>
       </div>
