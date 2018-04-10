@@ -16,6 +16,7 @@ import Editor from "./Editor";
 
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -51,13 +52,22 @@ class App extends Component {
   render() {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
       <MuiThemeProvider>
         <div>
           {/* Apply here things will show above the header. */}
+=======
+      <MuiThemeProvider>
+        <div>
+>>>>>>> master
           <Header
             appName={this.props.appName}
             currentUser={this.props.currentUser}
           />
+<<<<<<< HEAD
+=======
+          <Footer />
+>>>>>>> master
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/articleview" component={ArticleView} />
@@ -71,6 +81,7 @@ class App extends Component {
           </Switch>
         </div>
       </MuiThemeProvider>
+<<<<<<< HEAD
 =======
       <div>
         <Header
@@ -90,6 +101,8 @@ class App extends Component {
           <Route path="/Dashboard" component={Dashboard} />
         </Switch>
       </div>
+>>>>>>> master
+=======
 >>>>>>> master
     );
   }
