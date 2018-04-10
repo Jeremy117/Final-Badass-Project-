@@ -51,6 +51,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
+          {/* Apply here things will show above the header. */}
           <Header
             appName={this.props.appName}
             currentUser={this.props.currentUser}
