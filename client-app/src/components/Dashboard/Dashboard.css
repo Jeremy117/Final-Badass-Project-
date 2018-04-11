@@ -1,14 +1,32 @@
-.wrapper {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-.container1 {
-  background-color: rgb(0, 140, 255);
-}
-
 .show-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  background-color: #00233f;
+}
+.container1 {
+  border-style: solid;
+  border-color: beige;
+  text-align: center;
+  background-color: #ebebeb;
+}
+.cal {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  grid-row-gap: 3em;
+  justify-content: center;
+  align-content: center;
+  /* background-color: rgb(0, 238, 255); */
+}
+.roster {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgb(0, 238, 255); */
+}
+.player {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.text {
+  color: white;
 }

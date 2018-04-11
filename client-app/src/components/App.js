@@ -57,7 +57,7 @@ class App extends Component {
             appName={this.props.appName}
             currentUser={this.props.currentUser}
           />
-          <Footer />
+          {/* <Footer /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/articleview" component={ArticleView} />

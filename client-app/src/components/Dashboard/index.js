@@ -88,15 +88,18 @@ class Dashboard extends Component {
       <div>
         <div>
           <ul className="show-grid">
-            <div className="container1">
-              <InfiniteCalendar
-                width={260}
-                height={390}
-                selected={today}
-                disabledDays={[0, 6]}
-                minDate={lastWeek}
-                onSelect={this.handleShow}
-              />,
+            <div>
+              <br />
+              <div className="cal">
+                <InfiniteCalendar
+                  width={260}
+                  height={340}
+                  selected={today}
+                  disabledDays={[0, 6]}
+                  minDate={lastWeek}
+                  onSelect={this.handleShow}
+                />,
+              </div>
             </div>
             <div className="container1">
               <List>
@@ -110,28 +113,31 @@ class Dashboard extends Component {
                 </div>
               </List>
             </div>
-            <div className="container1">
-              <List>
-                <Subheader>
-                  <h3>
-                    <strong />Players
-                  </h3>
-                </Subheader>
-                <strong />
-                <div src={this.getPlayers()}>
-                  {this.state.players.map(player => (
-                    <div>
-                      <Link to="./settings">
-                        <ListItem
-                          primaryText={player.name}
-                          leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                          rightIcon={<CommunicationChatBubble />}
-                        />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </List>
+            <div className="roster">
+              <div>
+                <List className="player">
+                  <Subheader>
+                    <h3 className="text">
+                      <strong />Players
+                    </h3>
+                  </Subheader>
+                  <strong />
+                  <div src={this.getPlayers()}>
+                    {this.state.players.map(player => (
+                      <div>
+                        <Link to="./settings">
+                          <ListItem
+                            primaryText={player.name}
+                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                            rightIcon={<CommunicationChatBubble />}
+                          />
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </List>
+                <br />
+              </div>
             </div>
           </ul>
         </div>
