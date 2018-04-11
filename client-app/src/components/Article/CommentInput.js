@@ -37,11 +37,11 @@ class CommentInput extends Component {
           />
         </div>
         <div className="card-footer">
-          <img
+          {/* <img
             src={this.props.currentUser.image}
             className="comment-author-img"
             alt={this.props.currentUser.username}
-          />
+          /> */}
           <button className="btn btn-sm btn-primary" type="submit">
             Post Comment
           </button>

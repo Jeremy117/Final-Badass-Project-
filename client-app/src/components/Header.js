@@ -5,7 +5,7 @@ import mainImage from "../images/huddle-logo-white.png";
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul class="right hide-on-med-and-down sidenav">
+      <ul class="right">
         {/* <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
@@ -36,7 +36,7 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul class="right hide-on-med-and-down sidenav">
+      <ul class="right">
         <li className="">
           <Link to="/Dashboard" className="">
             Dashboard

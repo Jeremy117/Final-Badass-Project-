@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 // import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import mainImage from "../images/huddle-logo-white.png";
+import mainImage from "../images/huddle-logo-gray-transparent.png";
 // import Image from "react-image-resizer";
 
 var menucolor = {
-  backgroundColor: "#333",
+  backgroundColor: "#f5f5f5",
   padding: "50px",
   height: "350px"
 };
@@ -19,7 +19,7 @@ var paddingbottom = {
 };
 
 var iconcolor = {
-  color: "white"
+  color: "grey"
 };
 
 export default class Footer extends Component {
@@ -37,7 +37,7 @@ export default class Footer extends Component {
               {/* <h5 class="white-text">Links</h5> */}
               <ul>
                 <li>
-                  <a class="white-text text-lighten-3" href="/">
+                  <a class="grey-text text-lighten-13" href="/">
                     Home
                   </a>
                 </li>
@@ -47,12 +47,12 @@ export default class Footer extends Component {
                   </a>
                 </li> */}
                 <li>
-                  <a class="white-text text-lighten-3" href="/Login">
+                  <a class="grey-text text-lighten-13" href="/Login">
                     Sign In
                   </a>
                 </li>
                 <li>
-                  <a class="white-text text-lighten-3" href="/Register">
+                  <a class="grey-text text-lighten-13" href="/Register">
                     Become A Member
                   </a>
                 </li>
@@ -64,34 +64,21 @@ export default class Footer extends Component {
           <div class="container">
             {/* © 2018 Copyright Team Huddle */}
             <a class="right">
-              <a
-                href="https://facebook.com"
-                style={footerpadding}
-                style={iconcolor}
-              >
-                <i class="fab fa-facebook-square fa-2x  " />
+              <a href="https://facebook.com" style={iconcolor}>
+                <i class="fab fa-facebook-square fa-3x" style={footerpadding} />
               </a>
 
               <a
                 href="https://github.com/Jeremy117/Huddle-App"
-                style={footerpadding}
                 style={iconcolor}
               >
-                <i class="fab fa-github fa-2x " />
+                <i class="fab fa-github fa-3x" style={footerpadding} />
               </a>
-              <a
-                href="https://www.linkedin.com"
-                style={footerpadding}
-                style={iconcolor}
-              >
-                <i class="fab fa-linkedin fa-2x " />
+              <a href="https://www.linkedin.com" style={iconcolor}>
+                <i class="fab fa-linkedin fa-3x" style={footerpadding} />
               </a>
-              <a
-                href="https://www.google.com/"
-                style={footerpadding}
-                style={iconcolor}
-              >
-                <i class="fab fa-google fa-2x" />
+              <a href="https://www.google.com/" style={iconcolor}>
+                <i class="fab fa-google fa-3x" style={footerpadding} />
               </a>
             </a>
           </div>
