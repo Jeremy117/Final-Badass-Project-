@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
+import TextField from "material-ui/TextField";
+import Toggle from "material-ui/Toggle";
+
+import {
+  Grid,
+  Row,
+  Col,
   Button,
   Modal,
   ModalDialog,
@@ -13,6 +28,7 @@ import {
   Tooltip,
   Popover
 } from "react-bootstrap";
+
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
@@ -164,3 +180,4 @@ class Dashboard extends Component {
 
 // export default connect(mapStateToProps)(Dashboard);
 export default Dashboard;
+//export default FlatButtonExampleSimple;
