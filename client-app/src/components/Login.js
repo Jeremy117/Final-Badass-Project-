@@ -31,45 +31,45 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="auth-page">
-        <div className="container page">
+      <div className="">
+        <div className="container">
           <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign In</h1>
+            <div className="col m6 s12 l6">
+              <h2 className="text-xs-center">Sign In</h2>
               <p className="text-xs-center">
                 <Link to="/register">Need an account?</Link>
               </p>
               <ListErrors errors={this.props.errors} />
               <form onSubmit={this.handleOnSubmit}>
-                <fieldset>
-                  <fieldset className="form-group">
+                <field>
+                  <field className="">
                     <input
                       onChange={this.handleInputOnChange}
-                      className="form-control form-control-lg"
+                      className=""
                       type="email"
                       placeholder="Email"
                       name="email"
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="">
                     <input
                       onChange={this.handleInputOnChange}
-                      className="form-control form-control-lg"
+                      className=""
                       type="password"
                       placeholder="Password"
                       name="password"
                     />
-                  </fieldset>
+                  </field>
 
                   <button
-                    className="btn btn-lg btn-primary pull-xs-right"
+                    className="btn primary"
                     type="submit"
                     disabled={this.props.inProgress}
                   >
                     Sign in
                   </button>
-                </fieldset>
+                </field>
               </form>
             </div>
           </div>

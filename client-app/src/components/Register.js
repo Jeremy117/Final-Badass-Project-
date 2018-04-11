@@ -39,11 +39,11 @@ class Register extends Component {
   render() {
     const { username, email, password } = this.state;
     return (
-      <div className="auth-page">
-        <div className="container page">
+      <div className="">
+        <div className="container">
           <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign Up</h1>
+            <div className="col m6 s12 l6">
+              <h2 className="text-xs-center">Sign Up</h2>
               <p className="text-xs-center">
                 <Link to="login">Have an account?</Link>
               </p>
@@ -51,48 +51,48 @@ class Register extends Component {
               <ListErrors errors={this.props.errors} />
 
               <form onSubmit={e => this.submitForm(e)}>
-                <fieldset>
-                  <fieldset className="form-group">
+                <field>
+                  <field className="">
                     <input
-                      className="form-control form-control-lg"
+                      className=""
                       type="text"
                       name="username"
                       placeholder="Username"
                       value={username}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="">
                     <input
-                      className="form-control form-control-lg"
+                      className=""
                       type="email"
                       name="email"
                       placeholder="Email"
                       value={email}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="">
                     <input
-                      className="form-control form-control-lg"
+                      className=""
                       type="password"
                       name="password"
                       placeholder="Password"
                       value={password}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
                   <button
-                    className="btn btn-lg btn-primary pull-xs-right"
+                    className="btn primary"
                     type="submit"
                     disabled={this.props.inProgress}
                   >
                     Join Huddle
                   </button>
-                </fieldset>
+                </field>
               </form>
             </div>
           </div>

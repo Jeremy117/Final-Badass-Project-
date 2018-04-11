@@ -6,9 +6,9 @@ const ArticleMeta = props => {
   const article = props.article;
   return (
     <div className="article-meta">
-      <Link to={`@${article.author.username}`}>
+      {/* <Link to={`@${article.author.username}`}>
         <img src={article.author.image} alt={"author"} />
-      </Link>
+      </Link> */}
 
       <div className="info">
         <Link to={`@${article.author.username}`} className="author">

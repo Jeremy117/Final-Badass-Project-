@@ -1,28 +1,29 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import mainImage from "../images/huddle-logo-white.png";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
+      <ul class="right hide-on-med-and-down sidenav">
         {/* <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
           </Link>
         </li> */}
-        <li className="nav-item">
-          <Link to="/ArticleView" className="nav-link">
+        <li className="">
+          <Link to="/ArticleView" className="">
             Articles
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/Login" className="nav-link">
+        <li className="">
+          <Link to="/Login" className="">
             Sign in
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link to="/register" className="nav-link">
+        <li className="">
+          <Link to="/register" className="">
             Sign up
           </Link>
         </li>
@@ -35,9 +36,9 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
-        <li className="nav-item">
-          <Link to="/Dashboard" className="nav-link">
+      <ul class="right hide-on-med-and-down sidenav">
+        <li className="">
+          <Link to="/Dashboard" className="">
             Dashboard
           </Link>
         </li>
@@ -46,33 +47,33 @@ const LoggedInView = props => {
             Home
           </Link>
         </li> */}
-        <li className="nav-item">
-          <Link to="/ArticleView" className="nav-link">
+        <li className="">
+          <Link to="/ArticleView" className="">
             Articles
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/editor" className="nav-link">
-            <i className="ion-compose" />&nbsp;New Post
+        <li className="">
+          <Link to="/editor" className="">
+            <i className="" />&nbsp;New Post
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link to="/settings" className="nav-link">
-            <i className="ion-gear-a" />&nbsp;Profile Settings
+        <li className="">
+          <Link to="/settings" className="">
+            <i className="" />&nbsp;Profile Settings
           </Link>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link to={`/@${props.currentUser.username}`} className="nav-link">
-            {/* <img
+            <img
               src={props.currentUser.image}
               className="user-pic"
               alt={props.currentUser.username}
-            /> */}
+            />
             {props.currentUser.username}
           </Link>
-        </li>
+        </li> */}
       </ul>
     );
   }
@@ -80,19 +81,24 @@ const LoggedInView = props => {
   return null;
 };
 
+var menucolor = {
+  backgroundColor: "#00233f"
+};
+
 class Header extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <div className="container">
-          <Link to="/" className="navbar-brand">
-            {this.props.appName.toLowerCase()}
+      <nav style={menucolor}>
+        <div class="container">
+          <Link to="/" class="">
+            <img src={mainImage} width={100} />
           </Link>
-
           <LoggedOutView currentUser={this.props.currentUser} />
-
           <LoggedInView currentUser={this.props.currentUser} />
         </div>
+        {/* <div data-target="mobile-demo" class="sidenav-trigger">
+          <i class="small material-icons">menu</i>
+        </div> */}
       </nav>
     );
   }

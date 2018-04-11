@@ -108,8 +108,8 @@ one.
               <ListErrors errors={this.props.errors} />
 
               <form>
-                <fieldset>
-                  <fieldset className="form-group">
+                <field>
+                  <field className="form-group">
                     <input
                       className="form-control form-control-lg"
                       type="text"
@@ -118,9 +118,9 @@ one.
                       value={title}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="form-group">
                     <input
                       className="form-control"
                       type="text"
@@ -129,9 +129,9 @@ one.
                       value={description}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="form-group">
                     <textarea
                       className="form-control"
                       rows="8"
@@ -140,9 +140,9 @@ one.
                       value={body}
                       onChange={this.handleInputChange}
                     />
-                  </fieldset>
+                  </field>
 
-                  <fieldset className="form-group">
+                  <field className="form-group">
                     <input
                       className="form-control"
                       type="text"
@@ -166,17 +166,17 @@ one.
                         );
                       })}
                     </div>
-                  </fieldset>
+                  </field>
 
                   <button
-                    className="btn btn-lg pull-xs-right btn-primary"
+                    className="btn primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}
                   >
                     Publish Article
                   </button>
-                </fieldset>
+                </field>
               </form>
             </div>
           </div>

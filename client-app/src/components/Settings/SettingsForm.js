@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class SettingsForm extends Component {
   state = {
     image: "",
@@ -54,56 +53,53 @@ class SettingsForm extends Component {
   render() {
     return (
       <form onSubmit={this.submitForm}>
-
-
-        <fieldset className="form-group">
+        <field className="">
           <input
-            className="form-control form-control-lg"
+            className=""
             type="text"
             placeholder="Username"
             value={this.state.username}
             onChange={this.updateState("username")}
           />
-        </fieldset>
+        </field>
 
-        <fieldset className="form-group">
+        <field className="">
           <textarea
-            className="form-control form-control-lg"
+            className=""
             rows="8"
-            placeholder="Short bio about you"
+            placeholder="Enter profile description"
             value={this.state.bio}
             onChange={this.updateState("bio")}
           />
-        </fieldset>
+        </field>
 
-        <fieldset className="form-group">
+        <field className="">
           <input
-            className="form-control form-control-lg"
+            className=""
             type="email"
             placeholder="Email"
             value={this.state.email}
             onChange={this.updateState("email")}
           />
-        </fieldset>
+        </field>
 
-        <fieldset className="form-group">
+        <field className="">
           <input
-            className="form-control form-control-lg"
+            className=""
             type="password"
             placeholder="New Password"
             value={this.state.password}
             onChange={this.updateState("password")}
           />
-        </fieldset>
+        </field>
 
         <button
-          className="btn btn-lg btn-primary pull-xs-right"
+          className="btn primary"
           type="submit"
           disabled={this.state.inProgress}
         >
           Update Settings
-          </button>
-
+        </button>
       </form>
     );
   }

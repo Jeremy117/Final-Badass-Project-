@@ -48,16 +48,16 @@ marked is a library that compiles markdown into HTML - in order to get react to 
       this.props.currentUser &&
       this.props.currentUser.username === article.author.username;
     return (
-      <div className="article-page">
-        <div className="banner">
+      <div className="">
+        <div className="">
           <div className="container">
             <h1>{article.title}</h1>
             <ArticleMeta article={this.props.article} canModify={canModify} />
           </div>
         </div>
 
-        <div className="container page">
-          <div className="row article-content">
+        <div className="container">
+          <div className="row">
             <div className="col-xs-12">
               <div dangerouslySetInnerHTML={markup} />
 

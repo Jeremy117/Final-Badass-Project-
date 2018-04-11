@@ -4,11 +4,11 @@ import React from "react";
 import ArticleList from "../ArticleList";
 const MainView = props => {
   return (
-    <div className="col-md-9">
+    <div className="col l12 m12 s12">
       <div className="feed-toggle">
-        <ul className="nav nav-pills outline-active">
+        <ul className="nav nav-pills ">
           <li className="nav-item">
-            <a href="" className="nav-link active">
+            <a href="" className="">
               Huddle Articles
             </a>
           </li>

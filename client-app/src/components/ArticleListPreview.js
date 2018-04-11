@@ -6,9 +6,9 @@ const ArticlePreview = ({ article }) => {
   return (
     <div className="article-preview">
       <div className="article-meta">
-        <a>
+        {/* <a>
           <img src={article.author.image} alt="avatar" />
-        </a>
+        </a> */}
 
         <div className="info">
           <a className="author">{article.author.username}</a>
@@ -17,12 +17,12 @@ const ArticlePreview = ({ article }) => {
           </span>
         </div>
 
-        <div className="pull-xs-right">
+        {/* <div className="pull-xs-right">
           <button className="btn btn-sm btn-outline-primary">
             <i className="ion-heart" />
             {article.favoritesCount}
           </button>
-        </div>
+        </div> */}
       </div>
 
       <Link to={`article/${article.slug}`} className="preview-link">
