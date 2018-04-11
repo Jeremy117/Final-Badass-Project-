@@ -101,7 +101,7 @@ class Dashboard extends Component {
                 />,
               </div>
             </div>
-            <div className="container1">
+            <div className="news">
               <List>
                 <ListItem>
                   <button onClick={this.getRequest}>Get Newsfeed!</button>
