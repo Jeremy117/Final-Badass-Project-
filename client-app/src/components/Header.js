@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import mainImage from "../images/huddle-logo-white.png";
+
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
+
+      <ul class="right hide-on-med-and-down">
         {/* <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
@@ -35,7 +38,8 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
+      <ul class="right hide-on-med-and-down">
+
         <li className="nav-item">
           <Link to="/Dashboard" className="nav-link">
             Dashboard
@@ -83,15 +87,23 @@ const LoggedInView = props => {
 class Header extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <div className="container">
-          <Link to="/" className="navbar-brand">
-            {this.props.appName.toLowerCase()}
+      <nav class="nav-wrapper blue">
+        <div class="container">
+
+
+
+          <Link to="/" class="brand-logo"><img src={mainImage}
+            width={100} />
           </Link>
+
+
 
           <LoggedOutView currentUser={this.props.currentUser} />
 
           <LoggedInView currentUser={this.props.currentUser} />
+
+        </div>
+        <div class="sidenav-trigger"><i class="small material-icons">menu</i>
         </div>
       </nav>
     );
