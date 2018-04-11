@@ -7,7 +7,7 @@ const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
 
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down sidenav" id="mobile-demo">
         {/* <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
@@ -38,7 +38,7 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down sidenav" id="mobile-demo">
 
         <li className="nav-item">
           <Link to="/Dashboard" className="nav-link">
@@ -103,7 +103,7 @@ class Header extends React.Component {
           <LoggedInView currentUser={this.props.currentUser} />
 
         </div>
-        <div class="sidenav-trigger"><i class="small material-icons">menu</i>
+        <div data-target="mobile-demo" class="sidenav-trigger"><i class="small material-icons">menu</i>
         </div>
       </nav>
     );

@@ -36,7 +36,7 @@ class Settings extends Component {
                 currentUser={this.props.currentUser}
                 onSubmitForm={this.props.onSubmitForm}
               />
-              <hr />
+              <br />
 
               <RaisedButton label="Log Out" primary={true}
                 style={{
