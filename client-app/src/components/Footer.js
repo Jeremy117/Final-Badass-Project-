@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 // import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Avatar from 'material-ui/Avatar';
-
+import Avatar from "material-ui/Avatar";
 
 export default class Footer extends Component {
   render() {
@@ -14,30 +13,29 @@ export default class Footer extends Component {
             <div class="col l6 s12">
               <h5 class="white-text">Huddle</h5>
               <Avatar src="./huddle-logo-white.png" />
-
             </div>
             <div class="col l6 offset-l2 s12">
               <h5 class="white-text">Links</h5>
               <ul>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Huddle Home
-                 </a>
+                    Huddle Home <i class="material-icons">home</i>
+                  </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    About
-                 </a>
+                    About <i class="material-icons">high_quality</i>
+                  </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Careers
-                 </a>
+                    Careers <i class="material-icons">weekend</i>
+                  </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Gallery
-                 </a>
+                    Gallery<i class="material-icons">camera_enhance</i>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -45,15 +43,16 @@ export default class Footer extends Component {
         </div>
         <div class="footer-copyright">
           <div class="container">
-            © 2018 Copyright Team Huddle
-           <a class="grey-text text-lighten-4 right" href="#!">
-              More Links
-           </a>
+            © 2018 Copyright Team Huddle<i class="material-icons">copyright</i>
+            <a class="grey-text text-lighten-4 right" href="#!">
+              More Links<i class="fab fa-facebook-square fa-2x" />
+              <i class="fab fa-twitter-square fa-2x" />
+              <i class="fab fa-github" />
+            </a>
           </div>
         </div>
       </footer>
       // <Navbar default fixedBottom>
-
 
       //   <Nav>
       //     {/* <!--Footer--> */}
@@ -121,7 +120,6 @@ export default class Footer extends Component {
 
       //               <div class="col-md-3 col-md-offset-3">
 
-
       //                 <div class="col-md-1">
       //                   <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x"></i></a>
       //                 </div>
@@ -137,7 +135,6 @@ export default class Footer extends Component {
       //                 <div class="col-md-1">
       //                   <a href="https://www.google.com/"><i class="fab fa-google fa-2x"></i></a>
       //                 </div>
-
 
       //               </div>
       //             </div>

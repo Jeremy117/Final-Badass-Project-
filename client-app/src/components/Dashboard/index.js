@@ -113,7 +113,7 @@ class Dashboard extends Component {
                 disabledDays={[0, 6]}
                 minDate={lastWeek}
                 onSelect={this.handleShow}
-              />,
+              />
             </Col>
             <Col sm={6} md={3} className="container1">
               <List>
@@ -141,7 +141,7 @@ class Dashboard extends Component {
                       <Link to="./settings">
                         <ListItem
                           primaryText={player.name}
-                          leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                          // leftAvatar={<Avatar src="images/ok-128.jpg" />}
                           rightIcon={<CommunicationChatBubble />}
                         />
                       </Link>
