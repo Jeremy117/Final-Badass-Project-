@@ -102,22 +102,19 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <div>
-          <ul className="show-grid">
-            <div>
-              <br />
-              <div className="cal">
-                <InfiniteCalendar
-                  width={260}
-                  height={340}
-                  selected={today}
-                  disabledDays={[0, 6]}
-                  minDate={lastWeek}
-                  onSelect={this.handleShow}
-                />,
-              </div>
-            </div>
-            <div className="news">
+        <Grid>
+          <Row className="show-grid">
+            <Col sm={6} lg={3} className="container1">
+              <InfiniteCalendar
+                width={260}
+                height={390}
+                selected={today}
+                disabledDays={[0, 6]}
+                minDate={lastWeek}
+                onSelect={this.handleShow}
+              />
+            </Col>
+            <Col sm={6} md={3} className="container1">
               <List>
                 <ListItem>
                   <button onClick={this.getRequest}>Get Newsfeed!</button>
@@ -128,35 +125,32 @@ class Dashboard extends Component {
                   ))}
                 </div>
               </List>
-            </div>
-            <div className="roster">
-              <div>
-                <List className="player">
-                  <Subheader>
-                    <h3 className="text">
-                      <strong />Players
-                    </h3>
-                  </Subheader>
-                  <strong />
-                  <div src={this.getPlayers()}>
-                    {this.state.players.map(player => (
-                      <div>
-                        <Link to="./settings">
-                          <ListItem
-                            primaryText={player.name}
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            rightIcon={<CommunicationChatBubble />}
-                          />
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </List>
-                <br />
-              </div>
-            </div>
-          </ul>
-        </div>
+            </Col>
+            <Col sm={6} md={3} className="container1">
+              <List>
+                <Subheader>
+                  <h3>
+                    <strong />Players
+                  </h3>
+                </Subheader>
+                <strong />
+                <div src={this.getPlayers()}>
+                  {this.state.players.map(player => (
+                    <div>
+                      <Link to="./settings">
+                        <ListItem
+                          primaryText={player.name}
+                          // leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                          rightIcon={<CommunicationChatBubble />}
+                        />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </List>
+            </Col>
+          </Row>
+        </Grid>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Huddel Event</Modal.Title>
