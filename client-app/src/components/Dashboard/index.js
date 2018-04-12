@@ -111,7 +111,7 @@ class Dashboard extends Component {
       <div>
         <ul className="show-grid">
           <Button bsStyle="primary" onClick={this.toggleWeather}>
-            Weather On/Off
+            Toggle Weather
           </Button>
           {this.state.weather && <Box />}
         </ul>
@@ -130,6 +130,7 @@ class Dashboard extends Component {
                 />
               </div>
               <br />
+              {/* Googlemaps code below */}
               <div className="cal">
                 <div class="mapouter">
                   <div class="gmap_canvas">
