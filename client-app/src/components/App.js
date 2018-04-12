@@ -13,10 +13,8 @@ import Register from "./Register";
 import Settings from "./Settings";
 import Article from "./Article";
 import Editor from "./Editor";
-
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
-
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
