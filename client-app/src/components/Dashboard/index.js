@@ -12,7 +12,7 @@ import {
 } from "material-ui/Table";
 import TextField from "material-ui/TextField";
 import Toggle from "material-ui/Toggle";
-
+import ArticleView from "../ArticleView";
 import {
   Grid,
   Row,
@@ -40,8 +40,8 @@ import Subheader from "material-ui/Subheader";
 import Divider from "material-ui/Divider";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
-const URL =
-  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+// const URL =
+//   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
@@ -78,18 +78,18 @@ class Dashboard extends Component {
       });
     });
 
-  getRequest = () => {
-    axios.get(URL).then(res => {
-      this.setState({
-        newsfeed: true,
-        articles: res.data
-      });
-      // console.log(res.data);
-      // console.log(response.status);
-      // console.log(response.statusText);
-      // console.log(response.headers);
-    });
-  };
+  // getRequest = () => {
+  //   axios.get(ArticleView).then(res => {
+  //     this.setState({
+  //       newsfeed: true,
+  //       articles: res.data
+  //     });
+  //     // console.log(res.data);
+  //     // console.log(response.status);
+  //     // console.log(response.statusText);
+  //     // console.log(response.headers);
+  //   });
+  // };
 
   handleClose() {
     this.setState({ show: false });
@@ -149,16 +149,13 @@ class Dashboard extends Component {
               </div>
             </div>
             <div className="news">
-              <List>
-                <ListItem>
-                  <button onClick={this.getRequest}>Get Newsfeed!</button>
-                </ListItem>
-                <div>
-                  {this.state.articles.map(article => (
-                    <img src={article.body} />
-                  ))}
+              <div className="home-page">
+                <div className="container page">
+                  <div className="row">
+                    <ArticleView articles={this.props.articles} />
+                  </div>
                 </div>
-              </List>
+              </div>
             </div>
             <div className="roster">
               <div>
