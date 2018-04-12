@@ -61,7 +61,6 @@ class Dashboard extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.state = {
       show: false,
-      // dateShow: [],
       newsfeed: false,
       articles: [],
       playerShow: false,
