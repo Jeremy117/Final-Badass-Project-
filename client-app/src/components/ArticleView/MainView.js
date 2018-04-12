@@ -9,9 +9,7 @@ const MainView = props => {
         <ul className=" nav wrapper outline-active">
           <li className="nav-item">
             <a href="" className="nav-link active">
-              <i class="material-icons">flight_takeoff</i>
               Huddle Articles
-              <i class="material-icons">flight_land</i>
             </a>
           </li>
         </ul>
