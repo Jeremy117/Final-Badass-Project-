@@ -19,22 +19,22 @@ export default class Footer extends Component {
               <ul>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Huddle Home <i class="material-icons">home</i>
+                    <i class="material-icons">home</i>Huddle Home
                   </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    About <i class="material-icons">high_quality</i>
+                    <i class="material-icons">high_quality</i>About
                   </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Careers <i class="material-icons">weekend</i>
+                    <i class="material-icons">weekend</i>Careers
                   </a>
                 </li>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">
-                    Gallery<i class="material-icons">camera_enhance</i>
+                    <i class="material-icons">camera_enhance</i>Gallery
                   </a>
                 </li>
               </ul>
@@ -47,7 +47,8 @@ export default class Footer extends Component {
             <a class="grey-text text-lighten-4 right" href="#!">
               More Links<i class="fab fa-facebook-square fa-2x" />
               <i class="fab fa-twitter-square fa-2x" />
-              <i class="fab fa-github" />
+              <i class="fab fa-github fa-2x" />
+              <i class="fab fa-linkedin fa-2x" />
             </a>
           </div>
         </div>
