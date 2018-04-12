@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
 class Article extends Component {
   componentDidMount() {
     /*
-    we'll need to get article by slug from the url
+    we'll need to get by slug from the url
     and the comments for this. 2 promises. ummmmm
     */
     const articleId = this.props.match.params.id;
@@ -50,10 +50,10 @@ marked is a library that compiles markdown into HTML - in order to get react to 
     return (
       <div className="article-page">
         <div class="card-panel">
-          <span class="green-text text-darken-2">
+          <span class="blue-text text-2">
             {/* This is a card panel with dark blue text */}
           </span>
-          <div class="card-panel red lighten-2">
+          <div class="card-panel blue -2">
             {/* This is a card panel with a teal lighten-2 class */}
           </div>
         </div>
@@ -66,7 +66,7 @@ marked is a library that compiles markdown into HTML - in order to get react to 
 
         <div className="container page">
           <div className="row article-content">
-            <div className="col-xs-12">
+            <div className="col sm 12">
               <div dangerouslySetInnerHTML={markup} />
 
               <ul className="tag-list">

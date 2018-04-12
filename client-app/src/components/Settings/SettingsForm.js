@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import Avatar from 'material-ui/Avatar';
-import List from 'material-ui/List/List';
-import ListItem from 'material-ui/List/ListItem';
-
-
-
+import RaisedButton from "material-ui/RaisedButton";
+import TextField from "material-ui/TextField";
+import Avatar from "material-ui/Avatar";
+import List from "material-ui/List/List";
+import ListItem from "material-ui/List/ListItem";
 
 class SettingsForm extends Component {
   state = {
@@ -65,12 +62,12 @@ class SettingsForm extends Component {
           <ListItem
             disabled={true}
             leftAvatar={
-              <Avatar src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
-                size={100} />
+              <Avatar
+                src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
+                size={100}
+              />
             }
-          >
-
-          </ListItem>
+          />
         </List>
         <br />
         <br />
@@ -87,9 +84,6 @@ class SettingsForm extends Component {
           onChange={this.updateState("image")}
         /><br /> */}
 
-
-
-
         <TextField
           style={{
             width: "700px"
@@ -98,8 +92,8 @@ class SettingsForm extends Component {
           placeholder="Username"
           value={this.state.username}
           onChange={this.updateState("username")}
-        /><br />
-
+        />
+        <br />
 
         <TextField
           style={{
@@ -108,8 +102,8 @@ class SettingsForm extends Component {
           placeholder="Short bio about you"
           value={this.state.bio}
           onChange={this.updateState("bio")}
-        /><br />
-
+        />
+        <br />
 
         <TextField
           style={{
@@ -119,10 +113,8 @@ class SettingsForm extends Component {
           placeholder="Email"
           value={this.state.email}
           onChange={this.updateState("email")}
-        /><br />
-
-
-
+        />
+        <br />
 
         <TextField
           style={{
@@ -132,24 +124,19 @@ class SettingsForm extends Component {
           placeholder="New Password"
           value={this.state.password}
           onChange={this.updateState("password")}
-        /><br />
+        />
+        <br />
 
-
-
-
-
-
-        <RaisedButton label="Update Settings" primary={true}
+        <RaisedButton
+          label="Update Settings"
+          primary={true}
           style={{
             width: "700px"
           }}
           type="submit"
           disabled={this.state.inProgress}
-
         />
-
-
-      </form >
+      </form>
     );
   }
 }

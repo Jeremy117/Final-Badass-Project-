@@ -11,14 +11,18 @@ import ArticlePreview from "./ArticleListPreview";
 const ArticleList = props => {
   //loading articles
   if (!props.articles) {
-    return <div className="article-preview">Loading.......</div>;
+    return (
+      <div className="article-preview">
+        We Gulp Data and never share it ......
+      </div>
+    );
   }
 
   //fetching articles
   if (props.articles.length === 0) {
     return (
       <div className="article-preview">
-        No Articles are here........sad. really just sad.
+        No Data here ........sad. really just sad.
       </div>
     );
   }
