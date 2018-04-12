@@ -42,3 +42,11 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+.weatherpic {
+  float: center;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  background-image: url(https://s14-eu5.startpage.com/cgi-bin/serveimage?url=http:%2F%2Fwww.baltana.com%2Ffiles%2Fwallpapers-8%2FSunny-Day-Best-Wallpaper-25960.jpg&sp=8bf1ad835505823b6b47f982c318e8dc);
+}

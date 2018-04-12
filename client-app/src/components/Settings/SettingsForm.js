@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-
+import RaisedButton from "material-ui/RaisedButton";
+import TextField from "material-ui/TextField";
+import Avatar from "material-ui/Avatar";
+import List from "material-ui/List/List";
+import ListItem from "material-ui/List/ListItem";
 
 class SettingsForm extends Component {
   state = {
@@ -54,56 +58,84 @@ class SettingsForm extends Component {
   render() {
     return (
       <form onSubmit={this.submitForm}>
-
-
-        <fieldset className="form-group">
-          <input
-            className="form-control form-control-lg"
-            type="text"
-            placeholder="Username"
-            value={this.state.username}
-            onChange={this.updateState("username")}
+        <List>
+          <ListItem
+            disabled={true}
+            leftAvatar={
+              <Avatar
+                src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
+                size={100}
+              />
+            }
           />
-        </fieldset>
+        </List>
+        <br />
+        <br />
+        <br />
+        <br />
 
-        <fieldset className="form-group">
-          <textarea
-            className="form-control form-control-lg"
-            rows="8"
-            placeholder="Short bio about you"
-            value={this.state.bio}
-            onChange={this.updateState("bio")}
-          />
-        </fieldset>
+        {/* <TextField
+          style={{
+            width: "700px"
+          }}
+          type="text"
+          placeholder="URL of profile picture"
+          value={this.state.image}
+          onChange={this.updateState("image")}
+        /><br /> */}
 
-        <fieldset className="form-group">
-          <input
-            className="form-control form-control-lg"
-            type="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.updateState("email")}
-          />
-        </fieldset>
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="text"
+          placeholder="Username"
+          value={this.state.username}
+          onChange={this.updateState("username")}
+        />
+        <br />
 
-        <fieldset className="form-group">
-          <input
-            className="form-control form-control-lg"
-            type="password"
-            placeholder="New Password"
-            value={this.state.password}
-            onChange={this.updateState("password")}
-          />
-        </fieldset>
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          placeholder="Short bio about you"
+          value={this.state.bio}
+          onChange={this.updateState("bio")}
+        />
+        <br />
 
-        <button
-          className="btn btn-lg btn-primary pull-xs-right"
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="email"
+          placeholder="Email"
+          value={this.state.email}
+          onChange={this.updateState("email")}
+        />
+        <br />
+
+        <TextField
+          style={{
+            width: "700px"
+          }}
+          type="password"
+          placeholder="New Password"
+          value={this.state.password}
+          onChange={this.updateState("password")}
+        />
+        <br />
+
+        <RaisedButton
+          label="Update Settings"
+          primary={true}
+          style={{
+            width: "700px"
+          }}
           type="submit"
           disabled={this.state.inProgress}
-        >
-          Update Settings
-          </button>
-
+        />
       </form>
     );
   }
