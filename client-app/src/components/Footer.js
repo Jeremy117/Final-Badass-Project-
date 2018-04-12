@@ -5,6 +5,7 @@ import mainImage from "../images/huddle-logo-white.png";
 import Image from 'react-image-resizer';
 
 
+
 export default class Footer extends Component {
   render() {
     return (
