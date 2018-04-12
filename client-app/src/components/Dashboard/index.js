@@ -109,10 +109,12 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Button bsStyle="primary" onClick={this.toggleWeather}>
-          Weather On/Off
-        </Button>
-        {this.state.weather && <Box />}
+        <ul className="show-grid">
+          <Button bsStyle="primary" onClick={this.toggleWeather}>
+            Weather On/Off
+          </Button>
+          {this.state.weather && <Box />}
+        </ul>
         <div>
           <ul className="show-grid">
             <div>
@@ -125,7 +127,25 @@ class Dashboard extends Component {
                   disabledDays={[0, 6]}
                   minDate={lastWeek}
                   onSelect={this.handleShow}
-                />,
+                />
+              </div>
+              <br />
+              <div className="cal">
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="300"
+                      height="500"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    />
+                  </div>
+                  <a href="https://www.embedgooglemap.net" />
+                </div>
               </div>
             </div>
             <div className="news">
@@ -194,11 +214,11 @@ class Box extends Component {
     return (
       <div>
         <iframe
-          className="body"
+          className="weatherpic"
           id="forecast_embed"
           frameBorder="2"
-          height="220"
-          width="100%"
+          height="216"
+          width="115%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
         />
       </div>
