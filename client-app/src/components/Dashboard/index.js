@@ -59,12 +59,14 @@ class Dashboard extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.toggleWeather = this.toggleWeather.bind(this);
     this.state = {
       show: false,
       newsfeed: false,
       articles: [],
       playerShow: false,
-      players: []
+      players: [],
+      weather: true
     };
   }
 
@@ -99,9 +101,18 @@ class Dashboard extends Component {
     });
   }
 
+  toggleWeather = () => {
+    const { weather } = this.state;
+    this.setState({ weather: !weather });
+  };
+
   render() {
     return (
       <div>
+        <Button bsStyle="primary" onClick={this.toggleWeather}>
+          Weather On/Off
+        </Button>
+        {this.state.weather && <Box />}
         <div>
           <ul className="show-grid">
             <div>
@@ -178,6 +189,22 @@ class Dashboard extends Component {
   }
 }
 
+class Box extends Component {
+  render() {
+    return (
+      <div>
+        <iframe
+          className="body"
+          id="forecast_embed"
+          frameBorder="2"
+          height="220"
+          width="100%"
+          src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+        />
+      </div>
+    );
+  }
+}
 // export default connect(mapStateToProps)(Dashboard);
 export default Dashboard;
 //export default FlatButtonExampleSimple;
