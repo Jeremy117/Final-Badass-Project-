@@ -32,9 +32,9 @@ class Login extends React.Component {
   render() {
     return (
       <div className="">
-        <div className="container">
+        <div className="container page">
           <div className="row">
-            <div className="col m6 s12 l6">
+            <div className="col-md-6 offset-md-3 col-xs-12">
               <h2 className="text-xs-center">Sign In</h2>
               <p className="text-xs-center">
                 <Link to="/register">Need an account?</Link>

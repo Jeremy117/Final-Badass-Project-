@@ -42,7 +42,7 @@ class Register extends Component {
       <div className="">
         <div className="container">
           <div className="row">
-            <div className="col m6 s12 l6">
+            <div className="col-md-6 offset-md-3 col-xs-12">
               <h2 className="text-xs-center">Sign Up</h2>
               <p className="text-xs-center">
                 <Link to="login">Have an account?</Link>
