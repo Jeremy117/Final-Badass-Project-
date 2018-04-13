@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+
+
 
 import services from "../services";
 import ListErrors from "./ListErrors";
+
+const style = {
+  marginLeft: 20,
+};
 
 const mapStateToProps = state => ({ ...state.auth });
 
@@ -40,64 +49,58 @@ class Register extends Component {
     const { username, email, password } = this.state;
     return (
       <div className="auth-page">
-        <div className="container page">
+        <div className="container">
           <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign Up</h1>
-              <p className="text-xs-center">
-                <Link to="login">Have an account?</Link>
-              </p>
 
-              <ListErrors errors={this.props.errors} />
+            <h3 className="text-xs-center">Sign Up</h3>
 
-              <form onSubmit={e => this.submitForm(e)}>
-                <fieldset>
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-lg"
-                      type="text"
-                      name="username"
-                      placeholder="Username"
-                      value={username}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
+            <Link to="login">Have an account?</Link>
 
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-lg"
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
 
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-lg"
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      value={password}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
+            <ListErrors errors={this.props.errors} />
 
-                  <button
-                    className="btn btn-lg btn-primary pull-xs-right"
-                    type="submit"
-                    disabled={this.props.inProgress}
-                  >
-                    Join Huddle
-                  </button>
-                </fieldset>
-              </form>
-            </div>
+            <form onSubmit={e => this.submitForm(e)}>
+              <Paper zDepth={2}>
+                <TextField
+                  hintText="username"
+                  style={style}
+                  underlineShow={false}
+                  name="username"
+                  value={username}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
+
+                <TextField
+                  hintText="email"
+                  style={style}
+                  underlineShow={false}
+                  name="email"
+                  value={email}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
+
+                <TextField
+                  hintText="password"
+                  style={style}
+                  underlineShow={false}
+                  name="password"
+                  value={password}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
+              </Paper>
+
+              <br />
+
+              <button class="btn blue" disabled={this.state.inProgress}>Join Huddle</button>
+
+            </form>
           </div>
         </div>
       </div>
+
     );
   }
 }

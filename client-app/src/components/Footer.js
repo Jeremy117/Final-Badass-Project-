@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Avatar from "material-ui/Avatar";
 import mainImage from "../images/huddle-logo-white.png";
 import Image from 'react-image-resizer';
+import './Footer.css'
+
 
 
 export default class Footer extends Component {
@@ -10,7 +12,7 @@ export default class Footer extends Component {
     return (
       <footer class="page-footer blue">
         <div class="container">
-          <div className="main, footer" />
+          <div class="wrapper" />
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">Huddle</h5>

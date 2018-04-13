@@ -5,6 +5,7 @@ import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
 
+
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
@@ -64,11 +65,7 @@ const LoggedInView = props => {
 
         <li className="nav-item">
           <Link to={`/@${props.currentUser.username}`} className="nav-link">
-            {/* <img
-              src={props.currentUser.image}
-              className="user-pic"
-              alt={props.currentUser.username}
-            /> */}
+
             {props.currentUser.username}
           </Link>
         </li>
@@ -78,6 +75,12 @@ const LoggedInView = props => {
 
   return null;
 };
+
+
+
+
+
+
 
 class Header extends React.Component {
   constructor(props) {

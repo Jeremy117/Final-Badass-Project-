@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import RaisedButton from "material-ui/RaisedButton";
-import TextField from "material-ui/TextField";
-import Avatar from "material-ui/Avatar";
-import List from "material-ui/List/List";
-import ListItem from "material-ui/List/ListItem";
+import TextField from 'material-ui/TextField';
+import Avatar from 'material-ui/Avatar';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+
+const style = {
+  marginLeft: 20,
+};
+
+
 
 class SettingsForm extends Component {
   state = {
@@ -13,8 +20,7 @@ class SettingsForm extends Component {
     email: "",
     password: ""
   };
-  //On Mount we want to assign all the currentUser props to the forms state,
-  //so it's filled out
+
   componentDidMount() {
     if (this.props.currentUser) {
       this.setState({
@@ -24,7 +30,7 @@ class SettingsForm extends Component {
     }
   }
 
-  //we also need the form to update after possible rehydration, or changes to currentUser
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser) {
       this.setState({
@@ -74,69 +80,68 @@ class SettingsForm extends Component {
         <br />
         <br />
 
-        {/* <TextField
-          style={{
-            width: "700px"
-          }}
-          type="text"
-          placeholder="URL of profile picture"
-          value={this.state.image}
-          onChange={this.updateState("image")}
-        /><br /> */}
 
-        <TextField
-          style={{
-            width: "700px"
-          }}
-          type="text"
-          placeholder="Username"
-          value={this.state.username}
-          onChange={this.updateState("username")}
-        />
+
+
+        <Paper zDepth={2}>
+          <TextField
+            hintText="Username"
+            style={style}
+            underlineShow={false}
+            value={this.state.username}
+            onChange={this.updateState("username")}
+          />
+          <Divider />
+
+
+
+          <TextField
+            hintText="Bio"
+            style={style}
+            underlineShow={false}
+            value={this.state.bio}
+            onChange={this.updateState("bio")}
+          />
+          <Divider />
+
+
+          <TextField
+            hintText="email"
+            style={style}
+            underlineShow={false}
+            value={this.state.email}
+            onChange={this.updateState("email")}
+          />
+          <Divider />
+
+
+
+
+          <TextField
+            hintText=" New Password"
+            style={style}
+            underlineShow={false}
+            value={this.state.password}
+            onChange={this.updateState("password")}
+          />
+          <Divider />
+
+
+        </Paper>
+
+
         <br />
 
-        <TextField
-          style={{
-            width: "700px"
-          }}
-          placeholder="Short bio about you"
-          value={this.state.bio}
-          onChange={this.updateState("bio")}
-        />
+        <button class="btn blue" disabled={this.state.inProgress}>Update Settings</button>
+
+
         <br />
 
-        <TextField
-          style={{
-            width: "700px"
-          }}
-          type="email"
-          placeholder="Email"
-          value={this.state.email}
-          onChange={this.updateState("email")}
-        />
-        <br />
 
-        <TextField
-          style={{
-            width: "700px"
-          }}
-          type="password"
-          placeholder="New Password"
-          value={this.state.password}
-          onChange={this.updateState("password")}
-        />
-        <br />
 
-        <RaisedButton
-          label="Update Settings"
-          primary={true}
-          style={{
-            width: "700px"
-          }}
-          type="submit"
-          disabled={this.state.inProgress}
-        />
-      </form>
+
+
+      </form >
     );
   }
 }
