@@ -75,33 +75,14 @@ const LoggedInView = props => {
 
 
 class Header extends React.Component {
-  state = {
-    show: false,
-    list: []
-  }
   render() {
-    const menus = (
-      <ul>
-        <li>Home</li>
-        <li>Dashboard</li>
-        <li>Login</li>
-      </ul>
-    );
-
-    console.log(this.state.list);
-    // console.log(menus);
-
     return (
       <nav class="nav-wrapper blue">
         <div class="container">
           <ul id="slide-out" class="side-out">
           </ul>
-          <a onClick={() =>
-            this.setState({
-              show: true,
-              list: menus
-            })
-          } data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a
+            data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
 
 
@@ -118,7 +99,7 @@ class Header extends React.Component {
         </div>
 
 
-        {this.state.list}
+
 
 
 
