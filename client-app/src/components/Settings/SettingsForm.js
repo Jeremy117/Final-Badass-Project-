@@ -68,12 +68,12 @@ class SettingsForm extends Component {
           <ListItem
             disabled={true}
             leftAvatar={
-              <Avatar src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
-                size={100} />
+              <Avatar
+                src="https://cmgpbgametimehighschoolbuzz.files.wordpress.com/2017/07/williams.jpg"
+                size={100}
+              />
             }
-          >
-
-          </ListItem>
+          />
         </List>
         <br />
         <br />

@@ -12,7 +12,7 @@ import {
 } from "material-ui/Table";
 import TextField from "material-ui/TextField";
 import Toggle from "material-ui/Toggle";
-
+import ArticleView from "../ArticleView";
 import {
   Grid,
   Row,
@@ -40,8 +40,8 @@ import Subheader from "material-ui/Subheader";
 import Divider from "material-ui/Divider";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
-const URL =
-  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+// const URL =
+//   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
@@ -59,12 +59,14 @@ class Dashboard extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.toggleWeather = this.toggleWeather.bind(this);
     this.state = {
       show: false,
       newsfeed: false,
       articles: [],
       playerShow: false,
-      players: []
+      players: [],
+      weather: true
     };
   }
 
@@ -76,18 +78,18 @@ class Dashboard extends Component {
       });
     });
 
-  getRequest = () => {
-    axios.get(URL).then(res => {
-      this.setState({
-        newsfeed: true,
-        articles: res.data
-      });
-      // console.log(res.data);
-      // console.log(response.status);
-      // console.log(response.statusText);
-      // console.log(response.headers);
-    });
-  };
+  // getRequest = () => {
+  //   axios.get(ArticleView).then(res => {
+  //     this.setState({
+  //       newsfeed: true,
+  //       articles: res.data
+  //     });
+  //     // console.log(res.data);
+  //     // console.log(response.status);
+  //     // console.log(response.statusText);
+  //     // console.log(response.headers);
+  //   });
+  // };
 
   handleClose() {
     this.setState({ show: false });
@@ -99,9 +101,20 @@ class Dashboard extends Component {
     });
   }
 
+  toggleWeather = () => {
+    const { weather } = this.state;
+    this.setState({ weather: !weather });
+  };
+
   render() {
     return (
       <div>
+        <ul className="show-grid">
+          <Button bsStyle="primary" onClick={this.toggleWeather}>
+            Toggle Weather
+          </Button>
+          {this.state.weather && <Box />}
+        </ul>
         <div>
           <ul className="show-grid">
             <div>
@@ -114,28 +127,44 @@ class Dashboard extends Component {
                   disabledDays={[0, 6]}
                   minDate={lastWeek}
                   onSelect={this.handleShow}
-                />,
+                />
+              </div>
+              <br />
+              {/* Googlemaps code below */}
+              <div className="cal">
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="300"
+                      height="500"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    />
+                  </div>
+                  <a href="https://www.embedgooglemap.net" />
+                </div>
               </div>
             </div>
             <div className="news">
-              <List>
-                <ListItem>
-                  <button onClick={this.getRequest}>Get Newsfeed!</button>
-                </ListItem>
-                <div>
-                  {this.state.articles.map(article => (
-                    <img src={article.body} />
-                  ))}
+              <div className="home-page">
+                <div className="container page">
+                  <div className="row">
+                    <ArticleView articles={this.props.articles} />
+                  </div>
                 </div>
-              </List>
+              </div>
             </div>
             <div className="roster">
               <div>
                 <List className="player">
                   <Subheader>
-                    <h3 className="text">
+                    <h4 className="text">
                       <strong />Players
-                    </h3>
+                    </h4>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>
@@ -157,27 +186,45 @@ class Dashboard extends Component {
             </div>
           </ul>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Huddel Event</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+        <div
+          id="modal1"
+          className="modal"
+          show={this.state.show}
+          onHide={this.handleClose}
+        >
+          <div className="modal-content">
             <h4>Create Event:</h4>
             {Events}
-          </Modal.Body>
-          <Modal.Footer>
+          </div>
+          <div className="modal-footer">
             <RaisedButton
               label="Close"
               onClick={this.handleClose}
               primary={true}
             />
-          </Modal.Footer>
-        </Modal>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
+class Box extends Component {
+  render() {
+    return (
+      <div>
+        <iframe
+          className="weatherpic"
+          id="forecast_embed"
+          frameBorder="2"
+          height="216"
+          width="115%"
+          src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+        />
+      </div>
+    );
+  }
+}
 // export default connect(mapStateToProps)(Dashboard);
 export default Dashboard;
 //export default FlatButtonExampleSimple;

@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
+        "heroku-postbuild": "cd client-app/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
         "start": "concurrently \"nodemon ./bin/www\" \"cd client-app && npm start\" "
     },
     "dependencies": {

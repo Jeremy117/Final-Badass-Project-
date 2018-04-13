@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Avatar from "material-ui/Avatar";
 import mainImage from "../images/huddle-logo-white.png";
 import Image from 'react-image-resizer';
 import './Footer.css'
@@ -13,35 +14,32 @@ export default class Footer extends Component {
         <div class="container">
           <div class="wrapper" />
           <div class="row">
-            <div class="col s4">
-              <img src={mainImage}
-                width={200} />
-
-
-
+            <div class="col l6 s12">
+              <h5 class="white-text">Huddle</h5>
+              <Avatar src="./huddle-logo-white.png" />
             </div>
             <div class="col l6 offset-l2 s12">
               <h5 class="black-text">Links</h5>
               <ul>
                 <li>
-                  <a class="black-text text-lighten-3" href="/">
-                    Huddle Home
-                 </a>
+                  <a class="grey-text text-lighten-3" href="#!">
+                    <i class="material-icons">home</i>Huddle Home
+                  </a>
                 </li>
                 <li>
-                  <a class="black-text text-lighten-3" href="#!">
-                    About
-                 </a>
+                  <a class="grey-text text-lighten-3" href="#!">
+                    <i class="material-icons">high_quality</i>About
+                  </a>
                 </li>
                 <li>
-                  <a class="black-text text-lighten-3" href="#!">
-                    Careers
-                 </a>
+                  <a class="grey-text text-lighten-3" href="#!">
+                    <i class="material-icons">weekend</i>Careers
+                  </a>
                 </li>
                 <li>
-                  <a class="black-text text-lighten-3" href="#!">
-                    Gallery
-                 </a>
+                  <a class="grey-text text-lighten-3" href="#!">
+                    <i class="material-icons">camera_enhance</i>Gallery
+                  </a>
                 </li>
               </ul>
             </div>
@@ -49,17 +47,16 @@ export default class Footer extends Component {
         </div>
         <div class="footer-copyright">
           <div class="container">
-            © 2018 Copyright Team Huddle
-           <a class="right">
-              <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x white"></i></a>
-              <a href="https://github.com/Jeremy117/Huddle-App"><i class="fab fa-github fa-2x white"></i></a>
-              <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x white"></i></a>
-              <a href="https://www.google.com/"><i class="fab fa-google fa-2x white"></i></a>
+            © 2018 Copyright Team Huddle<i class="material-icons">copyright</i>
+            <a class="grey-text text-lighten-4 right" href="#!">
+              More Links<i class="fab fa-facebook-square fa-2x" />
+              <i class="fab fa-twitter-square fa-2x" />
+              <i class="fab fa-github fa-2x" />
+              <i class="fab fa-linkedin fa-2x" />
             </a>
           </div>
         </div>
       </footer>
-
     );
   }
 }

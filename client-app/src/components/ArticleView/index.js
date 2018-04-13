@@ -22,10 +22,10 @@ class ArticleView extends Component {
   render() {
     return (
       <div className="home-page">
-        <div className="container page">
-          <div className="row">
+        <div className="container-page">
+          <div className="container-row">
             <MainView articles={this.props.articles} />
-            {/* <i class="material-icons">sentiment_very_satisfied</i> */}
+            <i class="material-icons">sentiment_very_satisfied</i>
             <i class="material-icons">bubble_chart</i>
             <i class="material-icons">adb</i>
           </div>
