@@ -1,9 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+
 import services from "../services";
 
 import ListErrors from "./ListErrors";
+
+const style = {
+  marginLeft: 20,
+};
+
 
 const mapStateToProps = state => ({ ...state.auth });
 const mapDispatchToProps = dispatch => ({
@@ -32,49 +41,52 @@ class Login extends React.Component {
   render() {
     return (
       <div className="auth-page">
-        <div className="container page">
+        <div className="container">
           <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign In</h1>
-              <p className="text-xs-center">
-                <Link to="/register">Need an account?</Link>
-              </p>
-              <ListErrors errors={this.props.errors} />
-              <form onSubmit={this.handleOnSubmit}>
-                <fieldset>
-                  <fieldset className="form-group">
-                    <input
-                      onChange={this.handleInputOnChange}
-                      className="form-control form-control-lg"
-                      type="email"
-                      placeholder="Email"
-                      name="email"
-                    />
-                  </fieldset>
 
-                  <fieldset className="form-group">
-                    <input
-                      onChange={this.handleInputOnChange}
-                      className="form-control form-control-lg"
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                    />
-                  </fieldset>
+            <h3 className="text-xs-center">Sign In</h3>
 
-                  <button
-                    className="btn btn-lg btn-primary pull-xs-right"
-                    type="submit"
-                    disabled={this.props.inProgress}
-                  >
-                    Sign in
-                  </button>
-                </fieldset>
-              </form>
-            </div>
+            <Link to="/register">Need an account?</Link>
+
+
+            <ListErrors errors={this.props.errors} />
+            <form onSubmit={this.handleOnSubmit}>
+              <Paper zDepth={2}>
+                <TextField
+                  hintText="email"
+                  style={style}
+                  underlineShow={false}
+                  onChange={this.handleInputOnChange}
+                  type="email"
+                  name="email"
+                />
+                <Divider />
+
+                <TextField
+                  hintText="password"
+                  style={style}
+                  underlineShow={false}
+                  onChange={this.handleInputOnChange}
+                  type="password"
+                  name="password"
+                />
+                <Divider />
+
+              </Paper>
+
+              <br />
+
+              <button class="btn blue" disabled={this.state.inProgress}>Sign In</button>
+
+            </form>
+
+
+
+
           </div>
         </div>
       </div>
+
     );
   }
 }

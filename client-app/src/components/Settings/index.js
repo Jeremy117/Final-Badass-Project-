@@ -28,6 +28,8 @@ class Settings extends Component {
         <div class="row">
           <div class="col s12">
 
+            <h3 class="text-xs-center">Settings</h3>
+
 
 
 
@@ -40,19 +42,12 @@ class Settings extends Component {
             />
 
 
-            {/* <RaisedButton label="Log Out" primary={true}
-                style={{
-                  width: "700px"
-                }} */}
+            <br />
 
             <a onClick={this.props.onClickLogout} class="btn blue">Log Out</a>
 
-            {/* onClick={this.props.onClickLogout}
-              /> */}
-            <br />
-            <br />
-            <br />
-            <br />
+
+
 
 
 
