@@ -162,9 +162,9 @@ class Dashboard extends Component {
               <div>
                 <List className="player">
                   <Subheader>
-                    <h3 className="text">
+                    <h4 className="text">
                       <strong />Players
-                    </h3>
+                    </h4>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>

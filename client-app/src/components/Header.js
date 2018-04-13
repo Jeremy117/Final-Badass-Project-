@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import mainImage from "../images/huddle-logo-white.png";
+import Drawer from "material-ui/Drawer";
+import MenuItem from "material-ui/MenuItem";
+import RaisedButton from "material-ui/RaisedButton";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
@@ -77,10 +80,37 @@ const LoggedInView = props => {
 };
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+  }
+
+  handleToggle = () => this.setState({ open: !this.state.open });
+
   render() {
     return (
       <nav class="nav-wrapper blue">
         <div class="container">
+          <a
+            data-activates="slide-out"
+            class="button-collapse right"
+            label="Toggle Drawer"
+            onClick={this.handleToggle}
+          >
+            <i class="material-icons">menu</i>
+          </a>
+          <Drawer open={this.state.open}>
+            <MenuItem>
+              <RaisedButton primary={true} fullWidth={true}>
+                <Link to="/">Home</Link>
+              </RaisedButton>
+            </MenuItem>
+            <MenuItem>
+              <RaisedButton primary={true} fullWidth={true}>
+                <Link to="/Dashboard">Dashboard</Link>
+              </RaisedButton>
+            </MenuItem>
+          </Drawer>
           <Link to="/" class="brand-logo">
             <img src={mainImage} width={100} />
           </Link>
@@ -88,9 +118,6 @@ class Header extends React.Component {
           <LoggedOutView currentUser={this.props.currentUser} />
 
           <LoggedInView currentUser={this.props.currentUser} />
-        </div>
-        <div data-target="mobile-demo" class="sidenav-trigger">
-          <i class="small material-icons">menu</i>
         </div>
       </nav>
     );
