@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import mainImage from "../images/huddle-logo-white.png";
 import Image from 'react-image-resizer';
-
+import './Footer.css'
 
 
 
@@ -11,6 +11,7 @@ export default class Footer extends Component {
     return (
       <footer class="page-footer blue">
         <div class="container">
+          <div class="wrapper" />
           <div class="row">
             <div class="col s4">
               <img src={mainImage}
