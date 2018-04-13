@@ -54,13 +54,13 @@ const LoggedInView = props => {
         </li>
         <li className="white-text">
           <Link to="/editor" className="white-text">
-            <i className="" />&nbsp;New Post
+            <i className="" />New Post
           </Link>
         </li>
 
         <li className="white-text">
           <Link to="/settings" className="white-text">
-            <i className="" />&nbsp;Profile Settings
+            <i className="" />Profile Settings
           </Link>
         </li>
 
