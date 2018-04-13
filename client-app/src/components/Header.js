@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import mainImage from "../images/huddle-logo-white.png";
+import logoImage from "../images/huddle-logo-white.png";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
@@ -91,7 +91,7 @@ class Header extends React.Component {
       <nav style={menucolor}>
         <div class="container">
           <Link to="/" class="">
-            <img src={mainImage} width={100} />
+            <img src={logoImage} width={100} />
           </Link>
           <LoggedOutView currentUser={this.props.currentUser} />
           <LoggedInView currentUser={this.props.currentUser} />

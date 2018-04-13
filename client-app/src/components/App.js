@@ -16,7 +16,7 @@ import Editor from "./Editor";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import Dashboard from "./Dashboard";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -69,7 +69,7 @@ class App extends Component {
             <Route path="/editor" component={Editor} />
             <Route path="/Dashboard" component={Dashboard} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </MuiThemeProvider>
     );

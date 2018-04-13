@@ -9,6 +9,7 @@ import { ConnectedRouter } from "react-router-redux";
 import "./index.css";
 import App from "./components/App";
 import { reduxStore, history } from "./store";
+import "typeface-roboto";
 
 import registerServiceWorker from "./registerServiceWorker";
 

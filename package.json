@@ -28,7 +28,8 @@
         "react-addons-css-transition-group": "^15.6.2",
         "react-infinite-calendar": "^2.3.1",
         "serve-favicon": "^2.5.0",
-        "slug": "^0.9.1"
+        "slug": "^0.9.1",
+        "typeface-roboto": "0.0.54"
     },
     "devDependencies": {}
 }
