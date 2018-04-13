@@ -4,13 +4,11 @@ import React from "react";
 import ArticleList from "../ArticleList";
 const MainView = props => {
   return (
-    <div className="col l12 m12 s12">
-      <div className="feed-toggle">
-        <ul className="nav nav-pills ">
-          <li className="nav-item">
-            <a href="" className="">
-              Huddle Articles
-            </a>
+    <div className="">
+      <div className="">
+        <ul className="">
+          <li className="">
+            <a className="black-text">Articles</a>
           </li>
         </ul>
       </div>
