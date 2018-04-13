@@ -1,0 +1,9 @@
+.herobgrd {
+  background: url("../../images/prototype-home-desktop.jpg") no-repeat;
+  background-color: #00233f;
+
+  /* left: 0; */
+  /* position: fixed; */
+  width: 100%;
+  /* z-index: 1; */
+}

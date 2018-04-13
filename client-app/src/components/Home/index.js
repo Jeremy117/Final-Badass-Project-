@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import services from "../../services";
-import mainImage from "../../images/prototype-home-desktop.jpg";
+import mainImage from "../../images/prototype-home-desktop2.jpg";
+import "./home.css";
 
 const mapStateToProps = state => ({
   appName: state.common.appName,
@@ -12,8 +13,8 @@ const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
 });
 
-var heroimage = {
-  backgroundImage: mainImage
+const Background = function(props) {
+  return <img src={mainImage} className="herobgrd" alt="Huddle" />;
 };
 
 class Home extends Component {
@@ -23,8 +24,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div className="heroimage">
-          <img src={require("../../images/prototype-home-desktop.jpg")} />
+        <div className="herobgrd">
+          <Background />
         </div>
 
         {/* begin 3 column descrption section */}
@@ -43,7 +44,7 @@ class Home extends Component {
             person.
           </div>
           <div className="col m4 center">
-            <h4>Share Photos</h4>
+            <h4>Share Memories</h4>
             The web application has a news feed that allows each player or
             parent to post photos and comments on each game. Parents can add
             photos and comments after every game.
@@ -56,7 +57,6 @@ class Home extends Component {
           </div>
         </div>
         {/* end 3 colum description section */}
-
         {/* begin 4 columm stats section  */}
         <div
           className="grey white-text"
