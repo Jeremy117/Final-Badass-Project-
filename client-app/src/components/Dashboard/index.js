@@ -162,9 +162,9 @@ class Dashboard extends Component {
               <div>
                 <List className="player">
                   <Subheader>
-                    <h3 className="text">
+                    <h4 className="text">
                       <strong />Players
-                    </h3>
+                    </h4>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>
@@ -186,22 +186,24 @@ class Dashboard extends Component {
             </div>
           </ul>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Huddel Event</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+        <div
+          id="modal1"
+          className="modal"
+          show={this.state.show}
+          onHide={this.handleClose}
+        >
+          <div className="modal-content">
             <h4>Create Event:</h4>
             {Events}
-          </Modal.Body>
-          <Modal.Footer>
+          </div>
+          <div className="modal-footer">
             <RaisedButton
               label="Close"
               onClick={this.handleClose}
               primary={true}
             />
-          </Modal.Footer>
-        </Modal>
+          </div>
+        </div>
       </div>
     );
   }
