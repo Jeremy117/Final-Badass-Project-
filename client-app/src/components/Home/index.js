@@ -39,15 +39,14 @@ class Home extends Component {
           <div className="col m4 center">
             <h4>Your Team</h4>
             With Huddle, Coach can manage his or her team’s schedule. No other
-            app makes it as easy as ours to be a parent in a sports team. Every
-            feature is made to make sure that information reaches the right
-            person.
+            app makes it as easy as ours to be a parent in a sports team.
+            Everything about games and practices in one place.
           </div>
           <div className="col m4 center">
             <h4>Share Memories</h4>
             The web application has a news feed that allows each player or
-            parent to post photos and comments on each game. Parents can add
-            photos and comments after every game.
+            parent to post comments on each game. An easy way to share with
+            everyone that didn’t make it to the game.
           </div>
           <div className="col m4 center">
             <h4>Player Roster</h4>
