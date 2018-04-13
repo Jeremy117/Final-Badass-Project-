@@ -11,19 +11,19 @@ const LoggedOutView = props => {
             Home
           </Link>
         </li> */}
-        <li className="">
-          <Link to="/ArticleView" className="">
+        <li className="white-text">
+          <Link to="/ArticleView" className="white-text">
             Articles
           </Link>
         </li>
-        <li className="">
-          <Link to="/Login" className="">
+        <li className="white-text">
+          <Link to="/Login" className="white-text">
             Sign in
           </Link>
         </li>
 
-        <li className="">
-          <Link to="/register" className="">
+        <li className="white-text">
+          <Link to="/register" className="white-text">
             Sign up
           </Link>
         </li>
@@ -37,8 +37,8 @@ const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <ul class="right">
-        <li className="">
-          <Link to="/Dashboard" className="">
+        <li className="white-text">
+          <Link to="/Dashboard" className="white-text">
             Dashboard
           </Link>
         </li>
@@ -47,19 +47,19 @@ const LoggedInView = props => {
             Home
           </Link>
         </li> */}
-        <li className="">
-          <Link to="/ArticleView" className="">
+        <li className="white-text">
+          <Link to="/ArticleView" className="white-text">
             Articles
           </Link>
         </li>
-        <li className="">
-          <Link to="/editor" className="">
+        <li className="white-text">
+          <Link to="/editor" className="white-text">
             <i className="" />&nbsp;New Post
           </Link>
         </li>
 
-        <li className="">
-          <Link to="/settings" className="">
+        <li className="white-text">
+          <Link to="/settings" className="white-text">
             <i className="" />&nbsp;Profile Settings
           </Link>
         </li>
