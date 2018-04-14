@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Router, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { push } from "react-router-redux";
 import { connect } from "react-redux";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -7,7 +7,6 @@ import { reduxStore } from "../store";
 import services from "../services";
 import Header from "./Header";
 import Home from "./Home";
-import ArticleView from "./ArticleView";
 import Login from "./Login";
 import Register from "./Register";
 import Settings from "./Settings";

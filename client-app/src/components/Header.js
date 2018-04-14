@@ -9,12 +9,8 @@ import RaisedButton from "material-ui/RaisedButton";
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul class="right hide-on-med-and-down sidenav" id="mobile-demo">
-        {/* <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li> */}
+      <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
+
         <li className="nav-item">
           <Link to="/Login" className="nav-link">
             Sign in
@@ -35,22 +31,13 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul class="right hide-on-med-and-down sidenav" id="mobile-demo">
+      <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
           <Link to="/Dashboard" className="nav-link">
             Dashboard
           </Link>
         </li>
-        {/* <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li> */}
-        {/* <li className="nav-item">
-          <Link to="/ArticleView" className="nav-link">
-            Articles
-          </Link>
-        </li> */}
+
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
             <i className="ion-compose" />&nbsp;New Post
@@ -92,15 +79,15 @@ class Header extends React.Component {
 
   render() {
     return (
-      <nav class="nav-wrapper blue">
-        <div class="container">
+      <nav className="nav-wrapper blue">
+        <div className="container">
           <a
             data-activates="slide-out"
-            class="button-collapse right"
+            className="button-collapse right"
             label="Toggle Drawer"
             onClick={this.handleToggle}
           >
-            <i class="material-icons">menu</i>
+            <i className="material-icons">menu</i>
           </a>
           <Drawer open={this.state.open}>
             <MenuItem>
@@ -114,8 +101,8 @@ class Header extends React.Component {
               </RaisedButton>
             </MenuItem>
           </Drawer>
-          <Link to="/" class="brand-logo">
-            <img src={mainImage} width={100} />
+          <Link to="/" className="brand-logo">
+            <img src={mainImage} width={100} alt="" />
           </Link>
 
           <LoggedOutView currentUser={this.props.currentUser} />

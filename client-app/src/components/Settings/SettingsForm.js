@@ -132,7 +132,7 @@ class SettingsForm extends Component {
 
         <br />
 
-        <button class="btn blue" disabled={this.state.inProgress}>Update Settings</button>
+        <button className="btn blue" disabled={this.state.inProgress}>Update Settings</button>
 
 
         <br />

@@ -1,32 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import {
-  Table,
-  TableBody,
-  TableFooter,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn
-} from "material-ui/Table";
-import TextField from "material-ui/TextField";
-import Toggle from "material-ui/Toggle";
+
 import ArticleView from "../ArticleView";
 import {
-  Grid,
-  Row,
-  Col,
+
   Button,
-  Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  ModalFooter,
-  OverlayTrigger,
-  Tooltip,
-  Popover
+
 } from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
@@ -37,7 +17,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
-import Divider from "material-ui/Divider";
+
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -132,14 +112,14 @@ class Dashboard extends Component {
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
-                <div class="mapouter">
-                  <div class="gmap_canvas">
-                    <iframe
+                <div className="mapouter">
+                  <div className="gmap_canvas">
+                    <iframe title="weather"
                       width="300"
                       height="500"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
+                      frameBorder="0"
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
@@ -173,7 +153,7 @@ class Dashboard extends Component {
                         <Link to="./settings">
                           <ListItem
                             primaryText={player.name}
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                            leftAvatar={<Avatar src="" />}
                             rightIcon={<CommunicationChatBubble />}
                           />
                         </Link>
@@ -213,7 +193,7 @@ class Box extends Component {
   render() {
     return (
       <div>
-        <iframe
+        <iframe title="weather"
           className="weatherpic"
           id="forecast_embed"
           frameBorder="2"
