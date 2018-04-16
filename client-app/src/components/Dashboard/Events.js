@@ -17,5 +17,8 @@ const Events = (
     </form>
   </div>
 );
+// $(button).click(function (){
+//   alert ("Hello");
+// });
 
 export default Events;
