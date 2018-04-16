@@ -1,13 +1,13 @@
 .show-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  border-style: solid;
+  border-style: groove;
   border-color: #1e88e5;
   background-color: #00233f;
-  border-radius: 25px;
+  /* border-radius: 10px; */
 }
 .news {
-  /* border-style: solid; */
+  border-style: inset;
   /* border-color: beige; */
   /* text-align: center; */
   background-color: white;
@@ -17,8 +17,8 @@
   /* justify-content: center; */
   justify-content: space-around;
   /* align-content: center; */
-  /* border-style: solid;
-  border-color: beige; */
+ /* border-style: groove; */
+  border-color: beige; 
 }
 .roster {
   display: flex;
@@ -29,9 +29,9 @@
   /* display: grid;
   grid-template-rows: 1fr 1fr; */
 
-  /* border-style: solid; */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  /* border-style: groove; */
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
   background-color: #1e88e5;
   /* color: white; */
 }

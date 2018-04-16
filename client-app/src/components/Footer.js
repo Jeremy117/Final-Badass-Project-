@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import mainImage from "../images/huddle-logo-white.png";
 
-import './Footer.css'
+
 
 
 

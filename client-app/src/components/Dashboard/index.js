@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 import ArticleView from "../ArticleView";
-import {
 
-  Button,
-
-} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
@@ -90,9 +86,9 @@ class Dashboard extends Component {
     return (
       <div>
         <ul className="show-grid">
-          <Button bsStyle="primary" onClick={this.toggleWeather}>
+          {/* <button className="btn blue" onClick={this.toggleWeather}>
             Toggle Weather
-          </Button>
+          </button> */}
           {this.state.weather && <Box />}
         </ul>
         <div>
@@ -198,7 +194,7 @@ class Box extends Component {
           id="forecast_embed"
           frameBorder="2"
           height="216"
-          width="115%"
+          width="400%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
         />
       </div>
