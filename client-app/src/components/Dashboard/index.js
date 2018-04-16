@@ -13,6 +13,15 @@ import {
 import TextField from "material-ui/TextField";
 import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
+// import Avatar from "material-ui/Avatar";
+import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
+import FlatButton from "material-ui/FlatButton";
+import DatePicker from "material-ui/DatePicker";
+import Divider from "material-ui/Divider";
+import MenuItem from "material-ui/MenuItem";
+import Menu from "material-ui/Menu";
+// import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 import {
   Grid,
   Row,
@@ -33,11 +42,11 @@ import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
 import Events from "./Events";
-import RaisedButton from "material-ui/RaisedButton";
+// import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
-import { List, ListItem } from "material-ui/List";
-import Subheader from "material-ui/Subheader";
-import Divider from "material-ui/Divider";
+// import { List, ListItem } from "material-ui/List";
+// import Subheader from "material-ui/Subheader";
+// import Divider from "material-ui/Divider";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -129,6 +138,29 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
+              <div>
+                <List>
+                  <Subheader>Recent Events</Subheader>
+                  <ListItem
+                    primaryText="Create An Event"
+                    leftAvatar={<i class="fas fa-user-secret" />}
+                    rightIcon={<CommunicationChatBubble />}
+                  />
+
+                  <div>
+                    <form>
+                      <TextField hintText="Place of Event" />
+                      <br />
+                      <TextField hintText="Describe Event" />
+                      <br />
+                      <DatePicker hintText="Date of Event" />
+                      <br />
+                      <FlatButton label="Submit" primary={true} />
+                      <FlatButton label="Delete" secondary={true} />
+                    </form>
+                  </div>
+                </List>
+              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
@@ -163,7 +195,7 @@ class Dashboard extends Component {
                 <List className="player">
                   <Subheader>
                     <h4 className="text">
-                      <strong />Players
+                      <strong />Roster
                     </h4>
                   </Subheader>
                   <strong />
@@ -197,10 +229,9 @@ class Dashboard extends Component {
             {Events}
           </div>
           <div className="modal-footer">
-            <RaisedButton
-              label="Close"
-              onClick={this.handleClose}
-              primary={true}
+            {/* <RaisedButton */}
+            label="Close" onClick={this.handleClose}
+            primary={true}
             />
           </div>
         </div>
