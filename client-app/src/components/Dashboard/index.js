@@ -4,15 +4,17 @@ import "./Dashboard.css";
 
 import ArticleView from "../ArticleView";
 
-
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
 import Events from "./Events";
-import RaisedButton from "material-ui/RaisedButton";
+// import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
+import FlatButton from "material-ui/FlatButton";
+import DatePicker from "material-ui/DatePicker";
+import TextField from "material-ui/TextField";
 
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
@@ -105,14 +107,43 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
+              <div>
+                <List>
+                  <Subheader>
+                    The Events haha really..<i class="fas fa-blind fa-9x" />where
+                    are the events
+                  </Subheader>
+                  <ListItem
+                  // leftAvatar={<i class="fas fa-user-secret" />}
+                  // rightIcon={<CommunicationChatBubble />}
+                  />
+
+                  <div>
+                    <Subheader>Create an Event here.</Subheader>
+                    <form>
+                      <TextField hintText="Place of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <TextField hintText="Describe Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <DatePicker hintText="Date of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <FlatButton label="Submit" primary={true} />
+                      <FlatButton label="Delete" secondary={true} />
+                    </form>
+                  </div>
+                </List>
+              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
-                <div className="mapouter">
-                  <div className="gmap_canvas">
-                    <iframe title="weather"
-                      width="300"
-                      height="500"
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="535"
+                      height="535"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameBorder="0"
@@ -139,7 +170,7 @@ class Dashboard extends Component {
                 <List className="player">
                   <Subheader>
                     <h4 className="text">
-                      <strong />Players
+                      <strong />Roster
                     </h4>
                   </Subheader>
                   <strong />
@@ -173,10 +204,9 @@ class Dashboard extends Component {
             {Events}
           </div>
           <div className="modal-footer">
-            <RaisedButton
-              label="Close"
-              onClick={this.handleClose}
-              primary={true}
+            {/* <RaisedButton */}
+            label="Close" onClick={this.handleClose}
+            primary={true}
             />
           </div>
         </div>
@@ -189,7 +219,8 @@ class Box extends Component {
   render() {
     return (
       <div>
-        <iframe title="weather"
+        <iframe
+          title="weather"
           className="weatherpic"
           id="forecast_embed"
           frameBorder="2"

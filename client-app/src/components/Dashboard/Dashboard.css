@@ -10,15 +10,15 @@
   border-style: inset;
   /* border-color: beige; */
   /* text-align: center; */
-  background-color: white;
+  background-color: rgba(34, 39, 82, 0.555);
 }
 .cal {
   display: flex;
   /* justify-content: center; */
   justify-content: space-around;
   /* align-content: center; */
- /* border-style: groove; */
-  border-color: beige; 
+  /* border-style: inset; */
+  border-color: rgb(21, 158, 212);
 }
 .roster {
   display: flex;
@@ -29,9 +29,9 @@
   /* display: grid;
   grid-template-rows: 1fr 1fr; */
 
-  /* border-style: groove; */
-  /* border-top-left-radius: 5px;
-  border-top-right-radius: 5px; */
+  /* border-style: inset; */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: #1e88e5;
   /* color: white; */
 }
