@@ -1,31 +1,38 @@
-//This file will accomplish a few things.
-//1. It will define the actions associated with the Roster
-//2. It will contain the markup for the roster itself
-//3. It will have the appropriate life-cycle methods for the roster
-
-//Actions Associated with the Roster
-//1. Roster Loaded
-//2. Add Player
-
-//Styling for the Roster
-//1. We will need an infinite scrolling page that allows us to link to player profiles.
-//2. We need a search box that pops up which allows us to search and add players in the database to the roster
-
-//Lifecycle Methods
-//1. We need a lifecycle method which will pull players for the associated team when the component mounts
-
+import MobileTearSheet from "../../../MobileTearSheet";
+import Avatar from "material-ui/Avatar";
+import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
+import Divider from "material-ui/Divider";
+import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 import React, { Component } from "react";
 import services from "../../services";
 import { connect } from "react-redux";
 
+const mapStateToProps = state => ({
+  ...state.team,
+  currentUser: state.common.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: payload => dispatch({ type: "ROSTER_LOADED", payload })
+});
+
 class Roster extends Component {
-    componentDidMount
+  componentDidMount() {
+    const teamid = this.props.match.params.id;
+    this.props.onLoad(services.Players.get);
+    console.log(teamid);
+  }
 
-    componentWillReceiveProps
-    
-    render(){
-        return (
-
-        )
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.players !== this.props.players) {
+      console.log(nextProps);
     }
+  }
+
+  render() {
+    return <div />;
+  }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Roster);
