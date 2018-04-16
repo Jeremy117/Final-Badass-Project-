@@ -1,42 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import {
-  Table,
-  TableBody,
-  TableFooter,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn
-} from "material-ui/Table";
-import TextField from "material-ui/TextField";
-import Toggle from "material-ui/Toggle";
+
 import ArticleView from "../ArticleView";
-// import Avatar from "material-ui/Avatar";
-import { List, ListItem } from "material-ui/List";
-import Subheader from "material-ui/Subheader";
-import FlatButton from "material-ui/FlatButton";
-import DatePicker from "material-ui/DatePicker";
-import Divider from "material-ui/Divider";
-import MenuItem from "material-ui/MenuItem";
-import Menu from "material-ui/Menu";
-// import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
-import {
-  Grid,
-  Row,
-  Col,
-  Button,
-  Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  ModalFooter,
-  OverlayTrigger,
-  Tooltip,
-  Popover
-} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
@@ -44,9 +10,12 @@ import axios from "axios";
 import Events from "./Events";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
-// import { List, ListItem } from "material-ui/List";
-// import Subheader from "material-ui/Subheader";
-// import Divider from "material-ui/Divider";
+import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
+import FlatButton from "material-ui/FlatButton";
+import DatePicker from "material-ui/DatePicker";
+import TextField from "material-ui/TextField";
+
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -119,9 +88,9 @@ class Dashboard extends Component {
     return (
       <div>
         <ul className="show-grid">
-          {/* <Button bsStyle="primary" onClick={this.toggleWeather}>
+          {/* <button className="btn blue" onClick={this.toggleWeather}>
             Toggle Weather
-          </Button> */}
+          </button> */}
           {this.state.weather && <Box />}
         </ul>
         <div>
@@ -177,7 +146,7 @@ class Dashboard extends Component {
                       height="535"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
+                      frameBorder="0"
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
@@ -211,7 +180,7 @@ class Dashboard extends Component {
                         <Link to="./settings">
                           <ListItem
                             primaryText={player.name}
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                            leftAvatar={<Avatar src="" />}
                             rightIcon={<CommunicationChatBubble />}
                           />
                         </Link>
@@ -251,6 +220,7 @@ class Box extends Component {
     return (
       <div>
         <iframe
+          title="weather"
           className="weatherpic"
           id="forecast_embed"
           frameBorder="2"

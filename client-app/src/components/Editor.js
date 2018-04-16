@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import services from "../services";
 import ListErrors from "./ListErrors";
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+
+const style = {
+  marginLeft: 20,
+};
 
 const mapStateToProps = state => ({
   ...state.editor
@@ -101,87 +108,97 @@ one.
   render() {
     const { title, description, body, tagList, tag } = this.state;
     return (
-      <div className="editor-page">
-        <div className="container page">
+
+      <div className="editor-page" >
+        <div className="container page" >
           <div className="row">
-            <div className="col-md-10 offset-md-1 col-xs-12">
+            <div className="col s12">
+
+              <h3 className="text-xs-center">New Post</h3>
+
               <ListErrors errors={this.props.errors} />
 
-              <form>
-                <fieldset>
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-lg"
-                      type="text"
-                      name="title"
-                      placeholder="Article Title"
-                      value={title}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
 
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="description"
-                      placeholder="What's this article about?"
-                      value={description}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
+              <Paper zDepth={2} >
+                <TextField
+                  hintText="Post Title"
+                  style={style}
+                  underlineShow={false}
+                  type="text"
+                  name="title"
 
-                  <fieldset className="form-group">
-                    <textarea
-                      className="form-control"
-                      rows="8"
-                      name="body"
-                      placeholder="Write your article (in markdown)"
-                      value={body}
-                      onChange={this.handleInputChange}
-                    />
-                  </fieldset>
+                  value={title}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
 
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="tag"
-                      value={tag}
-                      placeholder="Enter tags"
-                      onChange={this.handleTagChange}
-                      onKeyUp={this.handleTagChange}
-                    />
+                <TextField
 
-                    <div className="tag-list">
-                      {tagList.map(tag => {
-                        return (
-                          <span className="tag-default tag-pill" key={tag}>
-                            <i
-                              className="ion-close-round"
-                              onClick={this.removeTag(tag)}
-                            />
-                            {tag}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </fieldset>
+                  hintText="Post"
+                  style={style}
 
-                  <button
-                    className="btn btn-lg pull-xs-right btn-primary"
-                    type="button"
-                    disabled={this.props.inProgress}
-                    onClick={this.submitForm}
-                  >
-                    Publish Article
-                  </button>
-                </fieldset>
-              </form>
+                  underlineShow={false}
+                  type="text"
+                  name="description"
+
+                  value={description}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
+
+                <TextField
+                  hintText="Share your thoughts"
+                  style={style}
+                  multiLine={true}
+                  rows="8"
+
+                  name="body"
+
+                  value={body}
+                  onChange={this.handleInputChange}
+                />
+                <Divider />
+
+                <TextField
+                  hintText="Enter tags"
+                  style={style}
+                  underlineShow={false}
+                  type="text"
+                  name="tag"
+                  value={tag}
+
+                  onChange={this.handleTagChange}
+                  onKeyUp={this.handleTagChange}
+                />
+
+                <div className="tag-list">
+                  {tagList.map(tag => {
+                    return (
+                      <span className="tag-default tag-pill" key={tag}>
+                        <i
+                          className="ion-close-round"
+                          onClick={this.removeTag(tag)}
+                        />
+                        {tag}
+                      </span>
+                    );
+                  })}
+                </div>
+
+              </Paper >
+
+              <br />
+
+              <button className="btn blue" disabled={this.state.inProgress} onClick={this.submitForm}>Publish Article</button>
+
+
+
+
             </div>
           </div>
         </div>
       </div>
+
     );
   }
 }

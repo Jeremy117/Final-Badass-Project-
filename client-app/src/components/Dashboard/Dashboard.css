@@ -3,8 +3,8 @@
   grid-template-columns: 1fr 2fr 1fr;
   border-style: groove;
   border-color: #1e88e5;
-  background-color: #126ed6;
-  /* border-radius: 25px; */
+  background-color: #00233f;
+  /* border-radius: 10px; */
 }
 .news {
   border-style: inset;

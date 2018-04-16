@@ -98,7 +98,8 @@ class SettingsForm extends Component {
           <TextField
             hintText="Bio"
             style={style}
-            underlineShow={false}
+            multiLine={true}
+            rows="8"
             value={this.state.bio}
             onChange={this.updateState("bio")}
           />
@@ -132,7 +133,7 @@ class SettingsForm extends Component {
 
         <br />
 
-        <button class="btn blue" disabled={this.state.inProgress}>Update Settings</button>
+        <button className="btn blue" disabled={this.state.inProgress}>Update Settings</button>
 
 
         <br />
