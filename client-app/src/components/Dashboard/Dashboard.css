@@ -1,24 +1,24 @@
 .show-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  border-style: solid;
+  border-style: groove;
   border-color: #1e88e5;
-  background-color: #00233f;
-  border-radius: 25px;
+  background-color: #126ed6;
+  /* border-radius: 25px; */
 }
 .news {
-  /* border-style: solid; */
+  border-style: inset;
   /* border-color: beige; */
   /* text-align: center; */
-  background-color: white;
+  background-color: rgba(34, 39, 82, 0.555);
 }
 .cal {
   display: flex;
   /* justify-content: center; */
   justify-content: space-around;
   /* align-content: center; */
-  /* border-style: solid;
-  border-color: beige; */
+  /* border-style: inset; */
+  border-color: rgb(21, 158, 212);
 }
 .roster {
   display: flex;
@@ -29,7 +29,7 @@
   /* display: grid;
   grid-template-rows: 1fr 1fr; */
 
-  /* border-style: solid; */
+  /* border-style: inset; */
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #1e88e5;
