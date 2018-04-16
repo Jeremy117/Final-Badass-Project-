@@ -139,7 +139,7 @@ class Dashboard extends Component {
                       height="500"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
+                      frameBorder="0"
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
