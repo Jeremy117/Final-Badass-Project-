@@ -119,9 +119,9 @@ class Dashboard extends Component {
     return (
       <div>
         <ul className="show-grid">
-          <Button bsStyle="primary" onClick={this.toggleWeather}>
+          {/* <Button bsStyle="primary" onClick={this.toggleWeather}>
             Toggle Weather
-          </Button>
+          </Button> */}
           {this.state.weather && <Box />}
         </ul>
         <div>
@@ -140,20 +140,26 @@ class Dashboard extends Component {
               </div>
               <div>
                 <List>
-                  <Subheader>Recent Events</Subheader>
+                  <Subheader>
+                    The Events haha really..<i class="fas fa-blind fa-9x" />where
+                    are the events
+                  </Subheader>
                   <ListItem
-                    primaryText="Create An Event"
-                    leftAvatar={<i class="fas fa-user-secret" />}
-                    rightIcon={<CommunicationChatBubble />}
+                  // leftAvatar={<i class="fas fa-user-secret" />}
+                  // rightIcon={<CommunicationChatBubble />}
                   />
 
                   <div>
+                    <Subheader>Create an Event here.</Subheader>
                     <form>
                       <TextField hintText="Place of Event" />
+                      <i class="far fa-calendar-plus" />
                       <br />
                       <TextField hintText="Describe Event" />
+                      <i class="far fa-calendar-plus" />
                       <br />
                       <DatePicker hintText="Date of Event" />
+                      <i class="far fa-calendar-plus" />
                       <br />
                       <FlatButton label="Submit" primary={true} />
                       <FlatButton label="Delete" secondary={true} />
@@ -167,8 +173,8 @@ class Dashboard extends Component {
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="300"
-                      height="500"
+                      width="535"
+                      height="535"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameborder="0"
@@ -249,7 +255,7 @@ class Box extends Component {
           id="forecast_embed"
           frameBorder="2"
           height="216"
-          width="115%"
+          width="400%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
         />
       </div>
