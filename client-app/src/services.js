@@ -48,9 +48,35 @@ const Auth = {
   save: user => requests.put("/user", { user })
 };
 
+const Teams = {
+  get: userid => requests.get(`/teams/${userid}`),
+  post: (url, { team: { name, description, sport } }) =>
+    requests.post("/teams/"),
+  delete: teamid => requests.delete(`/teams/${teamid}`)
+};
+
+const Players = {
+  get: teamid => requests.get(`players/team/${teamid}`),
+  post: (teamid, { player: { name, position } }) =>
+    requests.post(`players/${teamid}`),
+  delete: teamplayerid => requests.delete(`/players/teamplayerid`)
+};
+
+const Events = {
+  get: teamid => requests.get(`events/team/${teamid}`),
+  post: (teamid, { player: { name, position } }) =>
+    requests.post(`events/${teamid}`),
+  delete: teameventid => requests.delete(`/players/teameventid`)
+};
+
+//Then create the appropriate reducers, where the desired data is passed to the component as props from the redux store
+
 export default {
   Articles,
   Auth,
   Comments,
-  setToken
+  setToken,
+  Teams,
+  Players,
+  Events
 };
