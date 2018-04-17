@@ -97,13 +97,23 @@ class Header extends React.Component {
           </a>
           <Drawer open={this.state.open}>
             <MenuItem>
-              <RaisedButton primary={true} fullWidth={true}>
+              <RaisedButton backgroundColor="blue" fullWidth={true}>
                 <Link to="/">Home</Link>
               </RaisedButton>
             </MenuItem>
             <MenuItem>
-              <RaisedButton primary={true} fullWidth={true}>
+              <RaisedButton backgroundColor="blue" fullWidth={true}>
                 <Link to="/Dashboard">Dashboard</Link>
+              </RaisedButton>
+            </MenuItem>
+            <MenuItem>
+              <RaisedButton backgroundColor="blue" fullWidth={true}>
+                <Link to="/Editor">New Post</Link>
+              </RaisedButton>
+            </MenuItem>
+            <MenuItem>
+              <RaisedButton backgroundColor="blue" fullWidth={true}>
+                <Link to="/Settings">Profile Settings</Link>
               </RaisedButton>
             </MenuItem>
           </Drawer>
