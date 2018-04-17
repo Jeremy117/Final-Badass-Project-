@@ -12,16 +12,19 @@ const ArticlePreview = ({ article }) => {
           <div class="row">
             <div class="col s12 lg12">
               <div class="card">
-                <div class="card-content blue-text">
+                <div class="card-content black-text">
+                  <a>
+                    <div class="card-content black-text">
+                      <img src={article.author.image} alt="Avatar" />
+                    </div>
+                  </a>
                   <div className="info">
                     <a className="author">{article.author.username}</a>
                     <span className="date">
                       {new Date(article.createdAt).toDateString()}
                     </span>
                   </div>
-                </div>
-                <div class="card-action blue-text">
-                  <h3>{article.title}</h3>
+                  <h5>{article.title}</h5>
                   <p>{article.description}</p>
                   {/* <span>Read more...</span> */}
                   <ul className="tag-last">
@@ -34,7 +37,10 @@ const ArticlePreview = ({ article }) => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={`article/${article.slug}`} className="preview-link">
+                  <Link
+                    to={`article/${article.slug}`}
+                    className="preview-link blue-text"
+                  >
                     {article.tagList.map(tag => (
                       <li
                         className="tag-default tag-pill tag-outline"
@@ -47,7 +53,7 @@ const ArticlePreview = ({ article }) => {
                   <br />
                   <Link
                     to={`article/${article.slug}`}
-                    className="preview-link blue-text"
+                    className="preview-link black-text"
                   >
                     <span>Read more...</span>
                     <ul className="tag-last">

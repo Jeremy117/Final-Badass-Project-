@@ -47,10 +47,10 @@
 }
 
 .card {
+  background-color: white;
   border-style: groove;
-  border-color: #05508d;
+  border-color: #3c9df1;
 }
-
-.BorderColorDiv {
-  border-color: white;
+.gradient {
+  background: linear-gradient(white, #05508d);
 }
