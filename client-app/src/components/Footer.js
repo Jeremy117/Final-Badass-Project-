@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import mainImage from "../images/huddle-logo-white.png";
-import Image from 'react-image-resizer';
-import './Footer.css'
-
-
+import Image from "react-image-resizer";
+import "./Footer.css";
 
 export default class Footer extends Component {
   render() {
@@ -14,34 +12,30 @@ export default class Footer extends Component {
           <div class="wrapper" />
           <div class="row">
             <div class="col s4">
-              <img src={mainImage}
-                width={200} />
-
-
-
+              <img src={mainImage} width={200} />
             </div>
             <div class="col l6 offset-l2 s12">
               <h5 class="black-text">Links</h5>
               <ul>
                 <li>
                   <a class="black-text text-lighten-3" href="/">
-                    Huddle Home
-                 </a>
+                    <i class="fas fa-home" />Huddle Home
+                  </a>
                 </li>
                 <li>
                   <a class="black-text text-lighten-3" href="#!">
-                    About
-                 </a>
+                    <i class="fas fa-coffee" />About
+                  </a>
                 </li>
                 <li>
                   <a class="black-text text-lighten-3" href="#!">
-                    Careers
-                 </a>
+                    <i class="fas fa-pencil-alt" />Careers
+                  </a>
                 </li>
                 <li>
                   <a class="black-text text-lighten-3" href="#!">
-                    Gallery
-                 </a>
+                    <i class="fas fa-camera-retro" />Gallery
+                  </a>
                 </li>
               </ul>
             </div>
@@ -50,16 +44,23 @@ export default class Footer extends Component {
         <div class="footer-copyright">
           <div class="container">
             © 2018 Copyright Team Huddle
-           <a class="right">
-              <a href="https://facebook.com"><i class="fab fa-facebook-square fa-2x white"></i></a>
-              <a href="https://github.com/Jeremy117/Huddle-App"><i class="fab fa-github fa-2x white"></i></a>
-              <a href="https://www.linkedin.com"><i class="fab fa-linkedin fa-2x white"></i></a>
-              <a href="https://www.google.com/"><i class="fab fa-google fa-2x white"></i></a>
+            <a class="right">
+              <a href="https://facebook.com">
+                <i class="fab fa-facebook-square fa-2x white" />
+              </a>
+              <a href="https://github.com/Jeremy117/Huddle-App">
+                <i class="fab fa-github fa-2x white" />
+              </a>
+              <a href="https://www.linkedin.com">
+                <i class="fab fa-linkedin fa-2x white" />
+              </a>
+              <a href="https://www.google.com/">
+                <i class="fab fa-google fa-2x white" />
+              </a>
             </a>
           </div>
         </div>
       </footer>
-
     );
   }
 }

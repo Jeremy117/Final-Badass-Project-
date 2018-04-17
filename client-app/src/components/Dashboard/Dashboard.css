@@ -3,14 +3,14 @@
   grid-template-columns: 1fr 2fr 1fr;
   border-style: groove;
   border-color: #1e88e5;
-  background-color: #126ed6;
+  background-color: #424242;
   /* border-radius: 25px; */
 }
 .news {
   border-style: inset;
   /* border-color: beige; */
   /* text-align: center; */
-  background-color: rgba(34, 39, 82, 0.555);
+  background-color: rgb(255, 255, 255);
 }
 .cal {
   display: flex;
@@ -32,13 +32,13 @@
   /* border-style: inset; */
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #1e88e5;
+  background-color: #424242;
   /* color: white; */
 }
 
 .text {
-  color: white;
-  background-color: #1e88e5;
+  color: rgb(202, 17, 17);
+  background-color: #424242;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
