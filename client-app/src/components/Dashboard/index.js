@@ -13,6 +13,7 @@ import {
 import TextField from "material-ui/TextField";
 // import Snackbar from "material-ui/Snackbar";
 import RaisedButton from "material-ui/RaisedButton";
+import TimePicker from "material-ui/TimePicker";
 import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
 import Dialog from "material-ui/Dialog";
@@ -116,7 +117,24 @@ class Dashboard extends Component {
     this.setState({ weather: !weather });
   };
 
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
   render() {
+    const actions = [
+      <FlatButton
+        label="Ok"
+        primary={true}
+        keyboardFocused={true}
+        onClick={this.handleClose}
+      />
+    ];
+
+    // render();
     return (
       <div>
         <ul className="show-grid">
@@ -153,20 +171,31 @@ class Dashboard extends Component {
                   />
 
                   <div>
-                    <Subheader>Create an Event here.</Subheader>
+                    <Subheader>Click here for an Event.</Subheader>
                     <form>
-                      <TextField hintText="Place of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <TextField hintText="Describe Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <DatePicker hintText="Date of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <FlatButton label="Submit" primary={true} />
-
-                      <FlatButton label="Delete" secondary={true} />
+                      <div>
+                        <RaisedButton
+                          label="Create an Event"
+                          onClick={this.handleOpen}
+                        />
+                        <Dialog
+                          title=" Pick your day"
+                          actions={actions}
+                          modal={false}
+                          open={this.state.open}
+                          onRequestClose={this.handleClose}
+                        >
+                          Choose a date.<i class="fas fa-calendar-alt" />
+                          <DatePicker hintText="Date Picker" />
+                          <div>
+                            <TimePicker hintText="Start time" />
+                            <TimePicker hintText="End time" />
+                            {/* <TimePicker hintText="current time" autoOk={true} /> */}
+                            <TimePicker format="24hr" hintText="24hr Format" />
+                            <TimePicker disabled={true} format="24hr" />
+                          </div>
+                        </Dialog>
+                      </div>
                     </form>
                   </div>
                 </List>
