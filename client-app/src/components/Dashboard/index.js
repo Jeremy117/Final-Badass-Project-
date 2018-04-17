@@ -1,43 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import {
-  Table,
-  TableBody,
-  TableFooter,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn
-} from "material-ui/Table";
-import TextField from "material-ui/TextField";
-import Toggle from "material-ui/Toggle";
+
 import ArticleView from "../ArticleView";
-import {
-  Grid,
-  Row,
-  Col,
-  Button,
-  Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  ModalFooter,
-  OverlayTrigger,
-  Tooltip,
-  Popover
-} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
 import Events from "./Events";
-import RaisedButton from "material-ui/RaisedButton";
+// import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
-import Divider from "material-ui/Divider";
+import FlatButton from "material-ui/FlatButton";
+import DatePicker from "material-ui/DatePicker";
+import TextField from "material-ui/TextField";
+
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -110,9 +88,9 @@ class Dashboard extends Component {
     return (
       <div>
         <ul className="show-grid">
-          <Button bsStyle="primary" onClick={this.toggleWeather}>
+          {/* <button className="btn blue" onClick={this.toggleWeather}>
             Toggle Weather
-          </Button>
+          </button> */}
           {this.state.weather && <Box />}
         </ul>
         <div>
@@ -129,14 +107,43 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
+              <div>
+                <List>
+                  <Subheader>
+                    The Events haha really..<i class="fas fa-blind fa-9x" />where
+                    are the events
+                  </Subheader>
+                  <ListItem
+                  // leftAvatar={<i class="fas fa-user-secret" />}
+                  // rightIcon={<CommunicationChatBubble />}
+                  />
+
+                  <div>
+                    <Subheader>Create an Event here.</Subheader>
+                    <form>
+                      <TextField hintText="Place of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <TextField hintText="Describe Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <DatePicker hintText="Date of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <FlatButton label="Submit" primary={true} />
+                      <FlatButton label="Delete" secondary={true} />
+                    </form>
+                  </div>
+                </List>
+              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="300"
-                      height="500"
+                      width="535"
+                      height="535"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameBorder="0"
@@ -163,7 +170,7 @@ class Dashboard extends Component {
                 <List className="player">
                   <Subheader>
                     <h4 className="text">
-                      <strong />Players
+                      <strong />Roster
                     </h4>
                   </Subheader>
                   <strong />
@@ -173,7 +180,7 @@ class Dashboard extends Component {
                         <Link to="./settings">
                           <ListItem
                             primaryText={player.name}
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                            leftAvatar={<Avatar src="" />}
                             rightIcon={<CommunicationChatBubble />}
                           />
                         </Link>
@@ -197,10 +204,9 @@ class Dashboard extends Component {
             {Events}
           </div>
           <div className="modal-footer">
-            <RaisedButton
-              label="Close"
-              onClick={this.handleClose}
-              primary={true}
+            {/* <RaisedButton */}
+            label="Close" onClick={this.handleClose}
+            primary={true}
             />
           </div>
         </div>
@@ -214,11 +220,12 @@ class Box extends Component {
     return (
       <div>
         <iframe
+          title="weather"
           className="weatherpic"
           id="forecast_embed"
           frameBorder="2"
           height="216"
-          width="115%"
+          width="400%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
         />
       </div>
