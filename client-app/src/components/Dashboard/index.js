@@ -139,42 +139,6 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
-<<<<<<< HEAD
-
-=======
-              <div>
-                <List>
-                  <Subheader>
-                    <i class="fas fa-football-ball fa-7x" />
-                    <i class="fas fa-baseball-ball fa-7x" />
-                    <i class="fas fa-basketball-ball fa-7x" />
-                    <i class="fas fa-volleyball-ball fa-7x" />
-                  </Subheader>
-                  <ListItem
-                  // leftAvatar={<i class="fas fa-user-secret" />}
-                  // rightIcon={<CommunicationChatBubble />}
-                  />
-
-                  <div>
-                    <Subheader>Create an Event here.</Subheader>
-                    <form>
-                      <TextField hintText="Place of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <TextField hintText="Describe Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <DatePicker hintText="Date of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <FlatButton label="Submit" primary={true} />
-
-                      <FlatButton label="Delete" secondary={true} />
-                    </form>
-                  </div>
-                </List>
-              </div>
->>>>>>> master
               <br />
               {/* Googlemaps code below */}
               <div className="cal">

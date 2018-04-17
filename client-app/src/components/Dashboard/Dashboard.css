@@ -2,26 +2,13 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   border-style: groove;
-<<<<<<< HEAD
   border-color: #3c9df1;
   background-color: #05508d;
   /* border-radius: 10px; */
-=======
-  border-color: #1e88e5;
-  background-color: #424242;
-  /* border-radius: 25px; */
->>>>>>> master
 }
 
 .news {
-<<<<<<< HEAD
   background-color: #05508d;
-=======
-  border-style: inset;
-  /* border-color: beige; */
-  /* text-align: center; */
-  background-color: rgb(255, 255, 255);
->>>>>>> master
 }
 
 .cal {
