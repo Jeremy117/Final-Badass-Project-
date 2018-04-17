@@ -107,43 +107,15 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
-              <div>
-                <List>
-                  <Subheader>
-                    The Events haha really..<i class="fas fa-blind fa-9x" />where
-                    are the events
-                  </Subheader>
-                  <ListItem
-                  // leftAvatar={<i class="fas fa-user-secret" />}
-                  // rightIcon={<CommunicationChatBubble />}
-                  />
 
-                  <div>
-                    <Subheader>Create an Event here.</Subheader>
-                    <form>
-                      <TextField hintText="Place of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <TextField hintText="Describe Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <DatePicker hintText="Date of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <FlatButton label="Submit" primary={true} />
-                      <FlatButton label="Delete" secondary={true} />
-                    </form>
-                  </div>
-                </List>
-              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="535"
-                      height="535"
+                      width="260"
+                      height="425"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameBorder="0"
