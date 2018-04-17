@@ -3,6 +3,9 @@ import services from "../../services";
 import { connect } from "react-redux";
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+import Avatar from 'material-ui/Avatar';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
 
 const style = {
   marginLeft: 20,
@@ -51,6 +54,7 @@ class CommentInput extends Component {
           />
           {/* </div> */}
           {/* <div className="card-footer"> */}
+
           <img
             src={this.props.currentUser.image}
             // className="comment-author-img"
