@@ -71,15 +71,15 @@ const ArticlePreview = ({ article }) => {
         <div className="pull-xs-right">
           <div class="card-panel">
             <button
-              class="btn waves-effect waves{article.favoritesCount}-bright red"
-              type="Cant"
+              class="btn waves-effect waves{article.favoritesCount}-Green"
+              type="Submit"
             >
-              Can't
-              <i class="material-icons right">Cant</i>
+              Submit
+              {/* <i class="material-icons right">Submit</i> */}
             </button>
             <button class="btn waves-effect waves-light red disabled" type="">
-              Touch this
-              <i class="material-icons right">Touch this</i>
+              Cancel
+              {/* <i class="material-icons right">Touch this</i> */}
             </button>
           </div>
         </div>

@@ -13,7 +13,9 @@ import Settings from "./Settings";
 import Article from "./Article";
 import Editor from "./Editor";
 import Dashboard from "./Dashboard";
-import Team from "./Team";
+import Footer from "./Footer";
+import Roster from "./Roster";
+
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -59,12 +61,12 @@ class App extends Component {
             {/* <Route path="/articleview" component={ArticleView} /> */}
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/roster" component={Roster} />
             <Route path="/settings" component={Settings} />
             <Route path="/article/:id" component={Article} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
             <Route path="/Dashboard" component={Dashboard} />
-            <Route path="/Team" component={Team} />
           </Switch>
 
         </div>

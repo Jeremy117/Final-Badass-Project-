@@ -31,7 +31,10 @@ if (isProduction) {
 //import models as soon as we are connected!!!!!!
 require("./models/User");
 require("./models/Article");
-require("./models/Comments");
+require("./models/Comment");
+require("./models/Player");
+require("./models/Team");
+require("./models/Event");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
