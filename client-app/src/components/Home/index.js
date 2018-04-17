@@ -21,9 +21,7 @@ class Home extends Component {
     return (
       <div className="home-page">
         <div>
-          <img src={mainImage}
-            width={1440}
-            alt="alt" /> <div className="row" />
+          <img src={mainImage} width={1440} alt="alt" /> <div className="row" />
         </div>
       </div>
     );
