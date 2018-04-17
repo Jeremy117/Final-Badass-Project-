@@ -48,9 +48,6 @@ import axios from "axios";
 import Events from "./Events";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
-// import { List, ListItem } from "material-ui/List";
-// import Subheader from "material-ui/Subheader";
-// import Divider from "material-ui/Divider";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -123,9 +120,9 @@ class Dashboard extends Component {
     return (
       <div>
         <ul className="show-grid">
-          {/* <Button bsStyle="primary" onClick={this.toggleWeather}>
+          {/* <button className="btn blue" onClick={this.toggleWeather}>
             Toggle Weather
-          </Button> */}
+          </button> */}
           {this.state.weather && <Box />}
         </ul>
         <div>
@@ -184,7 +181,7 @@ class Dashboard extends Component {
                       height="535"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
+                      frameBorder="0"
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
@@ -258,6 +255,7 @@ class Box extends Component {
     return (
       <div>
         <iframe
+          title="weather"
           className="weatherpic"
           id="forecast_embed"
           frameBorder="2"

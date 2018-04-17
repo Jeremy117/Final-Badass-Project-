@@ -60,7 +60,7 @@ class Register extends Component {
             <ListErrors errors={this.props.errors} />
 
             <form onSubmit={e => this.submitForm(e)}>
-              <Paper zDepth={2}>
+              <Paper zDepth={5}>
                 <TextField
                   hintText="username"
                   style={style}

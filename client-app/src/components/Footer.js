@@ -1,21 +1,18 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import mainImage from "../images/huddle-logo-white.png";
-import Image from "react-image-resizer";
-import "./Footer.css";
 
 export default class Footer extends Component {
   render() {
     return (
-      <footer class="page-footer blue">
-        <div class="container">
-          <div class="wrapper" />
-          <div class="row">
-            <div class="col s4">
-              <img src={mainImage} width={200} />
+      <footer className="page-footer blue">
+        <div className="container">
+          <div className="wrapper" />
+          <div className="row">
+            <div className="col s4">
+              <img src={mainImage} width={200} alt="" />
             </div>
-            <div class="col l6 offset-l2 s12">
-              <h5 class="black-text">Links</h5>
+            <div className="col l6 offset-l2 s12">
+              <h5 className="black-text">Links</h5>
               <ul>
                 <li>
                   <a class="black-text text-lighten-3" href="/">
@@ -41,8 +38,8 @@ export default class Footer extends Component {
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
+        <div className="footer-copyright">
+          <div className="container">
             © 2018 Copyright Team Huddle
             <a class="right">
               <a href="https://facebook.com">

@@ -6,8 +6,10 @@ import ListItem from 'material-ui/List/ListItem';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 
+
 const style = {
   marginLeft: 20,
+  width: "93%"
 };
 
 
@@ -63,7 +65,11 @@ class SettingsForm extends Component {
 
   render() {
     return (
+
       <form onSubmit={this.submitForm}>
+        <div className="width95" />
+
+
         <List>
           <ListItem
             disabled={true}
@@ -83,7 +89,9 @@ class SettingsForm extends Component {
 
 
 
-        <Paper zDepth={2}>
+
+
+        <Paper zDepth={5}>
           <TextField
             hintText="Username"
             style={style}
@@ -98,7 +106,10 @@ class SettingsForm extends Component {
           <TextField
             hintText="Bio"
             style={style}
+            fullWidth={true}
+            multiLine={true}
             underlineShow={false}
+            rows="4"
             value={this.state.bio}
             onChange={this.updateState("bio")}
           />
@@ -132,7 +143,7 @@ class SettingsForm extends Component {
 
         <br />
 
-        <button class="btn blue" disabled={this.state.inProgress}>Update Settings</button>
+        <button className="btn blue" disabled={this.state.inProgress}>Update Settings</button>
 
 
         <br />
