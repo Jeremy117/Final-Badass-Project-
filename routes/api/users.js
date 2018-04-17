@@ -32,10 +32,8 @@ router.post("/users/login", function(req, res, next) {
 
   passport.authenticate("local", { session: false }, function(err, user, info) {
     if (err) {
-      console.log(err);
       return next(err);
     }
-
     if (user) {
       return res.json({ user: user.toAuthJSON() });
     } else {
@@ -83,7 +81,7 @@ router.post("/users", function(req, res, next) {
 
   user.username = req.body.user.username; //---> get username
   user.email = req.body.user.email; //---> get email
-  user.password = req.body.user.password; //---> DON'T SAVE PASSWORD TO DB!!!!!
+  user.setPassword(req.body.user.password); //---> DON'T SAVE PASSWORD TO DB!!!!!
 
   user
     .save() //---> save new user to db
