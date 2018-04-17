@@ -157,49 +157,6 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
-              <div>
-                <List>
-                  <Subheader>
-                    <i class="fas fa-football-ball fa-7x" />
-                    <i class="fas fa-baseball-ball fa-7x" />
-                    <i class="fas fa-basketball-ball fa-7x" />
-                    <i class="fas fa-volleyball-ball fa-7x" />
-                  </Subheader>
-                  <ListItem
-                  // leftAvatar={<i class="fas fa-user-secret" />}
-                  // rightIcon={<CommunicationChatBubble />}
-                  />
-
-                  <div>
-                    <Subheader>Click here for an Event.</Subheader>
-                    <form>
-                      <div>
-                        <RaisedButton
-                          label="Create an Event"
-                          onClick={this.handleOpen}
-                        />
-                        <Dialog
-                          title=" Pick your day"
-                          actions={actions}
-                          modal={false}
-                          open={this.state.open}
-                          onRequestClose={this.handleClose}
-                        >
-                          Choose a date.<i class="fas fa-calendar-alt" />
-                          <DatePicker hintText="Date Picker" />
-                          <div>
-                            <TimePicker hintText="Start time" />
-                            <TimePicker hintText="End time" />
-                            {/* <TimePicker hintText="current time" autoOk={true} /> */}
-                            <TimePicker format="24hr" hintText="24hr Format" />
-                            <TimePicker disabled={true} format="24hr" />
-                          </div>
-                        </Dialog>
-                      </div>
-                    </form>
-                  </div>
-                </List>
-              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
