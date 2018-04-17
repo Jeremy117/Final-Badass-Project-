@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import mainImage from "../images/huddle-logo-white.png";
 
-
-
-
-
 export default class Footer extends Component {
   render() {
     return (
@@ -13,34 +9,30 @@ export default class Footer extends Component {
           <div className="wrapper" />
           <div className="row">
             <div className="col s4">
-              <img src={mainImage}
-                width={200} alt="" />
-
-
-
+              <img src={mainImage} width={200} alt="" />
             </div>
             <div className="col l6 offset-l2 s12">
               <h5 className="black-text">Links</h5>
               <ul>
                 <li>
-                  <a className="black-text text-lighten-3" href="/">
-                    Huddle Home
-                 </a>
+                  <a class="black-text text-lighten-3" href="/">
+                    <i class="fas fa-home" />Huddle Home
+                  </a>
                 </li>
                 <li>
-                  <a className="black-text text-lighten-3" href="#!">
-                    About
-                 </a>
+                  <a class="black-text text-lighten-3" href="#!">
+                    <i class="fas fa-coffee" />About
+                  </a>
                 </li>
                 <li>
-                  <a className="black-text text-lighten-3" href="#!">
-                    Careers
-                 </a>
+                  <a class="black-text text-lighten-3" href="#!">
+                    <i class="fas fa-pencil-alt" />Careers
+                  </a>
                 </li>
                 <li>
-                  <a className="black-text text-lighten-3" href="#!">
-                    Gallery
-                 </a>
+                  <a class="black-text text-lighten-3" href="#!">
+                    <i class="fas fa-camera-retro" />Gallery
+                  </a>
                 </li>
               </ul>
             </div>
@@ -49,16 +41,23 @@ export default class Footer extends Component {
         <div className="footer-copyright">
           <div className="container">
             © 2018 Copyright Team Huddle
-           <div className="right">
-              <a href="https://facebook.com"><i className="fab fa-facebook-square fa-2x white"></i></a>
-              <a href="https://github.com/Jeremy117/Huddle-App"><i className="fab fa-github fa-2x white"></i></a>
-              <a href="https://www.linkedin.com"><i className="fab fa-linkedin fa-2x white"></i></a>
-              <a href="https://www.google.com/"><i className="fab fa-google fa-2x white"></i></a>
-            </div>
+            <a class="right">
+              <a href="https://facebook.com">
+                <i class="fab fa-facebook-square fa-2x white" />
+              </a>
+              <a href="https://github.com/Jeremy117/Huddle-App">
+                <i class="fab fa-github fa-2x white" />
+              </a>
+              <a href="https://www.linkedin.com">
+                <i class="fab fa-linkedin fa-2x white" />
+              </a>
+              <a href="https://www.google.com/">
+                <i class="fab fa-google fa-2x white" />
+              </a>
+            </a>
           </div>
         </div>
       </footer>
-
     );
   }
 }
