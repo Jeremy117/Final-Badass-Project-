@@ -95,7 +95,7 @@ class Dashboard extends Component {
         </ul>
         <div>
           <ul className="show-grid">
-            <div>
+            <div className="news">
               <br />
               <div className="cal">
                 <InfiniteCalendar
@@ -137,7 +137,7 @@ class Dashboard extends Component {
                 </div>
               </div>
             </div>
-            <div className="roster">
+            <div className="news roster">
               <div>
                 <List className="player">
                   <Subheader>

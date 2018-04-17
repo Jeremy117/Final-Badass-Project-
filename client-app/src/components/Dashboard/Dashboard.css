@@ -7,6 +7,10 @@
   /* border-radius: 10px; */
 }
 
+.news {
+  background-color: #05508d;
+}
+
 .cal {
   display: flex;
   /* justify-content: center; */
