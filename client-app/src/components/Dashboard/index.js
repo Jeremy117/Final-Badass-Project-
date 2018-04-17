@@ -13,6 +13,7 @@ import {
 import TextField from "material-ui/TextField";
 // import Snackbar from "material-ui/Snackbar";
 import RaisedButton from "material-ui/RaisedButton";
+import TimePicker from "material-ui/TimePicker";
 import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
 import Dialog from "material-ui/Dialog";
@@ -116,7 +117,24 @@ class Dashboard extends Component {
     this.setState({ weather: !weather });
   };
 
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
   render() {
+    const actions = [
+      <FlatButton
+        label="Ok"
+        primary={true}
+        keyboardFocused={true}
+        onClick={this.handleClose}
+      />
+    ];
+
+    // render();
     return (
       <div>
         <ul className="show-grid">
@@ -127,7 +145,7 @@ class Dashboard extends Component {
         </ul>
         <div>
           <ul className="show-grid">
-            <div>
+            <div className="news">
               <br />
               <div className="cal">
                 <InfiniteCalendar
@@ -139,52 +157,20 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
-              <div>
-                <List>
-                  <Subheader>
-                    <i class="fas fa-football-ball fa-7x" />
-                    <i class="fas fa-baseball-ball fa-7x" />
-                    <i class="fas fa-basketball-ball fa-7x" />
-                    <i class="fas fa-volleyball-ball fa-7x" />
-                  </Subheader>
-                  <ListItem
-                  // leftAvatar={<i class="fas fa-user-secret" />}
-                  // rightIcon={<CommunicationChatBubble />}
-                  />
-
-                  <div>
-                    <Subheader>Create an Event here.</Subheader>
-                    <form>
-                      <TextField hintText="Place of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <TextField hintText="Describe Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <DatePicker hintText="Date of Event" />
-                      <i class="far fa-calendar-plus" />
-                      <br />
-                      <FlatButton label="Submit" primary={true} />
-
-                      <FlatButton label="Delete" secondary={true} />
-                    </form>
-                  </div>
-                </List>
-              </div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="535"
-                      height="535"
+                      width="260"
+                      height="425"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameBorder="0"
                       scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
+                      marginHeight="0"
+                      marginWidth="0"
                     />
                   </div>
                   <a href="https://www.embedgooglemap.net" />
@@ -200,7 +186,7 @@ class Dashboard extends Component {
                 </div>
               </div>
             </div>
-            <div className="roster">
+            <div className="news roster">
               <div>
                 <List className="player">
                   <Subheader>

@@ -2,16 +2,15 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   border-style: groove;
-  border-color: #1e88e5;
-  background-color: #424242;
-  /* border-radius: 25px; */
+  border-color: #3c9df1;
+  background-color: #05508d;
+  /* border-radius: 10px; */
 }
+
 .news {
-  border-style: inset;
-  /* border-color: beige; */
-  /* text-align: center; */
-  background-color: rgb(255, 255, 255);
+  background-color: #05508d;
 }
+
 .cal {
   display: flex;
   /* justify-content: center; */
@@ -49,4 +48,13 @@
   justify-content: center;
   justify-content: space-around;
   background-image: url(https://s14-eu5.startpage.com/cgi-bin/serveimage?url=http:%2F%2Fwww.baltana.com%2Ffiles%2Fwallpapers-8%2FSunny-Day-Best-Wallpaper-25960.jpg&sp=8bf1ad835505823b6b47f982c318e8dc);
+}
+
+.card {
+  background-color: lightgrey;
+  border-style: groove;
+  border-color: #3c9df1;
+}
+.gradient {
+  background: linear-gradient(white, #05508d);
 }
