@@ -70,17 +70,15 @@ const ArticlePreview = ({ article }) => {
 
         <div className="pull-xs-right">
           <div class="card-panel">
-            <button
-              class="btn waves-effect waves{article.favoritesCount}-Green"
-              type="Submit"
-            >
-              Submit
-              {/* <i class="material-icons right">Submit</i> */}
-            </button>
-            <button class="btn waves-effect waves-light red disabled" type="">
+            {/* <button */}
+            {/* class="btn waves-effect waves{article.favoritesCount}-Green" */}
+            {/* type="Submit" > Submit */}
+            {/* <i class="material-icons right">Submit</i> */}
+            {/* </button> */}
+            {/* <button class="btn waves-effect waves-light red disabled" type="">
               Cancel
               {/* <i class="material-icons right">Touch this</i> */}
-            </button>
+            {/* </button> */}
           </div>
         </div>
       </div>
