@@ -7,7 +7,9 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 
 const style = {
-  marginLeft: 20,
+  margin: 20,
+  width: "95%"
+
 };
 
 const mapStateToProps = state => ({
@@ -119,28 +121,24 @@ one.
               <ListErrors errors={this.props.errors} />
 
 
-              <Paper zDepth={2} >
+              <Paper zDepth={5} >
                 <TextField
                   hintText="Post Title"
                   style={style}
                   underlineShow={false}
                   type="text"
                   name="title"
-
                   value={title}
                   onChange={this.handleInputChange}
                 />
                 <Divider />
 
                 <TextField
-
                   hintText="Post"
                   style={style}
-
                   underlineShow={false}
                   type="text"
                   name="description"
-
                   value={description}
                   onChange={this.handleInputChange}
                 />
@@ -149,11 +147,11 @@ one.
                 <TextField
                   hintText="Share your thoughts"
                   style={style}
+                  fullWidth={true}
                   multiLine={true}
-                  rows="8"
-
+                  underlineShow={false}
+                  rows="4"
                   name="body"
-
                   value={body}
                   onChange={this.handleInputChange}
                 />
@@ -166,7 +164,6 @@ one.
                   type="text"
                   name="tag"
                   value={tag}
-
                   onChange={this.handleTagChange}
                   onKeyUp={this.handleTagChange}
                 />

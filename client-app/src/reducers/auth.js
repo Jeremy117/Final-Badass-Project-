@@ -4,7 +4,7 @@ export default (state = {}, action) => {
     case "REGISTER": {
       return {
         ...state,
-        inProgress: false,
+        inProgess: false,
         errors: action.error ? action.payload : null
       };
     }

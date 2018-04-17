@@ -8,6 +8,7 @@ import TextField from 'material-ui/TextField';
 
 const style = {
     marginLeft: 20,
+    width: "95%"
 };
 
 
@@ -38,7 +39,7 @@ class Team extends Component {
 
 
 
-                        <Paper zDepth={2}>
+                        <Paper zDepth={5}>
                             <TextField
                                 hintText="Team Name"
                                 style={style}
@@ -49,8 +50,11 @@ class Team extends Component {
                             <TextField
                                 hintText="Description of Team"
                                 style={style}
+                                fullWidth={true}
                                 multiLine={true}
-                                rows="8"
+                                underlineShow={false}
+                                rows="3"
+
 
                             />
                             <Divider />
