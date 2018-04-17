@@ -72,7 +72,6 @@ const ArticlePreview = ({ article }) => {
             </div>
           </div>
         </a>
-<<<<<<< HEAD
 
         <div className="info">
           <a className="author">{article.author.username}</a>
@@ -94,8 +93,6 @@ const ArticlePreview = ({ article }) => {
             {/* </button> */}
           </div>
         </div>
-=======
->>>>>>> ad4acff6aaba58165845e0b1e2a2efe027e85cd4
       </div>
     </div>
   );

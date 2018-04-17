@@ -157,7 +157,6 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
-<<<<<<< HEAD
               <div>
                 <List>
                   <Subheader>
@@ -201,8 +200,6 @@ class Dashboard extends Component {
                   </div>
                 </List>
               </div>
-=======
->>>>>>> ad4acff6aaba58165845e0b1e2a2efe027e85cd4
               <br />
               {/* Googlemaps code below */}
               <div className="cal">

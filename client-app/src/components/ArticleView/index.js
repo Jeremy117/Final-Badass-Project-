@@ -24,7 +24,6 @@ class ArticleView extends Component {
       <div className="home-page">
         <div className="container-page">
           <div className="container-row">
-<<<<<<< HEAD
             <i class="material-icons">sentiment_very_satisfied</i>
             <i class="material-icons">bubble_chart</i>
             <i class="material-icons">adb</i>
@@ -32,9 +31,6 @@ class ArticleView extends Component {
             {/* <i class="material-icons">sentiment_very_satisfied</i>
             <i class="material-icons">bubble_chart</i>
             <i class="material-icons">adb</i> */}
-=======
-            <MainView articles={this.props.articles} />
->>>>>>> ad4acff6aaba58165845e0b1e2a2efe027e85cd4
           </div>
         </div>
       </div>
