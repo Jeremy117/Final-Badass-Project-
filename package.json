@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "heroku-postbuild": "cd client-app && npm install --only=dev && npm install && npm run build",
+    "heroku-postbuild": "cd client-app/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "start": "concurrently \"nodemon ./bin/www\" \"cd client-app && npm start\" "
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "cookie-parser": "^1.4.3",
@@ -18,8 +17,8 @@
     "express-jwt": "^5.3.1",
     "express-session": "^1.15.6",
     "jade": "^1.11.0",
-    "jsonwebtoken": "^8.2.0",
-    "mongoose": "^5.0.12",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.15",
     "mongoose-unique-validator": "^2.0.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3",
