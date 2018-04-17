@@ -7,11 +7,7 @@ const MainView = props => {
     <div className="col md 9">
       <div className="feed-toggle">
         <ul className=" nav wrapper outline-active">
-          <li className="nav-item">
-            <a href="" className="nav-link active">
-              Huddle Articles
-            </a>
-          </li>
+          <li className="nav-item" />
         </ul>
       </div>
       <ArticleList articles={props.articles} />
