@@ -13,6 +13,7 @@ import {
 import TextField from "material-ui/TextField";
 // import Snackbar from "material-ui/Snackbar";
 import RaisedButton from "material-ui/RaisedButton";
+import TimePicker from "material-ui/TimePicker";
 import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
 import Dialog from "material-ui/Dialog";
@@ -186,6 +187,13 @@ class Dashboard extends Component {
                         >
                           Choose a date.<i class="fas fa-calendar-alt" />
                           <DatePicker hintText="Date Picker" />
+                          <div>
+                            <TimePicker hintText="Start time" />
+                            <TimePicker hintText="End time" />
+                            {/* <TimePicker hintText="current time" autoOk={true} /> */}
+                            <TimePicker format="24hr" hintText="24hr Format" />
+                            <TimePicker disabled={true} format="24hr" />
+                          </div>
                         </Dialog>
                       </div>
                     </form>
