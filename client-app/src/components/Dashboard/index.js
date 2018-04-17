@@ -116,7 +116,24 @@ class Dashboard extends Component {
     this.setState({ weather: !weather });
   };
 
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
   render() {
+    const actions = [
+      <FlatButton
+        label="Ok"
+        primary={true}
+        keyboardFocused={true}
+        onClick={this.handleClose}
+      />
+    ];
+
+    // render();
     return (
       <div>
         <ul className="show-grid">
