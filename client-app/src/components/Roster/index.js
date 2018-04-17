@@ -1,4 +1,4 @@
-import MobileTearSheet from "../../../MobileTearSheet";
+// import MobileTearSheet from "../../../MobileTearSheet";
 import Avatar from "material-ui/Avatar";
 import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
@@ -10,7 +10,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
   ...state.team,
-  currentUser: state.common.currentUser
+  currentUser: state.common.currentUser,
+  currentTeam: state.common.currentTeam
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
 class Roster extends Component {
   componentDidMount() {
     const teamid = this.props.match.params.id;
-    this.props.onLoad(services.Players.get);
+    this.props.onLoad(services.Players.get(this.user.team));
     console.log(teamid);
   }
 
@@ -31,7 +32,7 @@ class Roster extends Component {
   }
 
   render() {
-    return <div />;
+    return <div>{this.props.team}</div>;
   }
 }
 

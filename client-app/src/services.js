@@ -36,7 +36,8 @@ const Articles = {
 const Comments = {
   forArticle: slug => requests.get(`/articles/${slug}/comments`),
   create: (slug, body) =>
-    requests.post(`articles/${slug}/comments`, { comment: body })
+    requests.post(`/articles/${slug}/comments`, { comment: body }),
+  delete: commentid => requests.delete(`/articles/comments/commentid}`)
 };
 
 const Auth = {
@@ -68,8 +69,6 @@ const Events = {
     requests.post(`events/${teamid}`),
   delete: teameventid => requests.delete(`/players/teameventid`)
 };
-
-//Then create the appropriate reducers, where the desired data is passed to the component as props from the redux store
 
 export default {
   Articles,
