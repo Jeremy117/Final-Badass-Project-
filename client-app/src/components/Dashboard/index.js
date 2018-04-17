@@ -1,8 +1,46 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
+import TextField from "material-ui/TextField";
+// import Snackbar from "material-ui/Snackbar";
+import RaisedButton from "material-ui/RaisedButton";
+import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
+import Dialog from "material-ui/Dialog";
+// import Avatar from "material-ui/Avatar";
+import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
+import FlatButton from "material-ui/FlatButton";
+import { Step, Stepper, StepLabel, StepContent } from "material-ui/Stepper";
+import DatePicker from "material-ui/DatePicker";
+import Divider from "material-ui/Divider";
+import MenuItem from "material-ui/MenuItem";
+import Menu from "material-ui/Menu";
+// import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
+import {
+  Grid,
+  Row,
+  Col,
+  Button,
+  Modal,
+  ModalDialog,
+  ModalBody,
+  ModalTitle,
+  ModalHeader,
+  ModalFooter,
+  OverlayTrigger,
+  Tooltip,
+  Popover
+} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
@@ -10,12 +48,6 @@ import axios from "axios";
 import Events from "./Events";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
-import { List, ListItem } from "material-ui/List";
-import Subheader from "material-ui/Subheader";
-import FlatButton from "material-ui/FlatButton";
-import DatePicker from "material-ui/DatePicker";
-import TextField from "material-ui/TextField";
-
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 // const URL =
@@ -107,7 +139,42 @@ class Dashboard extends Component {
                   onSelect={this.handleShow}
                 />
               </div>
+<<<<<<< HEAD
 
+=======
+              <div>
+                <List>
+                  <Subheader>
+                    <i class="fas fa-football-ball fa-7x" />
+                    <i class="fas fa-baseball-ball fa-7x" />
+                    <i class="fas fa-basketball-ball fa-7x" />
+                    <i class="fas fa-volleyball-ball fa-7x" />
+                  </Subheader>
+                  <ListItem
+                  // leftAvatar={<i class="fas fa-user-secret" />}
+                  // rightIcon={<CommunicationChatBubble />}
+                  />
+
+                  <div>
+                    <Subheader>Create an Event here.</Subheader>
+                    <form>
+                      <TextField hintText="Place of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <TextField hintText="Describe Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <DatePicker hintText="Date of Event" />
+                      <i class="far fa-calendar-plus" />
+                      <br />
+                      <FlatButton label="Submit" primary={true} />
+
+                      <FlatButton label="Delete" secondary={true} />
+                    </form>
+                  </div>
+                </List>
+              </div>
+>>>>>>> master
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
@@ -152,8 +219,8 @@ class Dashboard extends Component {
                         <Link to="./settings">
                           <ListItem
                             primaryText={player.name}
-                            leftAvatar={<Avatar src="" />}
-                            rightIcon={<CommunicationChatBubble />}
+                            // leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                            rightIcon={<i class="fas fa-star" />}
                           />
                         </Link>
                       </div>

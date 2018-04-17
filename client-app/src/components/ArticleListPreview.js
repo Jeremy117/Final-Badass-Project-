@@ -72,6 +72,32 @@ const ArticlePreview = ({ article }) => {
             </div>
           </div>
         </a>
+<<<<<<< HEAD
+=======
+
+        <div className="info">
+          <a className="author">{article.author.username}</a>
+          <span className="date">
+            {new Date(article.createdAt).toDateString()}
+          </span>
+        </div>
+
+        <div className="pull-xs-right">
+          <div class="card-panel">
+            <button
+              class="btn waves-effect waves{article.favoritesCount}-Green"
+              type="Submit"
+            >
+              Submit
+              {/* <i class="material-icons right">Submit</i> */}
+            </button>
+            <button class="btn waves-effect waves-light red disabled" type="">
+              Cancel
+              {/* <i class="material-icons right">Touch this</i> */}
+            </button>
+          </div>
+        </div>
+>>>>>>> master
       </div>
     </div>
   );
