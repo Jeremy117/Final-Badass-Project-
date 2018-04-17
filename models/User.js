@@ -26,7 +26,8 @@ const UserSchema = new mongoose.Schema(
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Article" }],
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     hash: String,
-    salt: String
+    salt: String,
+    teams: [{ type: mongoose.Schema.Types.ObjectId, ref: "Team" }]
   },
   {
     timestamps: true,

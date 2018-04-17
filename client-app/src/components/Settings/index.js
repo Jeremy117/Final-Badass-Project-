@@ -24,11 +24,11 @@ class Settings extends Component {
   render() {
     return (
 
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
+      <div className="container">
+        <div className="row">
+          <div className="col s12">
 
-            <h3 class="text-xs-center">Settings</h3>
+            <h3 className="text-xs-center">Settings</h3>
 
 
 
@@ -44,7 +44,7 @@ class Settings extends Component {
 
             <br />
 
-            <a onClick={this.props.onClickLogout} class="btn blue">Log Out</a>
+            <a onClick={this.props.onClickLogout} className="btn blue">Log Out</a>
 
 
 
