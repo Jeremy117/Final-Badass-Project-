@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Router, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { push } from "react-router-redux";
 import { connect } from "react-redux";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -7,7 +7,6 @@ import { reduxStore } from "../store";
 import services from "../services";
 import Header from "./Header";
 import Home from "./Home";
-import ArticleView from "./ArticleView";
 import Login from "./Login";
 import Register from "./Register";
 import Settings from "./Settings";
@@ -15,6 +14,8 @@ import Article from "./Article";
 import Editor from "./Editor";
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
+import Roster from "./Roster";
+
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -60,13 +61,14 @@ class App extends Component {
             {/* <Route path="/articleview" component={ArticleView} /> */}
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/roster" component={Roster} />
             <Route path="/settings" component={Settings} />
             <Route path="/article/:id" component={Article} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
             <Route path="/Dashboard" component={Dashboard} />
           </Switch>
-          <Footer />
+
         </div>
       </MuiThemeProvider>
     );

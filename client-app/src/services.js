@@ -36,7 +36,8 @@ const Articles = {
 const Comments = {
   forArticle: slug => requests.get(`/articles/${slug}/comments`),
   create: (slug, body) =>
-    requests.post(`articles/${slug}/comments`, { comment: body })
+    requests.post(`/articles/${slug}/comments`, { comment: body }),
+  delete: commentid => requests.delete(`/articles/comments/commentid}`)
 };
 
 const Auth = {
@@ -48,9 +49,33 @@ const Auth = {
   save: user => requests.put("/user", { user })
 };
 
+const Teams = {
+  get: userid => requests.get(`/teams/${userid}`),
+  post: (url, { team: { name, description, sport } }) =>
+    requests.post("/teams/"),
+  delete: teamid => requests.delete(`/teams/${teamid}`)
+};
+
+const Players = {
+  get: teamid => requests.get(`players/team/${teamid}`),
+  post: (teamid, { player: { name, position } }) =>
+    requests.post(`players/${teamid}`),
+  delete: teamplayerid => requests.delete(`/players/teamplayerid`)
+};
+
+const Events = {
+  get: teamid => requests.get(`events/team/${teamid}`),
+  post: (teamid, { player: { name, position } }) =>
+    requests.post(`events/${teamid}`),
+  delete: teameventid => requests.delete(`/players/teameventid`)
+};
+
 export default {
   Articles,
   Auth,
   Comments,
-  setToken
+  setToken,
+  Teams,
+  Players,
+  Events
 };

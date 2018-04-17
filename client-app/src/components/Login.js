@@ -51,7 +51,7 @@ class Login extends React.Component {
 
             <ListErrors errors={this.props.errors} />
             <form onSubmit={this.handleOnSubmit}>
-              <Paper zDepth={2}>
+              <Paper zDepth={5}>
                 <TextField
                   hintText="email"
                   style={style}
