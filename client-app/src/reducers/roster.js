@@ -3,7 +3,7 @@ export default (state = {}, action) => {
     case "ROSTER_LOADED":
       return {
         ...state,
-        players: action.payload.players
+        team: action.payload.team
       };
     case "ADD_PLAYER":
       return {

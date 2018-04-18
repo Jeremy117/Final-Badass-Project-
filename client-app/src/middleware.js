@@ -6,11 +6,13 @@ const promiseMiddleware = store => next => action => {
     action.payload
       .then(res => {
         action.payload = res;
+        store.dispatch({ type: "ASYNC_END", promise: action.payload });
         store.dispatch(action);
       })
       .catch(error => {
         action.error = true;
         action.payload = error.response.data.errors;
+        store.dispatch({ type: "ASYNC_END", promise: action.payload });
         store.dispatch(action);
       });
     return;

@@ -18,7 +18,6 @@ module.exports = function(passport) {
                 errors: { "email or password": "is invalid" }
               });
             }
-            console.log(user);
             return done(null, user);
           })
           .catch(done);

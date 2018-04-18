@@ -81,7 +81,7 @@ router.post("/:team", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
       var event = new Event(req.body.event);
-      event.team = req.team;
+      event.team = req.team._id;
       /*
           Save event on success, we want to add the newly created 
           event Object_id to the events property

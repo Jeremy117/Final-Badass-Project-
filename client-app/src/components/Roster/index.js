@@ -10,8 +10,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
   ...state.team,
-  currentUser: state.common.currentUser,
-  currentTeam: state.common.currentTeam
+  currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -20,9 +19,9 @@ const mapDispatchToProps = dispatch => ({
 
 class Roster extends Component {
   componentDidMount() {
-    const teamid = this.props.match.params.id;
-    this.props.onLoad(services.Players.get(this.user.team));
-    console.log(teamid);
+    const teamId = this.props.match.params.id;
+    this.props.onLoad(services.Players.get(this.props.match.params.id));
+    console.log(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,7 +31,7 @@ class Roster extends Component {
   }
 
   render() {
-    return <div>{this.props.team}</div>;
+    return <div>{}</div>;
   }
 }
 

@@ -78,7 +78,7 @@ router.post("/:team", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
       var player = new Player(req.body.player);
-      player.team = req.team;
+      player.team = req.team._id;
       /*
         Save player on success, we want to add the newly created 
         player Object_id to the playes property
