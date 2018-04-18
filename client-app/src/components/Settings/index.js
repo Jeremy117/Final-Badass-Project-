@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Settings extends Component {
+
   render() {
     return (
 
