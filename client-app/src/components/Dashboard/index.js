@@ -145,7 +145,7 @@ class Dashboard extends Component {
         </ul>
         <div>
           <ul className="show-grid">
-            <div>
+            <div className="news">
               <br />
               <div className="cal">
                 <InfiniteCalendar
@@ -206,14 +206,14 @@ class Dashboard extends Component {
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="535"
-                      height="535"
+                      width="260"
+                      height="425"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
                       frameBorder="0"
                       scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
+                      marginHeight="0"
+                      marginWidth="0"
                     />
                   </div>
                   <a href="https://www.embedgooglemap.net" />
@@ -229,7 +229,7 @@ class Dashboard extends Component {
                 </div>
               </div>
             </div>
-            <div className="roster">
+            <div className="news roster">
               <div>
                 <List className="player">
                   <Subheader>

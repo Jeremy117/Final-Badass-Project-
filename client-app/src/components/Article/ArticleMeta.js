@@ -9,7 +9,6 @@ const ArticleMeta = props => {
       <Link to={`@${article.author.username}`}>
         <img src={article.author.image} alt={"author"} />
       </Link>
-      {/* <i class="material-icons">gesture</i> */}
 
       <div className="info">
         <Link to={`@${article.author.username}`} className="author">
