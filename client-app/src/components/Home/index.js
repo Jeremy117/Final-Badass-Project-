@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import services from "../../services";
 import mainImage from "../../images/prototype-home-desktop-logo.jpg";
-// import "./home.css";
+import "./home.css";
 
 const mapStateToProps = state => ({
   appName: state.common.appName,
