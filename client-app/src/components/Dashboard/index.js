@@ -160,10 +160,10 @@ class Dashboard extends Component {
               <div>
                 <List>
                   <Subheader>
-                    <i class="fas fa-football-ball fa-7x" />
+                    {/* <i class="fas fa-football-ball fa-7x" />
                     <i class="fas fa-baseball-ball fa-7x" />
                     <i class="fas fa-basketball-ball fa-7x" />
-                    <i class="fas fa-volleyball-ball fa-7x" />
+                    <i class="fas fa-volleyball-ball fa-7x" /> */}
                   </Subheader>
                   <ListItem
                   // leftAvatar={<i class="fas fa-user-secret" />}
