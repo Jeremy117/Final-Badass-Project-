@@ -26,27 +26,13 @@ import DatePicker from "material-ui/DatePicker";
 import Divider from "material-ui/Divider";
 import MenuItem from "material-ui/MenuItem";
 import Menu from "material-ui/Menu";
+import ListEvent from "./ListEvents";
 // import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
-import {
-  Grid,
-  Row,
-  Col,
-  Button,
-  Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  ModalFooter,
-  OverlayTrigger,
-  Tooltip,
-  Popover
-} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
-import Events from "./Events";
+// import Events from "./Events";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
@@ -133,8 +119,6 @@ class Dashboard extends Component {
         onClick={this.handleClose}
       />
     ];
-
-    // render();
     return (
       <div>
         <ul className="show-grid">
@@ -147,16 +131,7 @@ class Dashboard extends Component {
           <ul className="show-grid">
             <div className="news">
               <br />
-              <div className="cal">
-                <InfiniteCalendar
-                  width={260}
-                  height={340}
-                  selected={today}
-                  disabledDays={[0, 6]}
-                  minDate={lastWeek}
-                  onSelect={this.handleShow}
-                />
-              </div>
+              <div className="cal">{ListEvent}</div>
               <br />
               {/* Googlemaps code below */}
               <div className="cal">
@@ -213,23 +188,6 @@ class Dashboard extends Component {
               </div>
             </div>
           </ul>
-        </div>
-        <div
-          id="modal1"
-          className="modal"
-          show={this.state.show}
-          onHide={this.handleClose}
-        >
-          <div className="modal-content">
-            <h4>Create Event:</h4>
-            {Events}
-          </div>
-          <div className="modal-footer">
-            {/* <RaisedButton */}
-            label="Close" onClick={this.handleClose}
-            primary={true}
-            />
-          </div>
         </div>
       </div>
     );
