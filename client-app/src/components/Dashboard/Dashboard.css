@@ -7,6 +7,9 @@
   /* border-radius: 10px; */
 }
 
+.event {
+  background-color: white;
+}
 .news {
   background-color: #05508d;
 }
@@ -17,7 +20,7 @@
   justify-content: space-around;
   /* align-content: center; */
   /* border-style: inset; */
-  border-color: rgb(21, 158, 212);
+  border-color: white;
 }
 .roster {
   display: flex;
