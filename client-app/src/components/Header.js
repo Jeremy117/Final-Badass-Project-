@@ -4,6 +4,8 @@ import mainImage from "../images/huddle-logo-white.png";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
 
 
 const LoggedOutView = props => {
@@ -56,12 +58,10 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link to={`/@${props.currentUser.username}`} className="nav-link">
 
-            {props.currentUser.username}
-          </Link>
-        </li>
+        {props.currentUser.username}
+
+
       </ul>
     );
   }
@@ -81,6 +81,24 @@ class Header extends React.Component {
     this.state = { open: false };
   }
 
+
+  handleClick = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+
   handleToggle = () => this.setState({ open: !this.state.open });
 
   render() {
@@ -89,13 +107,13 @@ class Header extends React.Component {
         <div className="container">
           <a
             data-activates="slide-out"
-            className="button-collapse right"
+            className="medium button-collapse left"
             label="Toggle Drawer"
             onClick={this.handleToggle}
           >
-            <i className="material-icons">menu</i>
+            {/* <i className="material-icons">menu</i> */}
           </a>
-          <Drawer open={this.state.open}>
+          {/* <Drawer open={this.state.open}>
             <MenuItem>
               <RaisedButton backgroundColor="blue" fullWidth={true}>
                 <Link to="/">Home</Link>
@@ -116,7 +134,7 @@ class Header extends React.Component {
                 <Link to="/Settings">Profile Settings</Link>
               </RaisedButton>
             </MenuItem>
-          </Drawer>
+          </Drawer> */}
           <Link to="/" className="brand-logo">
             <img src={mainImage} width={100} alt="" />
           </Link>
@@ -124,6 +142,39 @@ class Header extends React.Component {
           <LoggedOutView currentUser={this.props.currentUser} />
 
           <LoggedInView currentUser={this.props.currentUser} />
+        </div>
+        <div>
+          <i onClick={this.handleClick} className="material-icons">menu</i>
+
+
+
+
+          <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+            targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu>
+              <MenuItem>
+                <Link to="/">Home</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/Dashboard">Dashboard</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/Editor">New Post</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/Settings">Profile Settings</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/Settings">Log Out</Link>
+              </MenuItem>
+
+            </Menu>
+          </Popover>
         </div>
       </nav>
     );

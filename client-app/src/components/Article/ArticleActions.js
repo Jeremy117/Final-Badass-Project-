@@ -22,6 +22,7 @@ const ArticleActions = props => {
           <i className="ion-edit" /> Edit Article
         </Link>
         <br />
+        <br />
 
         <button className="btn blue" onClick={del}>Delete Article</button>
 

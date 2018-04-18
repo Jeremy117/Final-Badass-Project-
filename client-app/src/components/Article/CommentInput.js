@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import services from "../../services";
 import { connect } from "react-redux";
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import Avatar from 'material-ui/Avatar';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+
+const style = {
+  marginLeft: 20,
+  width: "93%"
+};
+
+
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: payload => dispatch({ type: "ADD_COMMENT", payload })
@@ -26,26 +38,33 @@ class CommentInput extends Component {
 
   render() {
     return (
-      <form className="card comment-form" onSubmit={this.createComment}>
-        <div className="card-block">
-          <textarea
-            className="form-control"
-            placeholder="Write a comment..."
+      <form onSubmit={this.createComment}>
+        <Paper>
+          {/* <div className="card-block"> */}
+          <TextField
+            hintText="Write a comment"
+            style={style}
+            fullWidth={true}
+            multiLine={true}
+            underlineShow={false}
+            rows="3"
             value={this.state.body}
             onChange={this.setBody}
-            rows="3"
+
           />
-        </div>
-        <div className="card-footer">
+          {/* </div> */}
+          {/* <div className="card-footer"> */}
+
           <img
             src={this.props.currentUser.image}
-            className="comment-author-img"
+            // className="comment-author-img"
             alt={this.props.currentUser.username}
           />
-          <button className="btn btn-sm btn-primary" type="submit">
+          <button className="blue" type="submit">
             Post Comment
           </button>
-        </div>
+          {/* </div> */}
+        </Paper >
       </form>
     );
   }

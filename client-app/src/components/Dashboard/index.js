@@ -43,6 +43,13 @@ import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bu
 const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
+var cardStyle = {
+  display: 'block',
+  width: '25vw',
+  transitionDuration: '0.3s',
+  height: '1vw'
+}
+
 var today = new Date();
 var lastWeek = new Date(
   today.getFullYear(),
@@ -163,11 +170,12 @@ class Dashboard extends Component {
             </div>
             <div className="news roster">
               <div>
+                <card style={cardStyle} />
                 <List className="player">
                   <Subheader>
-                    <h4 className="text">
+                    <h5 className="text">
                       <strong />Roster
-                    </h4>
+                    </h5>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>
