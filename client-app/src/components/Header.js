@@ -48,6 +48,15 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
+          <Link
+            to={"/Addplayer/" + props.currentUser.email}
+            className="nav-link"
+          >
+            <i className="ion-compose" />&nbsp;Add Player
+          </Link>
+        </li>
+
+        <li className="nav-item">
           <Link to="/editor" className="nav-link">
             <i className="ion-compose" />&nbsp;New Post
           </Link>
