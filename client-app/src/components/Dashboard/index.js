@@ -147,16 +147,38 @@ class Dashboard extends Component {
           <ul className="show-grid">
             <div className="news">
               <br />
-              {/* <div className="cal">
-                <InfiniteCalendar
-                  width={260}
-                  height={340}
-                  selected={today}
-                  disabledDays={[0, 6]}
-                  minDate={lastWeek}
-                  onSelect={this.handleShow}
-                />
-              </div> */}
+              <div>
+                <form>
+                  <div>
+                    <RaisedButton
+                      label="Create an Event"
+                      onClick={this.handleOpen}
+                      primary={true}
+                      fullWidth={true}
+                    />
+                    <Dialog
+                      title=" Pick your day"
+                      actions={actions}
+                      modal={false}
+                      open={this.state.open}
+                      onRequestClose={this.handleClose}
+                    >
+                      Choose a date.<i class="fas fa-calendar-alt" />
+                      <DatePicker hintText="Date Picker" />
+                      <div>
+                        <TimePicker hintText="Start time" />
+                        <TimePicker hintText="End time" />
+                        <TextField
+                          hintText="Description of event"
+                          multiLine={true}
+                          underlineShow={false}
+                        />
+                      </div>
+                    </Dialog>
+                  </div>
+                </form>
+              </div>
+              {ListEvent}
               <div>
                 <List>
                   <Subheader>
@@ -169,43 +191,6 @@ class Dashboard extends Component {
                   // leftAvatar={<i class="fas fa-user-secret" />}
                   // rightIcon={<CommunicationChatBubble />}
                   />
-
-                  <div>
-                    <Subheader>Click here for an Event.</Subheader>
-                    <form>
-                      <div>
-                        <RaisedButton
-                          label="Create an Event"
-                          onClick={this.handleOpen}
-                        />
-                        <Dialog
-                          title=" Pick your day"
-                          actions={actions}
-                          modal={false}
-                          open={this.state.open}
-                          onRequestClose={this.handleClose}
-                        >
-                          Choose a date.<i class="fas fa-calendar-alt" />
-                          <DatePicker hintText="Date Picker" />
-                          <div>
-                            <TimePicker hintText="Start time" />
-                            <TimePicker hintText="End time" />
-                            <TextField
-                              hintText="Description of event"
-                              // style={style}
-                              multiLine={true}
-                              underlineShow={false}
-                              // style={Datepicker}
-                            />
-
-                            {/* <TimePicker hintText="current time" autoOk={true} /> */}
-                            {/* <TimePicker format="24hr" hintText="24hr Format" /> */}
-                            {/* <TimePicker disabled={true} format="24hr" /> */}
-                          </div>
-                        </Dialog>
-                      </div>
-                    </form>
-                  </div>
                 </List>
               </div>
               <br />
