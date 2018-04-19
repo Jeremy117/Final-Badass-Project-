@@ -13,7 +13,8 @@ const ArticleSchema = new mongoose.Schema(
     favoritesCount: { type: Number, default: 0 },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
     tagList: [{ type: String }],
-    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    team: { type: mongoose.Schema.Types.ObjectId, ref: "Team" }
   },
   { timestamps: true }
 );
@@ -44,7 +45,8 @@ ArticleSchema.methods.toJSONFor = function() {
     createdAt: this.createdAt,
     updatedAt: this.updatedAt,
     tagList: this.tagList,
-    author: this.author.toProfileJSONFor()
+    author: this.author,
+    team: this.team
   };
 };
 
