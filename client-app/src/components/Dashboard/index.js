@@ -173,9 +173,9 @@ class Dashboard extends Component {
                 <card style={cardStyle} />
                 <List className="player">
                   <Subheader>
-                    <h5 className="text">
+                    <h4 className="text">
                       <strong />Roster
-                    </h5>
+                    </h4>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>
