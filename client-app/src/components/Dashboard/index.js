@@ -147,7 +147,7 @@ class Dashboard extends Component {
           <ul className="show-grid">
             <div className="news">
               <br />
-              <div className="cal">
+              {/* <div className="cal">
                 <InfiniteCalendar
                   width={260}
                   height={340}
@@ -156,7 +156,7 @@ class Dashboard extends Component {
                   minDate={lastWeek}
                   onSelect={this.handleShow}
                 />
-              </div>
+              </div> */}
               <div>
                 <List>
                   <Subheader>
