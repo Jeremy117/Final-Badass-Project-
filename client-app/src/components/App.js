@@ -15,7 +15,7 @@ import Editor from "./Editor";
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
 import Roster from "./Roster";
-
+import DontGo from "./Settings/DontGo";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -67,8 +67,8 @@ class App extends Component {
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
             <Route path="/Dashboard" component={Dashboard} />
+            <Route path="/DontGo" component={DontGo} />
           </Switch>
-
         </div>
       </MuiThemeProvider>
     );
