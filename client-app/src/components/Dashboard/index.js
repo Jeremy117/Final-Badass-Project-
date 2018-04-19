@@ -17,6 +17,8 @@ import TimePicker from "material-ui/TimePicker";
 import Toggle from "material-ui/Toggle";
 import ArticleView from "../ArticleView";
 import Dialog from "material-ui/Dialog";
+
+// import AutoComplete from "material-ui/AutoComplete";
 // import Avatar from "material-ui/Avatar";
 import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
@@ -63,6 +65,7 @@ var lastWeek = new Date(
   today.getMonth(),
   today.getDate() - 7
 );
+var Datepicker = { width: "30vw" };
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -120,6 +123,11 @@ class Dashboard extends Component {
   handleOpen = () => {
     this.setState({ open: true });
   };
+  // handleUpdateInput = value => {
+  //   this.setState({
+  //     dataSource: [value, value + value, value + value + value]
+  //   });
+  // };
 
   handleClose = () => {
     this.setState({ open: false });
@@ -190,9 +198,17 @@ class Dashboard extends Component {
                           <div>
                             <TimePicker hintText="Start time" />
                             <TimePicker hintText="End time" />
+                            <TextField
+                              hintText="Description of event"
+                              // style={style}
+                              multiLine={true}
+                              underlineShow={false}
+                              // style={Datepicker}
+                            />
+
                             {/* <TimePicker hintText="current time" autoOk={true} /> */}
-                            <TimePicker format="24hr" hintText="24hr Format" />
-                            <TimePicker disabled={true} format="24hr" />
+                            {/* <TimePicker format="24hr" hintText="24hr Format" /> */}
+                            {/* <TimePicker disabled={true} format="24hr" /> */}
                           </div>
                         </Dialog>
                       </div>
