@@ -47,14 +47,6 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link
-            to={"/Addplayer/" + props.currentUser.email}
-            className="nav-link"
-          >
-            <i className="ion-compose" />&nbsp;Add Player
-          </Link>
-        </li>
 
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
@@ -82,7 +74,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: function(payload) {
+  onLoad: function (payload) {
     dispatch({
       type: "HEADER_LOADED",
       payload
