@@ -36,6 +36,7 @@ import axios from "axios";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
+import Addbutton from "./Addbutton";
 
 // const URL =
 //   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
@@ -171,6 +172,7 @@ class Dashboard extends Component {
             <div className="news roster">
               <div>
                 <card style={cardStyle} />
+                <Addbutton />
                 <List className="player">
                   <Subheader>
                     <h4 className="text">
