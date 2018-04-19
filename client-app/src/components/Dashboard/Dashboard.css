@@ -1,8 +1,8 @@
 .show-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  border-style: groove;
-  border-color: #3c9df1;
+  /* border-style: groove;
+  border-color: #3c9df1; */
   background-color: #05508d;
   /* border-radius: 10px; */
 }
@@ -59,8 +59,9 @@
 
 .card {
   background-color: lightgrey;
-  border-style: groove;
-  border-color: #3c9df1;
+  /* border-style: groove; */
+  /* border-color: #3c9df1; */
+  padding-left: 20px;
 }
 .gradient {
   background: linear-gradient(white, #05508d);
