@@ -6,7 +6,7 @@ import Divider from "material-ui/Divider";
 import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
-import TableExampleSimple from "./teamstable";
+import TableExampleSimple from "./Teamstable";
 import {
   Table,
   TableBody,
@@ -45,9 +45,11 @@ class Teams extends Component {
   componentDidMount() {
     const email = this.props.match.params.email;
     this.props.onLoad(email);
-    console.log(this.props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
   state = {
     name: "",
     description: "",

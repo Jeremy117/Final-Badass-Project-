@@ -11,6 +11,7 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 import TextField from "material-ui/TextField";
+import { connect } from "react-redux";
 // import Snackbar from "material-ui/Snackbar";
 import RaisedButton from "material-ui/RaisedButton";
 import TimePicker from "material-ui/TimePicker";
