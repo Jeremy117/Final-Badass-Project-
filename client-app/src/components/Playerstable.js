@@ -8,20 +8,20 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 
-class TableExampleSimple extends Component {
+class Playerstable extends Component {
   render() {
     return (
       <Table>
         <TableHeader>
           <TableRow>
             <TableHeaderColumn>Name</TableHeaderColumn>
-            <TableHeaderColumn>Sport</TableHeaderColumn>
+            <TableHeaderColumn>Position</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableRowColumn />
-            <TableRowColumn>Baseball</TableRowColumn>
+            <TableHeaderColumn>Jeremy</TableHeaderColumn>
+            <TableRowColumn>Version Control Manager</TableRowColumn>
           </TableRow>
         </TableBody>
       </Table>
@@ -29,4 +29,4 @@ class TableExampleSimple extends Component {
   }
 }
 
-export default TableExampleSimple;
+export default Playerstable;
