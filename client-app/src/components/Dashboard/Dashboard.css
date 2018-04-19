@@ -10,6 +10,9 @@
 .event {
   background-color: white;
 }
+.eventbox {
+  padding-left: 10%;
+}
 .news {
   background-color: #05508d;
 }
