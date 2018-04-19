@@ -25,25 +25,27 @@
 .roster {
   display: flex;
   justify-content: center;
-  border-style: groove;
+  /* border-style: groove; */
   /* background-color: rgb(0, 238, 255); */
+  padding-right: 10%;
 }
 .player {
   /* display: grid;
   grid-template-rows: 1fr 1fr; */
 
   /* border-style: inset; */
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #424242;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
+  background-color: white;
   /* color: white; */
 }
 
 .text {
-  color: rgb(202, 17, 17);
-  background-color: #424242;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  color:black;
+  background-color: white;
+  justify-content: center;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
 }
 
 .weatherpic {
