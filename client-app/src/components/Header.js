@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import { connect } from "react-redux";
+import React, { Component } from "react";
 import mainImage from "../images/huddle-logo-white.png";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
 import Popover from "material-ui/Popover";
 import Menu from "material-ui/Menu";
+import services from "../services";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
@@ -64,10 +66,25 @@ const LoggedInView = props => {
   return null;
 };
 
+const mapStateToProps = state => {
+  return { currentUser: state.common.currentUser };
+};
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: function() {
+    dispatch({
+      type: "HEADER_LOADED"
+    });
+  }
+});
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
+  }
+  componentDidMount() {
+    this.props.onLoad();
   }
 
   handleClick = event => {
@@ -147,10 +164,10 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/dashboard/">Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/editor">New Post</Link>
+                <Link to="/teams">Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>
@@ -166,4 +183,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

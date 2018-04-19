@@ -13,7 +13,7 @@ const style = {
 };
 
 const mapStateToProps = state => ({
-  ...state.Teams,
+  ...state.team,
   currentUser: state.common.currentUser
 });
 
@@ -36,6 +36,7 @@ class Teams extends Component {
   componentDidMount() {
     const email = this.props.match.params.email;
     this.props.onLoad(email);
+    console.log(this.props);
   }
 
   state = {
