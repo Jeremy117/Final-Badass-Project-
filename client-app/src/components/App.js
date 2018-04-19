@@ -18,7 +18,9 @@ import Roster from "./Roster";
 import DontGo from "./Settings/DontGo";
 import Teams from "./Teams";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
+import Addplayer from "./Addplayer";
 import teamstable from "./teamstable";
+
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -71,6 +73,7 @@ class App extends Component {
             <Route path="/DontGo" component={DontGo} />
             <Route path="/dashboard/:team" component={Dashboard} />
             <Route path="/teams/:email" component={Teams} />
+            <Route path="/Addplayer" component={Addplayer} />
           </Switch>
         </div>
       </MuiThemeProvider>
