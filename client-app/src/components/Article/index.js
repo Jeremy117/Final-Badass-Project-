@@ -81,8 +81,6 @@ marked is a library that compiles markdown into HTML - in order to get react to 
             </div>
           </div>
 
-
-
           <div className="article-actions" />
         </div>
 

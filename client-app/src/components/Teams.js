@@ -6,6 +6,15 @@ import Divider from "material-ui/Divider";
 import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
+import TableExampleSimple from "./Teamstable";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
 
 const style = {
   marginLeft: 20,
@@ -36,9 +45,11 @@ class Teams extends Component {
   componentDidMount() {
     const email = this.props.match.params.email;
     this.props.onLoad(email);
-    console.log(this.props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
   state = {
     name: "",
     description: "",
@@ -113,9 +124,13 @@ class Teams extends Component {
             </form>
           </div>
         </div>
-        <div class="row">
-          <div class="col s12">
-            <h3 class="text-xs-center">Teams List</h3>
+
+        <div class="container roster">
+          <div class="row">
+            <div class="col s12">
+              <h3 class="text-xs-center">Teams List</h3>
+              <TableExampleSimple />
+            </div>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
 import Popover from "material-ui/Popover";
 import Menu from "material-ui/Menu";
+import DontGo from "./Settings/DontGo";
 import services from "../services";
 
 const LoggedOutView = props => {
@@ -35,7 +36,7 @@ const LoggedInView = props => {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
-          <Link to={"/dashboard/"} className="nav-link">
+          <Link to={"/dashboard"} className="nav-link">
             Dashboard
           </Link>
         </li>
@@ -46,7 +47,18 @@ const LoggedInView = props => {
           </Link>
         </li>
 
+<<<<<<< HEAD
 
+=======
+        <li className="nav-item">
+          <Link
+            to={"/Addplayer/" + props.currentUser.email}
+            className="nav-link"
+          >
+            <i className="ion-compose" />&nbsp;Add Player
+          </Link>
+        </li>
+>>>>>>> master
 
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
@@ -68,14 +80,16 @@ const LoggedInView = props => {
   return null;
 };
 
-const mapStateToProps = state => {
-  return { currentUser: state.common.currentUser };
-};
+const mapStateToProps = state => ({
+  ...state.team,
+  currentUser: state.common.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: function () {
+  onLoad: function(payload) {
     dispatch({
-      type: "HEADER_LOADED"
+      type: "HEADER_LOADED",
+      payload
     });
   }
 });
@@ -83,10 +97,16 @@ const mapDispatchToProps = dispatch => ({
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = {
+      open: false
+    };
   }
   componentDidMount() {
-    this.props.onLoad();
+    this.props.onLoad(services.Auth.user);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   handleClick = event => {
@@ -166,16 +186,16 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/dashboard/">Dashboard</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/teams">Teams</Link>
+                <Link to={"/teams/"}>Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/settings">Log Out</Link>
+                <Link to="/DontGo">Log Out</Link>
               </MenuItem>
             </Menu>
           </Popover>
