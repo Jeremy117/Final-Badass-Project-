@@ -17,6 +17,7 @@ import Footer from "./Footer";
 import Roster from "./Roster";
 import Teams from "./Teams";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
+import Addplayer from "./Addplayer";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -68,6 +69,7 @@ class App extends Component {
             <Route path="/editor" component={Editor} />
             <Route path="/dashboard/:team" component={Dashboard} />
             <Route path="/teams/:email" component={Teams} />
+            <Route path="/Addplayer" component={Addplayer} />
           </Switch>
         </div>
       </MuiThemeProvider>
