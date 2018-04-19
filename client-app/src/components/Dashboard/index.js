@@ -44,11 +44,11 @@ const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 var cardStyle = {
-  display: 'block',
-  width: '25vw',
-  transitionDuration: '0.3s',
-  height: '1vw'
-}
+  display: "block",
+  width: "25vw",
+  transitionDuration: "0.3s",
+  height: "1vw"
+};
 
 var today = new Date();
 var lastWeek = new Date(
@@ -153,6 +153,7 @@ class Dashboard extends Component {
                       scrolling="no"
                       marginHeight="0"
                       marginWidth="0"
+                      sandbox
                     />
                   </div>
                   <a href="https://www.embedgooglemap.net" />
@@ -214,6 +215,7 @@ class Box extends Component {
           height="216"
           width="400%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+          sandbox
         />
       </div>
     );

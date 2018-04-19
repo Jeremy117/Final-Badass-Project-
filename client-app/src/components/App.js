@@ -15,8 +15,10 @@ import Editor from "./Editor";
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
 import Roster from "./Roster";
+import DontGo from "./Settings/DontGo";
 import Teams from "./Teams";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
+import teamstable from "./teamstable";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
@@ -66,6 +68,7 @@ class App extends Component {
             <Route path="/article/:id" component={Article} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
+            <Route path="/DontGo" component={DontGo} />
             <Route path="/dashboard/:team" component={Dashboard} />
             <Route path="/teams/:email" component={Teams} />
           </Switch>

@@ -7,6 +7,7 @@ import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
 import Popover from "material-ui/Popover";
 import Menu from "material-ui/Menu";
+import DontGo from "./Settings/DontGo";
 import services from "../services";
 
 const LoggedOutView = props => {
@@ -173,7 +174,7 @@ class Header extends React.Component {
                 <Link to="/settings">Profile Settings</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/settings">Log Out</Link>
+                <Link to="/DontGo">Log Out</Link>
               </MenuItem>
             </Menu>
           </Popover>
