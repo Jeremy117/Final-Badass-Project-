@@ -4,15 +4,13 @@ import mainImage from "../images/huddle-logo-white.png";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-
+import Popover from "material-ui/Popover";
+import Menu from "material-ui/Menu";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
-
         <li className="nav-item">
           <Link to="/Login" className="nav-link">
             Sign in
@@ -35,14 +33,14 @@ const LoggedInView = props => {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
-          <Link to="/Dashboard" className="nav-link">
+          <Link to={"/dashboard/"} className="nav-link">
             Dashboard
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/Team" className="nav-link">
-            <i className="ion-compose" />&nbsp;Create New Team
+          <Link to={"/teams/" + props.currentUser.email} className="nav-link">
+            <i className="ion-compose" />&nbsp;Teams
           </Link>
         </li>
 
@@ -58,10 +56,7 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-
         {props.currentUser.username}
-
-
       </ul>
     );
   }
@@ -69,35 +64,27 @@ const LoggedInView = props => {
   return null;
 };
 
-
-
-
-
-
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
   }
 
-
-  handleClick = (event) => {
+  handleClick = event => {
     // This prevents ghost click.
     event.preventDefault();
 
     this.setState({
       open: true,
-      anchorEl: event.currentTarget,
+      anchorEl: event.currentTarget
     });
   };
 
   handleRequestClose = () => {
     this.setState({
-      open: false,
+      open: false
     });
   };
-
 
   handleToggle = () => this.setState({ open: !this.state.open });
 
@@ -144,16 +131,15 @@ class Header extends React.Component {
           <LoggedInView currentUser={this.props.currentUser} />
         </div>
         <div>
-          <i onClick={this.handleClick} className="material-icons">menu</i>
-
-
-
+          <i onClick={this.handleClick} className="material-icons">
+            menu
+          </i>
 
           <Popover
             open={this.state.open}
             anchorEl={this.state.anchorEl}
-            anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-            targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+            targetOrigin={{ horizontal: "left", vertical: "top" }}
             onRequestClose={this.handleRequestClose}
           >
             <Menu>
@@ -161,18 +147,17 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Dashboard">Dashboard</Link>
+                <Link to="/dashboard">Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Editor">New Post</Link>
+                <Link to="/editor">New Post</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Settings">Profile Settings</Link>
+                <Link to="/settings">Profile Settings</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Settings">Log Out</Link>
+                <Link to="/settings">Log Out</Link>
               </MenuItem>
-
             </Menu>
           </Popover>
         </div>

@@ -2,6 +2,7 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 const Article = mongoose.model("Article");
 const User = mongoose.model("User");
+const Team = mongoose.model("Team");
 const Comment = mongoose.model("Comment");
 const auth = require("../auth");
 
@@ -20,13 +21,38 @@ router.param("article", function(req, res, next, slug) {
     .catch(next);
 });
 
+router.param("comment", function(req, res, next, id) {
+  Comment.findById(id)
+    .then(function(comment) {
+      if (!comment) {
+        return res.sendStatus(404);
+      }
+      req.comment = comment;
+
+      return next();
+    })
+    .catch(next);
+});
+
+router.param("team", function(req, res, next, _id) {
+  Team.findOne({ _id: _id })
+    .then(function(team) {
+      if (!team) {
+        return res.sendStatus(404);
+      }
+      req.team = team;
+
+      return next();
+    })
+    .catch(next);
+});
+
 router.get("/", function(req, res, next) {
   //this is where we'd query db, give all the articles
   // get the results
   //and send them back
   //db.getCollection('articles').find({})
   Article.find()
-    .limit(50)
     .exec()
     .then(results => {
       return res.json({
@@ -36,11 +62,21 @@ router.get("/", function(req, res, next) {
     .catch(next);
 });
 
-// return a article by slug-id, we also want to get user who is actually signed in.
+// return an article by slug-id
 router.get("/:article", auth.optional, function(req, res, next) {
-  Promise.all([req.article.populate("author").execPopulate()])
-    .then(function(results) {
-      return res.json({ article: req.article.toJSONFor() });
+  Article.findOne({ slug: req.article.slug }).then(article => {
+    res.json({ article: article.toJSONFor() });
+  });
+});
+
+//return team's articles
+
+router.get("/team/:team", function(req, res, next) {
+  Team.findById(req.team._id)
+    .then(results => {
+      res.json({
+        articles: results.articles
+      });
     })
     .catch(next);
 });
@@ -73,21 +109,23 @@ router.get("/:article/comments", auth.optional, function(req, res, next) {
     .catch(next);
 });
 
-// create a new Article,  auth required
-router.post("/", auth.required, function(req, res, next) {
+// create a new Article and post it to team,  auth required
+router.post("/:team", auth.required, function(req, res, next) {
   User.findById(req.payload.id)
     .then(function(user) {
       if (!user) {
         return res.sendStatus(401);
       }
-
       var article = new Article(req.body.article);
-
-      article.author = user;
-
-      return article.save().then(function() {
-        return res.json({ article: article.toJSONFor() });
-      });
+      article.team = req.team._id;
+      article.author = user._id;
+      req.team.articles.push(article._id);
+      Promise.all([
+        article.save().then(function() {
+          return res.json({ article: article.toJSONFor() });
+        }),
+        req.team.save().then(console.log("team saved"))
+      ]).then(console.log("article posted to team"));
     })
     .catch(next);
 });

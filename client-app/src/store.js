@@ -11,6 +11,8 @@ import home from "./reducers/home";
 import settings from "./reducers/settings";
 import article from "./reducers/article";
 import editor from "./reducers/editor";
+import team from "./reducers/team";
+import roster from "./reducers/roster";
 
 //init browser history API
 export const history = createHistory();
@@ -25,7 +27,9 @@ const reducer = combineReducers({
   settings,
   article,
   editor,
-  router: routerReducer
+  router: routerReducer,
+  team,
+  roster
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
