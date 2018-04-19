@@ -9,13 +9,14 @@ import {
 } from "material-ui/Table";
 
 const style = {
+  marginLeft: 20,
   width: "95%"
 };
 
 class TableExampleSimple extends Component {
   render() {
     return (
-      <Table style={style}>
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHeaderColumn>ID</TableHeaderColumn>
