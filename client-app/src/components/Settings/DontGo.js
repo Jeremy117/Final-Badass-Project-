@@ -59,7 +59,7 @@ class DontGo extends Component {
             <br />
             <br />
             <br />
-            <h3 className="text-xs-center">awe, ok fine....</h3>
+            <h3 className="text-xs-center">Okay see ya next time!</h3>
 
             <ListErrors errors={this.props.errors} />
 
