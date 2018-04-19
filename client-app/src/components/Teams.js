@@ -6,7 +6,7 @@ import Divider from "material-ui/Divider";
 import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
-import TableExampleSimple from "./teamstable";
+import TableExampleSimple from "./Teamstable";
 import {
   Table,
   TableBody,

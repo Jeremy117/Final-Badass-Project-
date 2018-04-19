@@ -18,7 +18,6 @@ import Roster from "./Roster";
 import DontGo from "./Settings/DontGo";
 import Teams from "./Teams";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
-import teamstable from "./teamstable";
 
 const mapStateToProps = state => ({
   appLoaded: state.common.appLoaded,
