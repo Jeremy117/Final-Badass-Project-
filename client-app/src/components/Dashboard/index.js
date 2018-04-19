@@ -150,11 +150,11 @@ class Dashboard extends Component {
               <br />
               <div>
                 <form>
-                  <div>
+                  <div className="eventbox">
                     <RaisedButton
                       label="Create an Event"
                       onClick={this.handleOpen}
-                      primary={true}
+
                       fullWidth={true}
                     />
                     <Dialog
@@ -196,11 +196,11 @@ class Dashboard extends Component {
               </div>
               <br />
               {/* Googlemaps code below */}
-              <div className="cal">
+              <div className="eventbox">
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="260"
+                      width="320"
                       height="425"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"

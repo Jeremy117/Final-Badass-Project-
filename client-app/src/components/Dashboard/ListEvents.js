@@ -9,35 +9,37 @@ import ActionInfo from "material-ui/svg-icons/action/info";
 
 const ListEvents = (
   <div>
-    <form className="event">
-      <h4>List of Events</h4>
-      <List>
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-        <ListItem
-          primaryText="Event has been added here"
-          leftIcon={<ActionGrade />}
-        />
-      </List>
-    </form>
+    <div className="eventbox">
+      <form className="event">
+        <h4>List of Events</h4>
+        <List>
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+          <ListItem
+            primaryText="Event has been added here"
+            leftIcon={<ActionGrade />}
+          />
+        </List>
+      </form>
+    </div>
   </div>
 );
 
