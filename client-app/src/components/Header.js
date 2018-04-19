@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import { connect } from "react-redux";
+import React, { Component } from "react";
 import mainImage from "../images/huddle-logo-white.png";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-
+import Popover from "material-ui/Popover";
+import Menu from "material-ui/Menu";
+import DontGo from "./Settings/DontGo";
+import services from "../services";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
-
         <li className="nav-item">
           <Link to="/Login" className="nav-link">
             Sign in
@@ -33,14 +36,14 @@ const LoggedInView = props => {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
-          <Link to="/Dashboard" className="nav-link">
+          <Link to={"/dashboard/"} className="nav-link">
             Dashboard
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/Team" className="nav-link">
-            <i className="ion-compose" />&nbsp;Create New Team
+          <Link to={"/teams/" + props.currentUser.email} className="nav-link">
+            <i className="ion-compose" />&nbsp;Teams
           </Link>
         </li>
 
@@ -56,12 +59,7 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link to={`/@${props.currentUser.username}`} className="nav-link">
-
-            {props.currentUser.username}
-          </Link>
-        </li>
+        {props.currentUser.username}
       </ul>
     );
   }
@@ -69,17 +67,42 @@ const LoggedInView = props => {
   return null;
 };
 
+const mapStateToProps = state => {
+  return { currentUser: state.common.currentUser };
+};
 
-
-
-
-
+const mapDispatchToProps = dispatch => ({
+  onLoad: function() {
+    dispatch({
+      type: "HEADER_LOADED"
+    });
+  }
+});
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
   }
+  componentDidMount() {
+    this.props.onLoad();
+  }
+
+  handleClick = event => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false
+    });
+  };
 
   handleToggle = () => this.setState({ open: !this.state.open });
 
@@ -89,13 +112,13 @@ class Header extends React.Component {
         <div className="container">
           <a
             data-activates="slide-out"
-            className="button-collapse right"
+            className="medium button-collapse left"
             label="Toggle Drawer"
             onClick={this.handleToggle}
           >
-            <i className="material-icons">menu</i>
+            {/* <i className="material-icons">menu</i> */}
           </a>
-          <Drawer open={this.state.open}>
+          {/* <Drawer open={this.state.open}>
             <MenuItem>
               <RaisedButton backgroundColor="blue" fullWidth={true}>
                 <Link to="/">Home</Link>
@@ -116,7 +139,7 @@ class Header extends React.Component {
                 <Link to="/Settings">Profile Settings</Link>
               </RaisedButton>
             </MenuItem>
-          </Drawer>
+          </Drawer> */}
           <Link to="/" className="brand-logo">
             <img src={mainImage} width={100} alt="" />
           </Link>
@@ -125,9 +148,40 @@ class Header extends React.Component {
 
           <LoggedInView currentUser={this.props.currentUser} />
         </div>
+        <div>
+          <i onClick={this.handleClick} className="material-icons">
+            menu
+          </i>
+
+          <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+            targetOrigin={{ horizontal: "left", vertical: "top" }}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu>
+              <MenuItem>
+                <Link to="/">Home</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/dashboard/">Dashboard</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/teams">Teams</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/settings">Profile Settings</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to="/DontGo">Log Out</Link>
+              </MenuItem>
+            </Menu>
+          </Popover>
+        </div>
       </nav>
     );
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

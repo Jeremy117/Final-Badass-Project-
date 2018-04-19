@@ -61,6 +61,7 @@ router.get("/:player", function(req, res, next) {
 
 router.get("/team/:team", function(req, res, next) {
   Team.findById(req.team._id)
+    .populate("players")
     .then(results => {
       res.json({
         players: results.players
@@ -78,7 +79,7 @@ router.post("/:team", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
       var player = new Player(req.body.player);
-      player.team = req.team;
+      player.team = req.team._id;
       /*
         Save player on success, we want to add the newly created 
         player Object_id to the playes property
@@ -101,14 +102,15 @@ router.post("/:team", auth.required, function(req, res, next) {
 
 //delete a player from a team, and then delete the player from the players database
 
-router.delete("/:team/:player", auth.required, function(req, res, next) {
-  User.findById(req.payload.id)
+router.delete("/:player", auth.required, function(req, res, next) {
+  User.findOne(req.payload.id)
     .then(function(user) {
       if (!user) {
         return res.sendStatus(401);
       }
-      var index = req.team.players.indexOf(req.player._id.toString());
-      req.team.players.splice(index, 1);
+
+      Player.findById(req.payload.id);
+
       Promise.all([
         req.team.save().then(function() {
           console.log("player removed from team");

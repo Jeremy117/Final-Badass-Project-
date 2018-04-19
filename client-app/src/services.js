@@ -50,9 +50,10 @@ const Auth = {
 };
 
 const Teams = {
-  get: userid => requests.get(`/teams/${userid}`),
-  post: (url, { team: { name, description, sport } }) =>
-    requests.post("/teams/"),
+  get: teamid => requests.get(`/teams/${teamid}`),
+  getTeams: email => requests.get(`/teams/user/${email}`),
+  post: (email, name, description, sport) =>
+    requests.post(`/teams/${email}`, { team: { name, description, sport } }),
   delete: teamid => requests.delete(`/teams/${teamid}`)
 };
 
@@ -60,7 +61,7 @@ const Players = {
   get: teamid => requests.get(`players/team/${teamid}`),
   post: (teamid, { player: { name, position } }) =>
     requests.post(`players/${teamid}`),
-  delete: teamplayerid => requests.delete(`/players/teamplayerid`)
+  delete: teamplayerid => requests.delete(`/players/`)
 };
 
 const Events = {

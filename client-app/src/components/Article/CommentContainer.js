@@ -6,7 +6,7 @@ import CommentInput from "./CommentInput";
 const CommentContainer = props => {
   if (props.currentUser) {
     return (
-      <div className="col-xs-12 col-md-8 offset-md-2">
+      <div>
         <div>
           <list-errors errors={props.errors} />
         </div>
@@ -20,7 +20,7 @@ const CommentContainer = props => {
     );
   } else {
     return (
-      <div className="col-xs-12 col-md-8 offset-md-2">
+      <div>
         <p>
           <Link to="/login">Sign in</Link>
           &nbsp;or&nbsp;

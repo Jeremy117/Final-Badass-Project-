@@ -28,27 +28,13 @@ import DatePicker from "material-ui/DatePicker";
 import Divider from "material-ui/Divider";
 import MenuItem from "material-ui/MenuItem";
 import Menu from "material-ui/Menu";
+import ListEvent from "./ListEvents";
 // import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
-import {
-  Grid,
-  Row,
-  Col,
-  Button,
-  Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
-  ModalHeader,
-  ModalFooter,
-  OverlayTrigger,
-  Tooltip,
-  Popover
-} from "react-bootstrap";
 
 import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 import axios from "axios";
-import Events from "./Events";
+// import Events from "./Events";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
@@ -58,6 +44,13 @@ import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bu
 
 const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+
+var cardStyle = {
+  display: "block",
+  width: "25vw",
+  transitionDuration: "0.3s",
+  height: "1vw"
+};
 
 var today = new Date();
 var lastWeek = new Date(
@@ -141,8 +134,6 @@ class Dashboard extends Component {
         onClick={this.handleClose}
       />
     ];
-
-    // render();
     return (
       <div>
         <ul className="show-grid">
@@ -230,6 +221,7 @@ class Dashboard extends Component {
                       scrolling="no"
                       marginHeight="0"
                       marginWidth="0"
+                      sandbox
                     />
                   </div>
                   <a href="https://www.embedgooglemap.net" />
@@ -247,11 +239,12 @@ class Dashboard extends Component {
             </div>
             <div className="news roster">
               <div>
+                <card style={cardStyle} />
                 <List className="player">
                   <Subheader>
-                    <h4 className="text">
+                    <h5 className="text">
                       <strong />Roster
-                    </h4>
+                    </h5>
                   </Subheader>
                   <strong />
                   <div src={this.getPlayers()}>
@@ -273,23 +266,6 @@ class Dashboard extends Component {
             </div>
           </ul>
         </div>
-        <div
-          id="modal1"
-          className="modal"
-          show={this.state.show}
-          onHide={this.handleClose}
-        >
-          <div className="modal-content">
-            <h4>Create Event:</h4>
-            {Events}
-          </div>
-          <div className="modal-footer">
-            {/* <RaisedButton */}
-            label="Close" onClick={this.handleClose}
-            primary={true}
-            />
-          </div>
-        </div>
       </div>
     );
   }
@@ -307,6 +283,7 @@ class Box extends Component {
           height="216"
           width="400%"
           src="//forecast.io/embed/#lat=33.494170&lon=-111.926052&name=Scottsdale"
+          sandbox
         />
       </div>
     );

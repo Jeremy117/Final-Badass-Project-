@@ -67,7 +67,7 @@ class SettingsForm extends Component {
     return (
 
       <form onSubmit={this.submitForm}>
-        <div className="width95" />
+
 
 
         <List>

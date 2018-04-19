@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+var cardStyle = {
+  display: 'block',
+  width: '30vw',
+  transitionDuration: '0.3s',
+  height: '1vw'
+}
+
 const ArticlePreview = ({ article }) => {
   // const article = props.article;
   return (
@@ -15,6 +22,9 @@ const ArticlePreview = ({ article }) => {
                 <div class="card-content black-text">
                   <a>
                     <div class="card-content black-text">
+
+                      <card style={cardStyle} />
+
                       <img src={article.author.image} alt="Avatar" />
                     </div>
                   </a>
