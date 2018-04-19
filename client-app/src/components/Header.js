@@ -84,7 +84,9 @@ const mapDispatchToProps = dispatch => ({
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = {
+      open: false
+    };
   }
   componentDidMount() {
     this.props.onLoad(services.Auth.user);
@@ -174,7 +176,7 @@ class Header extends React.Component {
                 <Link to="/dashboard">Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/teams"}>Teams</Link>
+                <Link to={"/teams/"}>Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>
