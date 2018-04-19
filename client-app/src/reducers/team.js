@@ -8,7 +8,8 @@ export default (state = {}, action) => {
     case "TEAM_ADDED":
       return {
         ...state,
-        inProgess: false
+        inProgess: false,
+        errors: action.error ? action.payload : null
       };
     default:
       return state;
