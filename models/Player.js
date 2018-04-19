@@ -10,7 +10,7 @@ PlayerSchema.methods.toJSONFor = function() {
   return {
     name: this.name,
     position: this.position,
-    team: this.team.toJSONFor()
+    team: this.team
   };
 };
 

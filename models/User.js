@@ -27,7 +27,8 @@ const UserSchema = new mongoose.Schema(
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     hash: String,
     salt: String,
-    teams: [{ type: mongoose.Schema.Types.ObjectId, ref: "Team" }]
+    teams: [{ type: mongoose.Schema.Types.ObjectId, ref: "Team" }],
+    selectedTeam: { type: mongoose.Schema.Types.ObjectId, ref: "Team" }
   },
   {
     timestamps: true,
@@ -53,7 +54,8 @@ UserSchema.methods.toAuthJSON = function() {
     bio: this.bio,
     image:
       this.image || "https://static.productionready.io/images/smiley-cyrus.jpg",
-    token: this.generateJWT()
+    token: this.generateJWT(),
+    selectedTeam: this.selectedTeam
   };
 };
 

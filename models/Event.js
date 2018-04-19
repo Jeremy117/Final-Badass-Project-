@@ -14,7 +14,7 @@ EventSchema.methods.toJSONFor = function() {
     description: this.position,
     date: this.date,
     time: this.time,
-    team: this.team.toJSONFor()
+    team: this.team
   };
 };
 

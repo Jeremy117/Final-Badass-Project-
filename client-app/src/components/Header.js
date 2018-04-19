@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import { connect } from "react-redux";
+import React, { Component } from "react";
 import mainImage from "../images/huddle-logo-white.png";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
@@ -7,6 +8,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import Popover from "material-ui/Popover";
 import Menu from "material-ui/Menu";
 import DontGo from "./Settings/DontGo";
+import services from "../services";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
@@ -34,14 +36,14 @@ const LoggedInView = props => {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
-          <Link to="/Dashboard" className="nav-link">
+          <Link to={"/dashboard/"} className="nav-link">
             Dashboard
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/Team" className="nav-link">
-            <i className="ion-compose" />&nbsp;Create New Team
+          <Link to={"/teams/" + props.currentUser.email} className="nav-link">
+            <i className="ion-compose" />&nbsp;Teams
           </Link>
         </li>
 
@@ -65,10 +67,25 @@ const LoggedInView = props => {
   return null;
 };
 
+const mapStateToProps = state => {
+  return { currentUser: state.common.currentUser };
+};
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: function() {
+    dispatch({
+      type: "HEADER_LOADED"
+    });
+  }
+});
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
+  }
+  componentDidMount() {
+    this.props.onLoad();
   }
 
   handleClick = event => {
@@ -148,13 +165,13 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Dashboard">Dashboard</Link>
+                <Link to="/dashboard/">Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Editor">New Post</Link>
+                <Link to="/teams">Teams</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/Settings">Profile Settings</Link>
+                <Link to="/settings">Profile Settings</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/DontGo">Log Out</Link>
@@ -167,4 +184,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

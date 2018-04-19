@@ -22,7 +22,7 @@ export default (state = defaultState, action) => {
     case "LOGIN":
       return {
         ...state,
-        redirectTo: action.error ? null : "/dashboard",
+        redirectTo: action.error ? null : `/teams/${action.payload.user.email}`,
         currentUser:
           action.error || !action.payload ? null : action.payload.user
       };
