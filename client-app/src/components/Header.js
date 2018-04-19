@@ -9,7 +9,6 @@ import Popover from "material-ui/Popover";
 import Menu from "material-ui/Menu";
 import DontGo from "./Settings/DontGo";
 import services from "../services";
-import { METHODS } from "http";
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
