@@ -66,7 +66,7 @@ class App extends Component {
             <Route path="/article/:id" component={Article} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
-            <Route path="/dashboard/:team" component={Dashboard} />
+            <Route path="/dashboard" component={Dashboard} />
             <Route path="/teams/:email" component={Teams} />
           </Switch>
         </div>

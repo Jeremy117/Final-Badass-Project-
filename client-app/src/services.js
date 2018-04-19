@@ -68,7 +68,7 @@ const Events = {
   get: teamid => requests.get(`events/team/${teamid}`),
   post: (teamid, { player: { name, position } }) =>
     requests.post(`events/${teamid}`),
-  delete: teameventid => requests.delete(`/players/teameventid`)
+  delete: teameventid => requests.delete(`eventid`)
 };
 
 export default {

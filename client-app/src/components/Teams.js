@@ -36,9 +36,11 @@ class Teams extends Component {
   componentDidMount() {
     const email = this.props.match.params.email;
     this.props.onLoad(email);
-    console.log(this.props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
   state = {
     name: "",
     description: "",

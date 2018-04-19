@@ -11,6 +11,7 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 import TextField from "material-ui/TextField";
+import { connect } from "react-redux";
 // import Snackbar from "material-ui/Snackbar";
 import RaisedButton from "material-ui/RaisedButton";
 import TimePicker from "material-ui/TimePicker";
@@ -44,11 +45,11 @@ const URL2 =
   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 var cardStyle = {
-  display: 'block',
-  width: '25vw',
-  transitionDuration: '0.3s',
-  height: '1vw'
-}
+  display: "block",
+  width: "25vw",
+  transitionDuration: "0.3s",
+  height: "1vw"
+};
 
 var today = new Date();
 var lastWeek = new Date(
@@ -220,5 +221,5 @@ class Box extends Component {
   }
 }
 // export default connect(mapStateToProps)(Dashboard);
-export default Dashboard;
+export default connect()(Dashboard);
 //export default FlatButtonExampleSimple;
