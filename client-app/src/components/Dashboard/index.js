@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import {
@@ -61,6 +62,20 @@ var lastWeek = new Date(
   today.getDate() - 7
 );
 var Datepicker = { width: "30vw" };
+
+const mapStateToProps = state => ({
+  ...state.team,
+  currentUser: state.common.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  onLoad: function(payload) {
+    dispatch({
+      type: "HEADER_LOADED",
+      payload
+    });
+  }
+});
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -154,7 +169,6 @@ class Dashboard extends Component {
                     <RaisedButton
                       label="Create an Event"
                       onClick={this.handleOpen}
-
                       fullWidth={true}
                     />
                     <Dialog
@@ -278,5 +292,5 @@ class Box extends Component {
   }
 }
 // export default connect(mapStateToProps)(Dashboard);
-export default Dashboard;
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 //export default FlatButtonExampleSimple;
