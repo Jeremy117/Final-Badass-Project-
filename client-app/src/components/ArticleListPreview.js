@@ -19,12 +19,12 @@ const ArticlePreview = ({ article }) => {
           <div class="row">
             <div class="col s12 lg12">
               <div class="card">
-                <div class="card-content black-text">
+                <div class="black-text">
                   <a>
-                    <div class="card-content black-text">
+                    <div class="black-text">
                       <card style={cardStyle} />
 
-                      <img src={article.author.image} alt="Avatar" />
+                      {/* <img src={article.author.image} alt="Avatar" /> */}
                     </div>
                   </a>
                   <div className="info">

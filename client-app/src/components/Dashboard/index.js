@@ -40,6 +40,7 @@ import axios from "axios";
 // import RaisedButton from "material-ui/RaisedButton";
 import Avatar from "material-ui/Avatar";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
+import Addbutton from "./Addbutton";
 
 // const URL =
 //   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
@@ -169,16 +170,38 @@ class Dashboard extends Component {
           <ul className="show-grid">
             <div className="news">
               <br />
-              {/* <div className="cal">
-                <InfiniteCalendar
-                  width={260}
-                  height={340}
-                  selected={today}
-                  disabledDays={[0, 6]}
-                  minDate={lastWeek}
-                  onSelect={this.handleShow}
-                />
-              </div> */}
+              <div>
+                <form>
+                  <div className="eventbox">
+                    <RaisedButton
+                      label="Create an Event"
+                      onClick={this.handleOpen}
+
+                      fullWidth={true}
+                    />
+                    <Dialog
+                      title=" Pick your day"
+                      actions={actions}
+                      modal={false}
+                      open={this.state.open}
+                      onRequestClose={this.handleClose}
+                    >
+                      Choose a date.<i class="fas fa-calendar-alt" />
+                      <DatePicker hintText="Date Picker" />
+                      <div>
+                        <TimePicker hintText="Start time" />
+                        <TimePicker hintText="End time" />
+                        <TextField
+                          hintText="Description of event"
+                          multiLine={true}
+                          underlineShow={false}
+                        />
+                      </div>
+                    </Dialog>
+                  </div>
+                </form>
+              </div>
+              {ListEvent}
               <div>
                 <List>
                   <Subheader>
@@ -191,52 +214,15 @@ class Dashboard extends Component {
                   // leftAvatar={<i class="fas fa-user-secret" />}
                   // rightIcon={<CommunicationChatBubble />}
                   />
-
-                  <div>
-                    <Subheader>Click here for an Event.</Subheader>
-                    <form>
-                      <div>
-                        <RaisedButton
-                          label="Create an Event"
-                          onClick={this.handleOpen}
-                        />
-                        <Dialog
-                          title=" Pick your day"
-                          actions={actions}
-                          modal={false}
-                          open={this.state.open}
-                          onRequestClose={this.handleClose}
-                        >
-                          Choose a date.<i class="fas fa-calendar-alt" />
-                          <DatePicker hintText="Date Picker" />
-                          <div>
-                            <TimePicker hintText="Start time" />
-                            <TimePicker hintText="End time" />
-                            <TextField
-                              hintText="Description of event"
-                              // style={style}
-                              multiLine={true}
-                              underlineShow={false}
-                              // style={Datepicker}
-                            />
-
-                            {/* <TimePicker hintText="current time" autoOk={true} /> */}
-                            {/* <TimePicker format="24hr" hintText="24hr Format" /> */}
-                            {/* <TimePicker disabled={true} format="24hr" /> */}
-                          </div>
-                        </Dialog>
-                      </div>
-                    </form>
-                  </div>
                 </List>
               </div>
               <br />
               {/* Googlemaps code below */}
-              <div className="cal">
+              <div className="eventbox">
                 <div class="mapouter">
                   <div class="gmap_canvas">
                     <iframe
-                      width="260"
+                      width="320"
                       height="425"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=Woz U, North 90th Street, Scottsdale, AZ&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -263,11 +249,12 @@ class Dashboard extends Component {
             <div className="news roster">
               <div>
                 <card style={cardStyle} />
+                <Addbutton />
                 <List className="player">
                   <Subheader>
-                    <h5 className="text">
+                    <h4 className="text">
                       <strong />Roster
-                    </h5>
+                    </h4>
                   </Subheader>
                   <strong />
                   <div>
