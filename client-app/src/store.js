@@ -13,7 +13,7 @@ import article from "./reducers/article";
 import editor from "./reducers/editor";
 import team from "./reducers/team";
 import header from "./reducers/header";
-
+import player from "./reducers/player";
 //init browser history API
 export const history = createHistory();
 
@@ -29,7 +29,8 @@ const reducer = combineReducers({
   editor,
   router: routerReducer,
   team,
-  header
+  header,
+  player
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

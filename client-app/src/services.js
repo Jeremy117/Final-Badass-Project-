@@ -63,8 +63,8 @@ const Teams = {
 
 const Players = {
   get: teamid => requests.get(`players/team/${teamid}`),
-  post: (teamid, { player: { name, position } }) =>
-    requests.post(`players/${teamid}`),
+  post: (teamid, name, position) =>
+    requests.post(`players/${teamid}`, { player: { name, position } }),
   delete: playerid => requests.delete(`/players/playerid`)
 };
 

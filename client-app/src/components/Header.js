@@ -37,12 +37,7 @@ const LoggedInView = props => {
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
           <Link
-            to={
-              "/dashboard" +
-              (props.currentUser.selectedTeam
-                ? "/" + props.currentUser.selectedTeam
-                : null)
-            }
+            to={"/dashboard/" + props.currentUser.selectedTeam}
             className="nav-link"
           >
             Dashboard
@@ -50,17 +45,18 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
-          <Link
-            to={
-              "/teams" +
-              (props.currentUser.email ? "/" + props.currentUser.email : null)
-            }
-            className="nav-link"
-          >
+          <Link to={"/teams/" + props.currentUser.email} className="nav-link">
             <i className="ion-compose" />&nbsp;Teams
           </Link>
         </li>
-
+        <li className="nav-item">
+          <Link
+            to={"/addPlayer/" + props.currentUser.selectedTeam}
+            className="nav-link"
+          >
+            <i className="ion-compose" />&nbsp;Players
+          </Link>
+        </li>
 
         <li className="nav-item">
           <Link to="/editor" className="nav-link">
@@ -88,7 +84,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: function (payload) {
+  onLoad: function(payload) {
     dispatch({
       type: "HEADER_LOADED",
       payload
@@ -193,14 +189,13 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link
-                  to={"/dashboard" + (selectedTeam ? "/" + selectedTeam : null)}
-                >
-                  Dashboard
-                </Link>
+                <Link to={"/dashboard/" + selectedTeam}>Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/teams" + (email ? "/" + email : null)}>Teams</Link>
+                <Link to={"/teams/" + email}>Teams</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={"/addplayer/" + selectedTeam}>Players</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>

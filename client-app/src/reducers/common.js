@@ -54,18 +54,14 @@ export default (state = defaultState, action) => {
     case "ARTICLES_LOADED":
       return {
         ...state,
-        articles: action.payload.articles
+        articles: action.payload ? action.payload.articles : null
       };
     case "TEAM_SELECTED":
       return {
         ...state,
         selectedTeam: action.payload.selectedTeam
       };
-    case "PLAYERS_LOADED":
-      return {
-        ...state,
-        players: action.payload.players
-      };
+
     default:
       return state;
   }

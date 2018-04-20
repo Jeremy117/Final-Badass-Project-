@@ -30,7 +30,7 @@ import Divider from "material-ui/Divider";
 import MenuItem from "material-ui/MenuItem";
 import Menu from "material-ui/Menu";
 import ListEvent from "./ListEvents";
-import services from "../services";
+import services from "../../services";
 // import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 import InfiniteCalendar from "react-infinite-calendar";
@@ -65,26 +65,24 @@ var Datepicker = { width: "30vw" };
 
 const mapStateToProps = state => ({
   teams: state.team.teams,
-  players: state.common.players,
+  players: state.player.players,
   currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (email, name, description, sport) => {
+  onLoad: team => {
     dispatch({
-      type: "PLAYER_ADDED",
-      payload: services.Teams.post(name, position)
-    });
-  },
-  onLoad: email => {
-    dispatch({
-      type: "PLAYERS.LOADED",
-      payload: services.Teams.getTeams(this.props.currentUser.selectedTeam)
+      type: "PLAYERS_LOADED",
+      payload: services.Players.get(team)
     });
   }
 });
 
 class Dashboard extends Component {
+  componentDidMount() {
+    const team = this.props.match.params.team;
+    this.props.onLoad(team);
+  }
   constructor(props, context) {
     super(props, context);
 
@@ -150,6 +148,7 @@ class Dashboard extends Component {
     this.setState({ open: false });
   };
   render() {
+    const players = this.props.players ? this.props.players : [];
     const actions = [
       <FlatButton
         label="Ok"
@@ -176,7 +175,6 @@ class Dashboard extends Component {
                     <RaisedButton
                       label="Create an Event"
                       onClick={this.handleOpen}
-
                       fullWidth={true}
                     />
                     <Dialog
@@ -258,7 +256,7 @@ class Dashboard extends Component {
                   </Subheader>
                   <strong />
                   <div>
-                    {this.props.players.map(player => (
+                    {players.map(player => (
                       <div>
                         <Link to="./settings">
                           <ListItem
@@ -299,6 +297,6 @@ class Box extends Component {
     );
   }
 }
-// export default connect(mapStateToProps)(Dashboard);
-export default Dashboard;
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+
 //export default FlatButtonExampleSimple;
