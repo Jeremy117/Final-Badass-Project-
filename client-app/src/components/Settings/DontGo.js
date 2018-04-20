@@ -38,21 +38,7 @@ class DontGo extends Component {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
             <h3 className="text-xs-center">No, STOP!</h3>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             <br />
             <br />
