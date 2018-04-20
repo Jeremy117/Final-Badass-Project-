@@ -41,7 +41,7 @@ const LoggedInView = props => {
               "/dashboard" +
               (props.currentUser.selectedTeam
                 ? "/" + props.currentUser.selectedTeam
-                : "")
+                : null)
             }
             className="nav-link"
           >
@@ -53,7 +53,7 @@ const LoggedInView = props => {
           <Link
             to={
               "/teams" +
-              (props.currentUser.email ? "/" + props.currentUser.email : "")
+              (props.currentUser.email ? "/" + props.currentUser.email : null)
             }
             className="nav-link"
           >
@@ -193,13 +193,13 @@ class Header extends React.Component {
               </MenuItem>
               <MenuItem>
                 <Link
-                  to={"/dashboard" + (selectedTeam ? "/" + selectedTeam : "")}
+                  to={"/dashboard" + (selectedTeam ? "/" + selectedTeam : null)}
                 >
                   Dashboard
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/teams" + (email ? "/" + email : "")}>Teams</Link>
+                <Link to={"/teams" + (email ? "/" + email : null)}>Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>
