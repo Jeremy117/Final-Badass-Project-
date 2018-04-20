@@ -61,6 +61,11 @@ export default (state = defaultState, action) => {
         ...state,
         selectedTeam: action.payload.selectedTeam
       };
+    case "PLAYERS_LOADED":
+      return {
+        ...state,
+        players: action.payload.players
+      };
     default:
       return state;
   }

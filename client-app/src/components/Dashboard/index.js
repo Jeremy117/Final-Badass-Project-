@@ -30,6 +30,7 @@ import Divider from "material-ui/Divider";
 import MenuItem from "material-ui/MenuItem";
 import Menu from "material-ui/Menu";
 import ListEvent from "./ListEvents";
+import services from "../services";
 // import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
 
 import InfiniteCalendar from "react-infinite-calendar";
@@ -43,8 +44,8 @@ import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bu
 // const URL =
 //   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/articles?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
-const URL2 =
-  "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
+// const URL2 =
+//   "https://api.mlab.com/api/1/databases/heroku_57qw8z8r/collections/players?apiKey=h-OMydwAhmajzJr_hWshGs0gjrPxVKKa";
 
 var cardStyle = {
   display: "block",
@@ -60,6 +61,27 @@ var lastWeek = new Date(
   today.getDate() - 7
 );
 var Datepicker = { width: "30vw" };
+
+const mapStateToProps = state => ({
+  teams: state.team.teams,
+  players: state.common.players,
+  currentUser: state.common.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (email, name, description, sport) => {
+    dispatch({
+      type: "PLAYER_ADDED",
+      payload: services.Teams.post(name, position)
+    });
+  },
+  onLoad: email => {
+    dispatch({
+      type: "PLAYERS.LOADED",
+      payload: services.Teams.getTeams(this.props.currentUser.selectedTeam)
+    });
+  }
+});
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -78,13 +100,13 @@ class Dashboard extends Component {
     };
   }
 
-  getPlayers = () =>
-    axios.get(URL2).then(res => {
-      this.setState({
-        playerShow: true,
-        players: res.data
-      });
-    });
+  // getPlayers = () =>
+  //   axios.get(URL2).then(res => {
+  //     this.setState({
+  //       playerShow: true,
+  //       players: res.data
+  //     });
+  //   });
 
   // getRequest = () => {
   //   axios.get(ArticleView).then(res => {
@@ -248,8 +270,8 @@ class Dashboard extends Component {
                     </h5>
                   </Subheader>
                   <strong />
-                  <div src={this.getPlayers()}>
-                    {this.state.players.map(player => (
+                  <div>
+                    {this.props.players.map(player => (
                       <div>
                         <Link to="./settings">
                           <ListItem
