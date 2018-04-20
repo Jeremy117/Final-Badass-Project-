@@ -51,12 +51,17 @@ export default (state = defaultState, action) => {
       return { ...state, redirectTo: redirectUrl };
     case "DELETE_ARTICLE":
       return { ...state, redirectTo: "/" };
-    default:
-      return state;
     case "ARTICLES_LOADED":
       return {
         ...state,
         articles: action.payload.articles
       };
+    case "TEAM_SELECTED":
+      return {
+        ...state,
+        selectedTeam: action.payload.selectedTeam
+      };
+    default:
+      return state;
   }
 };

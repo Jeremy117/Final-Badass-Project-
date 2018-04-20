@@ -37,7 +37,12 @@ const LoggedInView = props => {
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
           <Link
-            to={"/dashboard/" + props.currentUser.selectedTeam}
+            to={
+              "/dashboard" +
+              (props.currentUser.selectedTeam
+                ? "/" + props.currentUser.selectedTeam
+                : "")
+            }
             className="nav-link"
           >
             Dashboard
@@ -45,7 +50,13 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
-          <Link to={"/teams/" + props.currentUser.email} className="nav-link">
+          <Link
+            to={
+              "/teams" +
+              (props.currentUser.email ? "/" + props.currentUser.email : "")
+            }
+            className="nav-link"
+          >
             <i className="ion-compose" />&nbsp;Teams
           </Link>
         </li>
@@ -181,10 +192,14 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/dashboard/" + selectedTeam}>Dashboard</Link>
+                <Link
+                  to={"/dashboard" + (selectedTeam ? "/" + selectedTeam : "")}
+                >
+                  Dashboard
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/teams/" + email}>Teams</Link>
+                <Link to={"/teams" + (email ? "/" + email : "")}>Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>
