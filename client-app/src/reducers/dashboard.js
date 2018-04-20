@@ -1,15 +1,19 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case "ROSTER_LOADED":
+    case "DASHBOARD_LOADED":
+      return {
+        ...state,
+        currentUser: action.payload.currentUser
+      };
+    case "PLAYERS_LOADED":
       return {
         ...state,
         players: action.payload.players
       };
-    case "ADD_PLAYER":
+    case "EVENTS_LOADED":
       return {
         ...state,
-        playerErrors: action.error ? action.payload.errors : null,
-        players: action.error ? null : [...state.players, action.payload.player]
+        events: action.payload.events
       };
     default:
       return state;

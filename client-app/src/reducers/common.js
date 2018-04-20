@@ -24,7 +24,11 @@ export default (state = defaultState, action) => {
         ...state,
         redirectTo: action.error ? null : `/teams/${action.payload.user.email}`,
         currentUser:
-          action.error || !action.payload ? null : action.payload.user
+          action.error || !action.payload ? null : action.payload.user,
+        currentTeam:
+          action.error || !action.payload
+            ? null
+            : action.payload.user.selectedTeam
       };
     case "REGISTER": {
       return {
@@ -41,11 +45,18 @@ export default (state = defaultState, action) => {
         currentUser: action.error ? null : action.payload.user
       };
     case "ARTICLE_SUBMITTED":
-      const redirectUrl = `/article/${action.payload.article.slug}`;
+      const redirectUrl = action.payload
+        ? `/article/${action.payload.article.slug}`
+        : "";
       return { ...state, redirectTo: redirectUrl };
     case "DELETE_ARTICLE":
       return { ...state, redirectTo: "/" };
     default:
       return state;
+    case "ARTICLES_LOADED":
+      return {
+        ...state,
+        articles: action.payload.articles
+      };
   }
 };

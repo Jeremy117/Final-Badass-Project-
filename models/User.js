@@ -105,7 +105,8 @@ UserSchema.methods.toProfileJSONFor = function() {
     username: this.username,
     bio: this.bio,
     image:
-      this.image || "https://static.productionready.io/images/smiley-cyrus.jpg"
+      this.image || "https://static.productionready.io/images/smiley-cyrus.jpg",
+    selectedTeam: this.selectedTeam
   };
 };
 

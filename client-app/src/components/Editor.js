@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import services from "../services";
 import ListErrors from "./ListErrors";
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
+import Divider from "material-ui/Divider";
+import Paper from "material-ui/Paper";
+import TextField from "material-ui/TextField";
 
 const style = {
   margin: 20,
   width: "95%"
-
 };
 
 const mapStateToProps = state => ({
-  ...state.editor
+  ...state.editor,
+  currentUser: state.common.currentUser
 });
 
 const mapStateToDispatch = dispatch => ({
@@ -93,10 +93,11 @@ one.
       body: this.state.body,
       tagList: this.state.tagList
     };
+    const selectedTeam = this.props.currentUser.selectedTeam;
     const slug = { slug: this.props.match.params.slug };
     const promise = this.props.match.params.slug
       ? services.Articles.update(Object.assign(article, slug)) //object merge
-      : services.Articles.create(article);
+      : services.Articles.create(selectedTeam, article);
 
     this.props.onSubmit(promise);
   };
@@ -110,18 +111,15 @@ one.
   render() {
     const { title, description, body, tagList, tag } = this.state;
     return (
-
-      <div className="editor-page" >
-        <div className="container page" >
+      <div className="editor-page">
+        <div className="container page">
           <div className="row">
             <div className="col s12">
-
               <h3 className="text-xs-center">New Post</h3>
 
               <ListErrors errors={this.props.errors} />
 
-
-              <Paper zDepth={5} >
+              <Paper zDepth={5}>
                 <TextField
                   hintText="Post Title"
                   style={style}
@@ -181,21 +179,21 @@ one.
                     );
                   })}
                 </div>
-
-              </Paper >
+              </Paper>
 
               <br />
 
-              <button className="btn blue" disabled={this.state.inProgress} onClick={this.submitForm}>Publish Article</button>
-
-
-
-
+              <button
+                className="btn blue"
+                disabled={this.state.inProgress}
+                onClick={this.submitForm}
+              >
+                Publish Article
+              </button>
             </div>
           </div>
         </div>
       </div>
-
     );
   }
 }

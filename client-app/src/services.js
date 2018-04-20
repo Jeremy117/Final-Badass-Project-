@@ -25,9 +25,10 @@ const requests = {
 const omitSlug = article => Object.assign({}, article, { slug: undefined });
 
 const Articles = {
-  all: page => requests.get(`/articles?limit=10`),
+  all: teamid => requests.get(`/articles/team/${teamid}`),
   get: slug => requests.get(`/articles/${slug}`),
-  create: article => requests.post("/articles", { article }),
+  create: (teamid, article) =>
+    requests.post(`/articles/${teamid}`, { article }),
   update: article =>
     requests.put(`/articles/${article.slug}`, { article: omitSlug(article) }),
   delete: slug => requests.del(`/articles/${slug}`)
@@ -52,8 +53,11 @@ const Auth = {
 const Teams = {
   get: teamid => requests.get(`/teams/${teamid}`),
   getTeams: email => requests.get(`/teams/user/${email}`),
+  getSelectedTeam: email => requests.get(`/teams/user/selected/${email}`),
   post: (email, name, description, sport) =>
     requests.post(`/teams/${email}`, { team: { name, description, sport } }),
+  postSelectedTeam: (email, team) =>
+    requests.post(`/teams/selected/${email}`, team),
   delete: teamid => requests.delete(`/teams/${teamid}`)
 };
 

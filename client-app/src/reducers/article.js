@@ -14,6 +14,7 @@ export default (state = {}, action) => {
           ? null
           : [...state.comments, action.payload.comment]
       };
+
     default:
       return state;
   }

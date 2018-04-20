@@ -7,16 +7,20 @@ import services from "../../services";
 
 const mapStateToProps = state => ({
   appName: state.common.appName,
-  articles: state.home.articles
+  currentUser: state.common.currentUser,
+  articles: state.common.articles
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
+  onLoad: payload => dispatch({ type: "ARTICLES_LOADED", payload })
 });
 
 class ArticleView extends Component {
   componentDidMount() {
-    this.props.onLoad(services.Articles.all());
+    const selectedTeam = this.props.currentUser
+      ? this.props.currentUser.selectedTeam
+      : "";
+    this.props.onLoad(services.Articles.all(selectedTeam));
   }
 
   render() {

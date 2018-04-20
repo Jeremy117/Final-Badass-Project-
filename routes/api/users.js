@@ -5,7 +5,19 @@ const mongoose = require("mongoose"),
   User = mongoose.model("User");
 var auth = require("../auth");
 
-//User return user info,
+router.param("team", function(req, res, next, _id) {
+  Team.findOne({ _id: _id })
+    .then(function(team) {
+      if (!team) {
+        return res.sendStatus(404);
+      }
+      req.team = team;
+
+      return next();
+    })
+    .catch(next);
+});
+
 //Protected Route, notice the call to auth.required before the function!!
 router.get("/user", auth.required, function(req, res, next) {
   User.findById(req.payload.id)

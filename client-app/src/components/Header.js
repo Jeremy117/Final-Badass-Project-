@@ -36,7 +36,10 @@ const LoggedInView = props => {
     return (
       <ul className="right hide-on-med-and-down sidenav" id="mobile-demo">
         <li className="nav-item">
-          <Link to={"/dashboard"} className="nav-link">
+          <Link
+            to={"/dashboard/" + props.currentUser.selectedTeam}
+            className="nav-link"
+          >
             Dashboard
           </Link>
         </li>
@@ -115,6 +118,11 @@ class Header extends React.Component {
   handleToggle = () => this.setState({ open: !this.state.open });
 
   render() {
+    const email = this.props.currentUser ? this.props.currentUser.email : "";
+    const selectedTeam = this.props.currentUser
+      ? this.props.currentUser.selectedTeam
+      : "";
+    console.log(this.props);
     return (
       <nav className="nav-wrapper blue">
         <div className="container">
@@ -173,10 +181,10 @@ class Header extends React.Component {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to={"/dashboard/" + selectedTeam}>Dashboard</Link>
               </MenuItem>
               <MenuItem>
-                <Link to={"/teams/"}>Teams</Link>
+                <Link to={"/teams/" + email}>Teams</Link>
               </MenuItem>
               <MenuItem>
                 <Link to="/settings">Profile Settings</Link>

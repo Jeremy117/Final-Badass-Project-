@@ -14,7 +14,6 @@ import Article from "./Article";
 import Editor from "./Editor";
 import Dashboard from "./Dashboard";
 import Footer from "./Footer";
-import Roster from "./Roster";
 import DontGo from "./Settings/DontGo";
 import Teams from "./Teams";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
@@ -62,13 +61,12 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/roster/:team" component={Roster} />
             <Route path="/settings" component={Settings} />
             <Route path="/article/:id" component={Article} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
             <Route path="/DontGo" component={DontGo} />
-            <Route path="/dashboard/" component={Dashboard} />
+            <Route path="/dashboard/:team" component={Dashboard} />
             <Route path="/teams/:email" component={Teams} />
           </Switch>
         </div>

@@ -3,8 +3,7 @@ export default (state = {}, action) => {
     case "ARTICLE_SUBMITTED":
       return {
         ...state,
-        inProgress: null,
-        errors: action.error ? action.payload.errors : null
+        inProgress: null
       };
     case "EDITOR_PAGE_UNLOADED":
       return {};

@@ -47,6 +47,19 @@ router.param("team", function(req, res, next, _id) {
     .catch(next);
 });
 
+router.param("user", function(req, res, next, email) {
+  User.findOne({ email: email })
+    .then(function(user) {
+      if (!user) {
+        return res.sendStatus(404);
+      }
+      req.user = user;
+
+      return next();
+    })
+    .catch(next);
+});
+
 router.get("/", function(req, res, next) {
   //this is where we'd query db, give all the articles
   // get the results
@@ -63,16 +76,18 @@ router.get("/", function(req, res, next) {
 });
 
 // return an article by slug-id
+
 router.get("/:article", auth.optional, function(req, res, next) {
   Article.findOne({ slug: req.article.slug }).then(article => {
     res.json({ article: article.toJSONFor() });
   });
 });
 
-//return team's articles
+//return team articles
 
 router.get("/team/:team", function(req, res, next) {
   Team.findById(req.team._id)
+    .populate("articles")
     .then(results => {
       res.json({
         articles: results.articles

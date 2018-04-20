@@ -6,7 +6,6 @@ import Divider from "material-ui/Divider";
 import Paper from "material-ui/Paper";
 import TextField from "material-ui/TextField";
 import { ENGINE_METHOD_PKEY_ASN1_METHS } from "constants";
-import TableExampleSimple from "./Teamstable";
 import {
   Table,
   TableBody,
@@ -22,7 +21,7 @@ const style = {
 };
 
 const mapStateToProps = state => ({
-  ...state.team,
+  teams: state.team.teams,
   currentUser: state.common.currentUser
 });
 
@@ -70,6 +69,9 @@ class Teams extends Component {
   };
 
   render() {
+    const email = this.props.currentUser ? this.props.currentUser.email : "";
+    const teams = this.props.teams ? this.props.teams : [];
+
     const { name, description, sport } = this.state;
     return (
       <div class="container">
@@ -124,14 +126,27 @@ class Teams extends Component {
             </form>
           </div>
         </div>
-
-        <div class="container roster">
-          <div class="row">
-            <div class="col s12">
-              <h3 class="text-xs-center">Teams List</h3>
-              <TableExampleSimple />
-            </div>
-          </div>
+        <div>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Sport</TableHeaderColumn>
+                <TableHeaderColumn>id</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {teams.map(teamobject => {
+                return (
+                  <TableRow>
+                    <TableRowColumn>{teamobject.name}</TableRowColumn>
+                    <TableRowColumn>{teamobject.sport}</TableRowColumn>
+                    <TableRowColumn>{teamobject._id}</TableRowColumn>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
         </div>
       </div>
     );

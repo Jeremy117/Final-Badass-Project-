@@ -12,7 +12,6 @@ import settings from "./reducers/settings";
 import article from "./reducers/article";
 import editor from "./reducers/editor";
 import team from "./reducers/team";
-import roster from "./reducers/roster";
 import header from "./reducers/header";
 
 //init browser history API
@@ -30,7 +29,6 @@ const reducer = combineReducers({
   editor,
   router: routerReducer,
   team,
-  roster,
   header
 });
 

@@ -51,8 +51,8 @@ router.get("/", function(req, res, next) {
 
 //get a specific team and populate
 
-router.get("/:team", function(req, res, next) {
-  Team.findById(req.team._id)
+router.get("/:user", function(req, res, next) {
+  Team.findById(req.user.email)
     .populate("articles")
     .populate("events")
     .populate("players")
@@ -76,6 +76,8 @@ router.get("/user/:user", function(req, res, next) {
     .catch(next);
 });
 
+//get a users team
+
 //post a team to a specific user
 
 router.post("/:user", auth.required, function(req, res, next) {
@@ -92,6 +94,21 @@ router.post("/:user", auth.required, function(req, res, next) {
         req.user.save().then(function() {
           res.json({ user: req.user.toProfileJSONFor() });
         });
+      });
+    })
+    .catch(next);
+});
+
+//select a team
+router.post("/select/:team", auth.required, function(req, res, next) {
+  User.findById(req.payload.id)
+    .then(function(user) {
+      if (!user) {
+        return res.sendStatus(401);
+      }
+      user.selectedTeam = req.team._id;
+      user.save().then(() => {
+        return res.json({ user: user.toProfileJSONFor() });
       });
     })
     .catch(next);
