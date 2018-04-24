@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
 import { Router } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
-
 import "./index.css";
 import App from "./components/App";
 import { reduxStore, history } from "./store";
-
 import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
